@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63098D381E4DD9BC00924B3D /* ArtistAttendingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D371E4DD9BC00924B3D /* ArtistAttendingCollectionViewCell.swift */; };
+		63098D3A1E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D391E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift */; };
 		635B60FC1E41D65C009F780C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FB1E41D65C009F780C /* AppDelegate.swift */; };
 		635B60FE1E41D65C009F780C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FD1E41D65C009F780C /* ViewController.swift */; };
 		635B61011E41D65C009F780C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635B60FF1E41D65C009F780C /* Main.storyboard */; };
@@ -58,7 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		63098D371E4DD9BC00924B3D /* ArtistAttendingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistAttendingCollectionViewCell.swift; sourceTree = "<group>"; };
+		63098D391E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistAttendingTableViewCell.swift; sourceTree = "<group>"; };
 		635B60F81E41D65C009F780C /* FindMeInc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMeInc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635B60FB1E41D65C009F780C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635B60FD1E41D65C009F780C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				63F2CD0C1E4DA65B00E14727 /* EventDetailsViewController.swift */,
-				63098D371E4DD9BC00924B3D /* ArtistAttendingCollectionViewCell.swift */,
+				63098D391E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift */,
 			);
 			name = "Event details";
 			sourceTree = "<group>";
@@ -401,7 +401,7 @@
 			files = (
 				63F2CD001E4B664300E14727 /* CustomAlertTableViewCellWithButton.swift in Sources */,
 				63F2CD081E4C747600E14727 /* EventCollectionViewCell.swift in Sources */,
-				63098D381E4DD9BC00924B3D /* ArtistAttendingCollectionViewCell.swift in Sources */,
+				63098D3A1E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift in Sources */,
 				63F2CD051E4B7AE900E14727 /* InboxTableViewCell.swift in Sources */,
 				635E48AD1E44891C006072EC /* CreateAccountCustomerViewController.swift in Sources */,
 				635B61461E446914009F780C /* CreateAccountParlorViewController.swift in Sources */,

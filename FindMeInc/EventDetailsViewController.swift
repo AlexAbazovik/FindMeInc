@@ -3,6 +3,7 @@ import UIKit
 class EventDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource{
     
     @IBOutlet weak var chatTableView: UITableView!
+    @IBOutlet weak var artistAttendingTableView: UITableView!
     @IBOutlet weak var photosCollectionView: UICollectionView!
     
     @IBOutlet var filteringButtonsCollection: [UIButton]!
@@ -17,6 +18,9 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
         
         photosCollectionView.dataSource = self
         photosCollectionView.delegate = self
+        
+        artistAttendingTableView.delegate = self
+        artistAttendingTableView.dataSource = self
         
     }
 
@@ -41,8 +45,13 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = chatTableView.dequeueReusableCell(withIdentifier: "inboxTableViewCell", for: indexPath) as! InboxTableViewCell
-        return cell
+        if tableView == chatTableView{
+            let cell = chatTableView.dequeueReusableCell(withIdentifier: "inboxTableViewCell", for: indexPath) as! InboxTableViewCell
+            return cell
+        }else{
+            let cell = artistAttendingTableView.dequeueReusableCell(withIdentifier: "artistAttendingTableViewCell", for: indexPath) as! ArtistAttendingTableViewCell
+            return cell
+        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

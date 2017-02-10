@@ -50,7 +50,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONNECT WITH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XH2-G2-Kdz">
-                                <rect key="frame" x="150.5" y="340" width="76" height="14"/>
+                                <rect key="frame" x="149" y="340" width="77.5" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="2Yk-E2-Q3Z"/>
                                 </constraints>
@@ -96,7 +96,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7Q-G4-rqZ">
-                                <rect key="frame" x="136.5" y="600" width="103" height="44"/>
+                                <rect key="frame" x="137" y="600" width="102" height="44"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="CONTINUE AS GUEST">
@@ -778,7 +778,7 @@
                     <tabBarItem key="tabBarItem" title="" image="FMI_All_Star_Icon" id="tCv-Ld-R4g">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hoe-Is-Xno">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hoe-Is-Xno">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -892,7 +892,7 @@
                     <tabBarItem key="tabBarItem" title="" image="FMI_All_Search_Icon" id="ec8-ur-0xW">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="V8y-5W-kCf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="V8y-5W-kCf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1016,7 +1016,7 @@
                     <tabBarItem key="tabBarItem" title="" image="FMI_All_Ivents_Icon" id="0hr-5Z-SAv">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GTn-nZ-KTo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GTn-nZ-KTo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1088,19 +1088,19 @@
                                                     <rect key="frame" x="-2" y="108" width="153" height="94"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="4/5 - 4/8 @14:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1M-I5-SvT">
-                                                            <rect key="frame" x="0.0" y="0.0" width="153" height="23.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="153" height="16.5"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="0.25882352939999997" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="BRIDHTON TATTOO CONVENTION" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHw-k8-X8X">
-                                                            <rect key="frame" x="0.0" y="24.5" width="153" height="23.5"/>
+                                                            <rect key="frame" x="0.0" y="17.5" width="153" height="27.5"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="10"/>
                                                             <color key="textColor" red="0.25882352939999997" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 Apple Street, New York,  NY 10024" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I73-Mj-0Of">
-                                                            <rect key="frame" x="0.0" y="49" width="153" height="19"/>
+                                                            <rect key="frame" x="0.0" y="46" width="153" height="22"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="8"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1434,12 +1434,12 @@
                                             <constraint firstItem="8ua-BY-LoB" firstAttribute="width" secondItem="wQF-Ft-ZKR" secondAttribute="width" id="VF4-Fa-NAu"/>
                                         </constraints>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kUS-Wo-JpS">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="103" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kUS-Wo-JpS">
                                         <rect key="frame" x="-8" y="56" width="383" height="498"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="artistAttendingTableViewCell" rowHeight="103" id="1YR-iJ-zMZ" customClass="InboxTableViewCell" customModule="FindMeInc" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="artistAttendingTableViewCell" rowHeight="103" id="1YR-iJ-zMZ" customClass="ArtistAttendingTableViewCell" customModule="FindMeInc" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="383" height="103"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1YR-iJ-zMZ" id="hfE-b2-9dQ">
@@ -1494,11 +1494,10 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="detailButton" destination="WAJ-hJ-hZQ" id="IYD-df-WUF"/>
-                                                    <outlet property="detailButtonWidthConstraint" destination="a3R-a2-GzN" id="UdO-Hi-x8w"/>
-                                                    <outlet property="message" destination="5oP-bN-98A" id="Zna-1C-Rsf"/>
-                                                    <outlet property="name" destination="uJt-yP-EGG" id="hyj-e3-ItK"/>
-                                                    <outlet property="profilePicture" destination="zRR-Uz-JPp" id="rwd-NW-aNb"/>
+                                                    <outlet property="detailButton" destination="WAJ-hJ-hZQ" id="tUz-fo-Pkg"/>
+                                                    <outlet property="name" destination="uJt-yP-EGG" id="h4g-6F-jsm"/>
+                                                    <outlet property="profilePhoto" destination="zRR-Uz-JPp" id="yjA-RI-zXQ"/>
+                                                    <outlet property="salonName" destination="5oP-bN-98A" id="Jf2-15-uZg"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -1631,6 +1630,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="artistAttendingTableView" destination="kUS-Wo-JpS" id="rVC-WI-r4u"/>
                         <outlet property="chatTableView" destination="IwS-33-7N1" id="Tzf-d2-I4E"/>
                         <outlet property="photosCollectionView" destination="kOQ-wV-s73" id="GfI-Wg-qx7"/>
                         <outlet property="upperLayerTopConstraint" destination="sJr-Bu-vty" id="J3g-Kc-gkN"/>
@@ -1792,13 +1792,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEVE BRULE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="att-Eu-Wil">
-                                                    <rect key="frame" x="98" y="23" width="66" height="12"/>
+                                                    <rect key="frame" x="98" y="23" width="64" height="14"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi! i'm looking to get a piece on my calf." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8k-qo-B4O">
-                                                    <rect key="frame" x="98" y="45" width="120" height="19"/>
+                                                    <rect key="frame" x="98" y="47" width="120" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="YQn-Jr-Dzc"/>
                                                     </constraints>
@@ -1807,7 +1807,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAR 25, 15:35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pi6-7j-i8r">
-                                                    <rect key="frame" x="295" y="48" width="40" height="7"/>
+                                                    <rect key="frame" x="295" y="48" width="40" height="8.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="6"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1965,7 +1965,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSX-Si-TQy">
-                                <rect key="frame" x="169.5" y="340" width="36.5" height="14"/>
+                                <rect key="frame" x="168.5" y="340" width="38.5" height="14"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                 <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2004,7 +2004,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ha4-Lj-VNr">
-                                <rect key="frame" x="137.5" y="600" width="100" height="44"/>
+                                <rect key="frame" x="138" y="600" width="99" height="44"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="FORGOT PASSWORD">
