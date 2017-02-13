@@ -26,9 +26,9 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell: PopularInYourAreaCollectionViewCell
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! PopularInYourAreaCollectionViewCell
-        cell.backgroundColor = UIColor.gray
+        cell.mainImage.image = #imageLiteral(resourceName: "FMI_Temp_Tattoo_Photo")
         if indexPath.row == 2{
-            cell.backgroundColor = UIColor.black
+            cell.mainImage.image = #imageLiteral(resourceName: "FMI_Temp_Main_Picture")
             cell.stamp.image = #imageLiteral(resourceName: "FMI_All_Ivent_Icon")
         }
         return cell

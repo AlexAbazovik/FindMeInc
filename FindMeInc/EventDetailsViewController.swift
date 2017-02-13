@@ -34,6 +34,13 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
         }
         sender.isSelected = true
         chatTableView.isHidden = true
+        if sender.tag == 0{
+            chatTableView.isHidden = false
+            artistAttendingTableView.isHidden = true
+        }else{
+            chatTableView.isHidden = true
+            artistAttendingTableView.isHidden = false
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -67,7 +74,14 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
-    @IBAction func showBottomView(_ sender: UIBarButtonItem){
+    @IBAction func showBottomView(_ sender: UISwipeGestureRecognizer){
+        //TO DO: Add animation
         upperLayerTopConstraint.constant = UIScreen.main.bounds.size.height * 0.65
     }
+    
+    @IBAction func hideBottomView(_ sender: UISwipeGestureRecognizer) {
+        //TO DO: Aaa animation
+                upperLayerTopConstraint.constant = 0
+    }
+    
 }

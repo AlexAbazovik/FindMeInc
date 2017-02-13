@@ -32,12 +32,4 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    @IBAction func conventionViewMoveButton(_ sender: UIButton){
-        conventionsCollectionView.scrollToItem(at: conventionsCollectionView.indexPathsForVisibleItems.last!, at: .left, animated: true)
-    }
-    
-    @IBAction func localEventsViewMoveButton(_ sender: UIButton){
-        localEventsCollectionView.scrollToItem(at: localEventsCollectionView.indexPathsForVisibleItems.last!, at: .left, animated: true)
-    }
 }

@@ -43,7 +43,7 @@ class ArtistPageUserViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     @IBAction func moreInfoButtonTap(_ sender: Any) {
-        
+
         let transition = CATransition()
         transition.type = kCATransitionPush
         
@@ -97,19 +97,6 @@ class ArtistPageUserViewController: UIViewController, UICollectionViewDelegate, 
             }
         }
         return cell
-    }
-    
-    
-    @IBAction func staffViewMoveButton(_ sender: UIButton){
-        
-        //TO DO: implement scroll function
-        
-        /*
-        if staffCollectionView.indexPathsForVisibleItems.last?.row != staffCollectionView.numberOfItems(inSection: 0) - 1 {
-            var indexPath = NSIndexPath(row: (staffCollectionView.indexPathsForVisibleItems.first?.row)! + 1, section: 0)
-            staffCollectionView.scrollToItem(at: indexPath as IndexPath, at: .left, animated: true)
-        }
- */
     }
     
     override func didReceiveMemoryWarning() {

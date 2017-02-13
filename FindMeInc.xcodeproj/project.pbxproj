@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		63098D3A1E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D391E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift */; };
+		63098D3C1E4E015500924B3D /* UploadImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D3B1E4E015500924B3D /* UploadImageViewController.swift */; };
+		63098D3F1E51B05F00924B3D /* AddTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D3E1E51B05F00924B3D /* AddTagsViewController.swift */; };
+		63098D411E51B0A300924B3D /* TagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D401E51B0A300924B3D /* TagsTableViewCell.swift */; };
+		63098D441E51C31100924B3D /* Singletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D431E51C31100924B3D /* Singletone.swift */; };
+		63098D471E51C7F900924B3D /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D461E51C7F900924B3D /* TagsCollectionViewCell.swift */; };
+		63098D4A1E52112300924B3D /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D491E52112300924B3D /* SubscribeViewController.swift */; };
+		63098D4C1E52114200924B3D /* SubscribeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D4B1E52114200924B3D /* SubscribeTableViewCell.swift */; };
 		635B60FC1E41D65C009F780C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FB1E41D65C009F780C /* AppDelegate.swift */; };
 		635B60FE1E41D65C009F780C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FD1E41D65C009F780C /* ViewController.swift */; };
 		635B61011E41D65C009F780C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635B60FF1E41D65C009F780C /* Main.storyboard */; };
@@ -59,6 +66,13 @@
 
 /* Begin PBXFileReference section */
 		63098D391E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistAttendingTableViewCell.swift; sourceTree = "<group>"; };
+		63098D3B1E4E015500924B3D /* UploadImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageViewController.swift; sourceTree = "<group>"; };
+		63098D3E1E51B05F00924B3D /* AddTagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTagsViewController.swift; sourceTree = "<group>"; };
+		63098D401E51B0A300924B3D /* TagsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsTableViewCell.swift; sourceTree = "<group>"; };
+		63098D431E51C31100924B3D /* Singletone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Singletone.swift; path = ../Singletone.swift; sourceTree = "<group>"; };
+		63098D461E51C7F900924B3D /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
+		63098D491E52112300924B3D /* SubscribeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
+		63098D4B1E52114200924B3D /* SubscribeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeTableViewCell.swift; sourceTree = "<group>"; };
 		635B60F81E41D65C009F780C /* FindMeInc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMeInc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635B60FB1E41D65C009F780C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635B60FD1E41D65C009F780C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +136,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63098D3D1E51B02C00924B3D /* Add tags */ = {
+			isa = PBXGroup;
+			children = (
+				63098D3E1E51B05F00924B3D /* AddTagsViewController.swift */,
+				63098D401E51B0A300924B3D /* TagsTableViewCell.swift */,
+				63098D461E51C7F900924B3D /* TagsCollectionViewCell.swift */,
+			);
+			name = "Add tags";
+			sourceTree = "<group>";
+		};
+		63098D481E52110B00924B3D /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				63098D491E52112300924B3D /* SubscribeViewController.swift */,
+				63098D4B1E52114200924B3D /* SubscribeTableViewCell.swift */,
+			);
+			name = Subscribe;
+			sourceTree = "<group>";
+		};
 		635B60EF1E41D65C009F780C = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +179,7 @@
 		635B60FA1E41D65C009F780C /* FindMeInc */ = {
 			isa = PBXGroup;
 			children = (
+				63098D481E52110B00924B3D /* Subscribe */,
 				63F2CD061E4C6DFA00E14727 /* Events */,
 				63F2CD011E4B7AAA00E14727 /* Inbox */,
 				63F2CCF41E4B19D800E14727 /* Popular in your area */,
@@ -157,6 +191,7 @@
 				635B60FD1E41D65C009F780C /* ViewController.swift */,
 				635B60FF1E41D65C009F780C /* Main.storyboard */,
 				635B61051E41D65C009F780C /* Assets.xcassets */,
+				63098D431E51C31100924B3D /* Singletone.swift */,
 				635B61071E41D65C009F780C /* LaunchScreen.storyboard */,
 				635B610A1E41D65C009F780C /* Info.plist */,
 				635B61021E41D65C009F780C /* FindMeInc.xcdatamodeld */,
@@ -245,9 +280,11 @@
 		63F2CD061E4C6DFA00E14727 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				63098D3D1E51B02C00924B3D /* Add tags */,
 				63F2CD0B1E4DA64100E14727 /* Event details */,
 				63F2CD071E4C747600E14727 /* EventCollectionViewCell.swift */,
 				63F2CD091E4C755600E14727 /* EventsViewController.swift */,
+				63098D3B1E4E015500924B3D /* UploadImageViewController.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -329,7 +366,7 @@
 				TargetAttributes = {
 					635B60F71E41D65C009F780C = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 5YJ8TR27FR;
+						DevelopmentTeam = 9F8TSXP9SD;
 						ProvisioningStyle = Automatic;
 					};
 					635B610E1E41D65D009F780C = {
@@ -408,15 +445,22 @@
 				635B613B1E422B1A009F780C /* CreateAccountArtistViewController.swift in Sources */,
 				635B61041E41D65C009F780C /* FindMeInc.xcdatamodeld in Sources */,
 				63F2CCF61E4B19FC00E14727 /* PopularInAreaViewController.swift in Sources */,
+				63098D471E51C7F900924B3D /* TagsCollectionViewCell.swift in Sources */,
 				635B60FE1E41D65C009F780C /* ViewController.swift in Sources */,
 				635B60FC1E41D65C009F780C /* AppDelegate.swift in Sources */,
+				63098D3F1E51B05F00924B3D /* AddTagsViewController.swift in Sources */,
+				63098D411E51B0A300924B3D /* TagsTableViewCell.swift in Sources */,
+				63098D441E51C31100924B3D /* Singletone.swift in Sources */,
+				63098D4A1E52112300924B3D /* SubscribeViewController.swift in Sources */,
 				635B61441E445BC8009F780C /* SignInViewController.swift in Sources */,
 				63F2CD0A1E4C755600E14727 /* EventsViewController.swift in Sources */,
 				635E48B21E46375A006072EC /* ArtistPageUserViewController.swift in Sources */,
 				635B61411E43104B009F780C /* CustomRadioButton.swift in Sources */,
 				63F2CCFC1E4B528B00E14727 /* CustomAlertTableViewCell.swift in Sources */,
 				635E48AF1E44C043006072EC /* CreateAccountOptionsViewController.swift in Sources */,
+				63098D3C1E4E015500924B3D /* UploadImageViewController.swift in Sources */,
 				63F2CD031E4B7AC500E14727 /* InboxViewController.swift in Sources */,
+				63098D4C1E52114200924B3D /* SubscribeTableViewCell.swift in Sources */,
 				63F2CCFE1E4B575300E14727 /* CustomAlertViewController.swift in Sources */,
 				63F2CCF81E4B2EBF00E14727 /* PopularInYourAreaCollectionViewCell.swift in Sources */,
 				635B61371E4228B3009F780C /* Helpers.swift in Sources */,
@@ -571,10 +615,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5YJ8TR27FR;
+				DEVELOPMENT_TEAM = 9F8TSXP9SD;
 				INFOPLIST_FILE = FindMeInc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AlexCom.FindMeInc;
+				PRODUCT_BUNDLE_IDENTIFIER = tattoo.FMI.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -584,10 +628,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5YJ8TR27FR;
+				DEVELOPMENT_TEAM = 9F8TSXP9SD;
 				INFOPLIST_FILE = FindMeInc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = AlexCom.FindMeInc;
+				PRODUCT_BUNDLE_IDENTIFIER = tattoo.FMI.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

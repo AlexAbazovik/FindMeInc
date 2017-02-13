@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindMeInc/ArtistPageUserViewController.swift"
-            timestampString = "508417856.101351"
+            timestampString = "508427939.777836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindMeInc/ArtistPageUserViewController.swift"
-            timestampString = "508417856.101351"
+            timestampString = "508427939.777836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindMeInc/ArtistPageUserViewController.swift"
-            timestampString = "508417856.101351"
+            timestampString = "508427939.777836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindMeInc/ArtistPageUserViewController.swift"
-            timestampString = "508417856.101351"
+            timestampString = "508427939.777836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -138,12 +138,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindMeInc/EventDetailsViewController.swift"
-            timestampString = "508420585.199235"
+            timestampString = "508424368.50145"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FindMeInc/AddTagsViewController.swift"
+            timestampString = "508690097.705719"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FindMeInc/TagsTableViewCell.swift"
+            timestampString = "508686229.313068"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "radioButtonTap(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FindMeInc/AddTagsViewController.swift"
+            timestampString = "508690097.705719"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FindMeInc/AddTagsViewController.swift"
+            timestampString = "508690097.705719"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FindMeInc/AddTagsViewController.swift"
+            timestampString = "508690097.705719"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
