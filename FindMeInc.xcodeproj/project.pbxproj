@@ -15,6 +15,7 @@
 		63098D471E51C7F900924B3D /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D461E51C7F900924B3D /* TagsCollectionViewCell.swift */; };
 		63098D4A1E52112300924B3D /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D491E52112300924B3D /* SubscribeViewController.swift */; };
 		63098D4C1E52114200924B3D /* SubscribeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D4B1E52114200924B3D /* SubscribeTableViewCell.swift */; };
+		63098D4E1E52EE1E00924B3D /* PopularInArea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63098D4D1E52EE1E00924B3D /* PopularInArea.storyboard */; };
 		635B60FC1E41D65C009F780C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FB1E41D65C009F780C /* AppDelegate.swift */; };
 		635B60FE1E41D65C009F780C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FD1E41D65C009F780C /* ViewController.swift */; };
 		635B61011E41D65C009F780C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635B60FF1E41D65C009F780C /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		63098D461E51C7F900924B3D /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
 		63098D491E52112300924B3D /* SubscribeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		63098D4B1E52114200924B3D /* SubscribeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscribeTableViewCell.swift; sourceTree = "<group>"; };
+		63098D4D1E52EE1E00924B3D /* PopularInArea.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PopularInArea.storyboard; path = ../PopularInArea.storyboard; sourceTree = "<group>"; };
 		635B60F81E41D65C009F780C /* FindMeInc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMeInc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635B60FB1E41D65C009F780C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635B60FD1E41D65C009F780C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				635B60FB1E41D65C009F780C /* AppDelegate.swift */,
 				635B60FD1E41D65C009F780C /* ViewController.swift */,
 				635B60FF1E41D65C009F780C /* Main.storyboard */,
+				63098D4D1E52EE1E00924B3D /* PopularInArea.storyboard */,
 				635B61051E41D65C009F780C /* Assets.xcassets */,
 				63098D431E51C31100924B3D /* Singletone.swift */,
 				635B61071E41D65C009F780C /* LaunchScreen.storyboard */,
@@ -407,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				635B61301E41E0EB009F780C /* OpenSans-Bold.ttf in Resources */,
+				63098D4E1E52EE1E00924B3D /* PopularInArea.storyboard in Resources */,
 				635B61311E41E0EB009F780C /* OpenSans-Regular.ttf in Resources */,
 				635B61321E41E0EB009F780C /* OpenSans-Semibold.ttf in Resources */,
 				635B61091E41D65C009F780C /* LaunchScreen.storyboard in Resources */,
