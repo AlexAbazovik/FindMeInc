@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eTw-KD-gf6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="oMZ-sm-jwS">
+            <objects>
+                <navigationController id="eTw-KD-gf6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="FMI_All_Search_Icon" id="i8P-Ft-Ses">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="hpX-52-rOh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="17"/>
+                            <color key="textColor" red="0.25882352939999997" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Zqe-nL-eDy" kind="relationship" relationship="rootViewController" id="E2Y-Rw-f67"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ur6-TW-aYd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2953" y="-591"/>
+        </scene>
+        <!--S E A R C H-->
+        <scene sceneID="o7u-Uu-Tul">
+            <objects>
+                <viewController id="Zqe-nL-eDy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0cN-b0-pEm"/>
+                        <viewControllerLayoutGuide type="bottom" id="L1J-AH-5U3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="isd-os-iNv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ef5-P5-3Ck">
+                                <rect key="frame" x="41.5" y="79" width="293.5" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C U R R E N T  L O C A T I O N" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCJ-QH-4V1">
+                                        <rect key="frame" x="0.0" y="0.0" width="234.5" height="31"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.25882352939999997" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Reb-RV-FCH">
+                                        <rect key="frame" x="244.5" y="0.0" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.8980392157" green="0.61568627450000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="e9e-fd-DhU">
+                                <rect key="frame" x="16" y="125" width="343" height="40"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Atb-8Y-Lkt">
+                                        <rect key="frame" x="5" y="0.0" width="333" height="38"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_All_Search_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="F6k-tZ-wBR">
+                                                <rect key="frame" x="0.0" y="4.5" width="29" height="29"/>
+                                            </imageView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tf1-mg-BUT">
+                                                <rect key="frame" x="39" y="10.5" width="294" height="17"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_All_Horizontal_Row" translatesAutoresizingMaskIntoConstraints="NO" id="XuU-Ig-XOC">
+                                        <rect key="frame" x="0.0" y="38" width="343" height="2"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="KR3-cy-rFB"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="XuU-Ig-XOC" firstAttribute="top" secondItem="Atb-8Y-Lkt" secondAttribute="bottom" id="OnS-RB-nup"/>
+                                    <constraint firstItem="Atb-8Y-Lkt" firstAttribute="top" secondItem="e9e-fd-DhU" secondAttribute="top" id="P1w-oa-JWX"/>
+                                    <constraint firstAttribute="height" constant="40" id="dGd-8L-MON"/>
+                                    <constraint firstItem="Atb-8Y-Lkt" firstAttribute="leading" secondItem="e9e-fd-DhU" secondAttribute="leading" constant="5" id="nhI-pX-Mhj"/>
+                                    <constraint firstAttribute="trailing" secondItem="Atb-8Y-Lkt" secondAttribute="trailing" constant="5" id="yN9-T0-3F9"/>
+                                </constraints>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="#Leg #BlackAndWhite #Convention #Portrait #Realism #Stippling #DotArt #Flash" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9V-mD-Veh">
+                                <rect key="frame" x="26" y="175" width="150" height="200"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="7jC-Gi-zey"/>
+                                    <constraint firstAttribute="height" constant="200" id="Zwo-hr-12p"/>
+                                </constraints>
+                                <color key="textColor" red="0.25882352939999997" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKS-NX-yXh">
+                                <rect key="frame" x="26" y="385" width="74" height="26"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
+                                <state key="normal" title="LOAD MORE . . .">
+                                    <color key="titleColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WKS-NX-yXh" firstAttribute="top" secondItem="n9V-mD-Veh" secondAttribute="bottom" constant="10" id="4QZ-nW-J3P"/>
+                            <constraint firstItem="WKS-NX-yXh" firstAttribute="leading" secondItem="isd-os-iNv" secondAttribute="leadingMargin" constant="10" id="Rqu-jT-nKe"/>
+                            <constraint firstItem="ef5-P5-3Ck" firstAttribute="centerX" secondItem="isd-os-iNv" secondAttribute="centerX" id="SSO-0I-Q5p"/>
+                            <constraint firstItem="n9V-mD-Veh" firstAttribute="leading" secondItem="isd-os-iNv" secondAttribute="leadingMargin" constant="10" id="TGe-1h-vne"/>
+                            <constraint firstItem="ef5-P5-3Ck" firstAttribute="top" secondItem="0cN-b0-pEm" secondAttribute="bottom" constant="15" id="XjG-dm-DEd"/>
+                            <constraint firstItem="e9e-fd-DhU" firstAttribute="leading" secondItem="isd-os-iNv" secondAttribute="leadingMargin" id="ZLk-Aq-5Sj"/>
+                            <constraint firstItem="e9e-fd-DhU" firstAttribute="centerX" secondItem="isd-os-iNv" secondAttribute="centerX" id="lrD-0m-M5G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e9e-fd-DhU" secondAttribute="trailing" id="nzc-NV-ava"/>
+                            <constraint firstItem="n9V-mD-Veh" firstAttribute="top" secondItem="e9e-fd-DhU" secondAttribute="bottom" constant="10" id="pfe-Pf-La7"/>
+                            <constraint firstItem="e9e-fd-DhU" firstAttribute="top" secondItem="ef5-P5-3Ck" secondAttribute="bottom" constant="15" id="r2i-HX-035"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="S E A R C H" id="ict-qy-baW">
+                        <barButtonItem key="rightBarButtonItem" image="FMI_ALL_Preferences_Icon" id="JZs-hr-1p5"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pR-pG-Ybg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3678" y="-591"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="FMI_ALL_Preferences_Icon" width="22" height="22"/>
+        <image name="FMI_All_Horizontal_Row" width="2043" height="3"/>
+        <image name="FMI_All_Search_Icon" width="29" height="29"/>
+    </resources>
+</document>
