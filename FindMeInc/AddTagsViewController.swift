@@ -10,7 +10,7 @@ class AddTagsViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MySession.sharedInfo.tagsCollection.removeAll()
+        Data.sharedInfo.tagsCollection.removeAll()
         
         tagsTableView.dataSource = self
         tagsTableView.delegate = self
@@ -50,12 +50,12 @@ class AddTagsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-            return MySession.sharedInfo.tagsCollection.count
+            return Data.sharedInfo.tagsCollection.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = tagsCollectionView.dequeueReusableCell(withReuseIdentifier: "tagCollectionViewCell", for: indexPath) as! TagsCollectionViewCell
-        cell.label.text = MySession.sharedInfo.tagsCollection[indexPath.row]
+        cell.label.text = Data.sharedInfo.tagsCollection[indexPath.row]
         return cell
     }
 }

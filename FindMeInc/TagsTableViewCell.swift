@@ -19,11 +19,11 @@ class TagsTableViewCell: UITableViewCell {
     @IBAction func radioButtonTap(_ sender: CustomRadioButton){
         sender.isSelected = !sender.isSelected
         if sender.isSelected{
-            if !MySession.sharedInfo.tagsCollection.contains(tagLabel.text!){
-                MySession.sharedInfo.tagsCollection.append(tagLabel.text!)
+            if !Data.sharedInfo.tagsCollection.contains(tagLabel.text!){
+                Data.sharedInfo.tagsCollection.append(tagLabel.text!)
             }
         }else{
-            MySession.sharedInfo.tagsCollection.remove(at: MySession.sharedInfo.tagsCollection.index(of: tagLabel.text!)!)
+            Data.sharedInfo.tagsCollection.remove(at: Data.sharedInfo.tagsCollection.index(of: tagLabel.text!)!)
         }
         let tableView = super.superview?.superview as! UITableView
         tableView.reloadData()

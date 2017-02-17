@@ -1,12 +1,13 @@
 import Foundation
 
-class MySession {
-    class var sharedInfo: MySession {
+class Data{
+    class var sharedInfo: Data {
         struct My {
-            static var instance = MySession()
+            static var instance = Data()
         }
         return My.instance
     }
     
     var tagsCollection = [String]()
+    var states: NSDictionary?
 }

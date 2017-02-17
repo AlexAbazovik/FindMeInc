@@ -18,4 +18,17 @@ class CreateAccountOptionsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func selectOfUserType(_ sender: UIButton){
+        switch sender.tag {
+        case 1:
+            UserDefaults.standard.set("user", forKey: "userType")
+        case 2:
+            UserDefaults.standard.set("artist", forKey: "userType")
+        case 3:
+            UserDefaults.standard.set("parlor", forKey: "userType")
+        default:
+            break
+        }
+    }
 }
