@@ -40,8 +40,8 @@ class CustomAlertViewController: UIViewController, UITableViewDelegate, UITableV
                 cell.label.text = "A L L"
                 cell.radioButton.isSelected = true
             default:
-                let cell: CustomAlertTableViewCellWithButton
-                cell = tableView.dequeueReusableCell(withIdentifier: "customAlertTableViewCellWithButton", for: indexPath) as! CustomAlertTableViewCellWithButton
+                let cellWithButton: CustomAlertTableViewCellWithButton
+                cellWithButton = tableView.dequeueReusableCell(withIdentifier: "customAlertTableViewCellWithButton", for: indexPath) as! CustomAlertTableViewCellWithButton
             }
             return cell
     }

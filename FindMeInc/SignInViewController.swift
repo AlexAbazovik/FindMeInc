@@ -64,4 +64,19 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         return true
     }
+    
+    @IBAction func loginButtonTap( _ sender: UIButton){
+        MySession.sharedInfo.loginUser(emailAddress: userName.text!, password: password.text!, onSuccess: { (response) in
+            if response.object(forKey: "status") as! Int == 200{
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                self.present(storyboard.instantiateViewController(withIdentifier: "MainNavigationScene"), animated: true, completion: nil)
+            }else{
+                let alert = UIAlertController(title: "Warning", message: response.value(forKey: "message") as? String, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }) { (error) in
+            print(error)
+        }
+    }
 }

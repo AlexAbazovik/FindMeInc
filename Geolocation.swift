@@ -22,6 +22,6 @@ class Geolocation: NSObject, CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         currentLocation = manager.location!
-        print(currentLocation)
+        print(currentLocation!)
     }
 }

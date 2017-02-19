@@ -73,6 +73,9 @@
                                 <state key="normal" title="F A C E B O O K">
                                     <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginWithFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="75a-gT-T65"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymT-qq-bZl">
                                 <rect key="frame" x="48" y="536" width="280" height="44"/>
@@ -108,6 +111,9 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="useApplicationUsAGuestTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gP2-zj-g8d"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -315,6 +321,9 @@
                                 <state key="normal" title="C O N N E C T  W I T H  F A C E B O O K ">
                                     <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="connectWithFacebookButtonTap:" destination="fOs-K6-frX" eventType="touchUpInside" id="z64-za-zG2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -527,6 +536,9 @@
                                         <state key="normal" title="C O N N E C T  W I T H  F A C E B O O K ">
                                             <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="connectWithFacebookButtonTap:" destination="onX-Gn-4KS" eventType="touchUpInside" id="o6E-6Z-4ir"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -771,6 +783,9 @@
                                         <state key="normal" title="C O N N E C T  W I T H  F A C E B O O K ">
                                             <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="connectWithFacebookButtonTap:" destination="mZA-cr-BlU" eventType="touchUpInside" id="SAP-LO-mZl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1018,7 +1033,7 @@
                                             <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Cnc-kI-8D2" kind="show" id="laf-8l-cUv"/>
+                                            <action selector="loginButtonTap:" destination="87s-Jm-S23" eventType="touchUpInside" id="ycJ-Eh-XFP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ha4-Lj-VNr">
@@ -1153,6 +1168,6 @@
         <image name="FMI_Home_Screen_Logo" width="1336" height="1356"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bem-UL-mZz"/>
+        <segue reference="DH2-WU-he4"/>
     </inferredMetricsTieBreakers>
 </document>

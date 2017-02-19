@@ -20,6 +20,8 @@ class CreateAccountOptionsViewController: UIViewController {
     }
     
     @IBAction func selectOfUserType(_ sender: UIButton){
+        UserDefaults.standard.set(sender.tag, forKey: "userType")
+        /*
         switch sender.tag {
         case 1:
             UserDefaults.standard.set("user", forKey: "userType")
@@ -29,6 +31,6 @@ class CreateAccountOptionsViewController: UIViewController {
             UserDefaults.standard.set("parlor", forKey: "userType")
         default:
             break
-        }
+        }*/
     }
 }

@@ -98,4 +98,44 @@ class CreateAccountParlorViewController: UIViewController, UITextFieldDelegate {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    //MARK: Register new parlor with facebook
+    @IBAction func connectWithFacebookButtonTap( _ sender: UIButton){
+        if termsAndConditionsButton.isSelected{
+            let loginManager = FBSDKLoginManager()
+            loginManager.logIn(withReadPermissions: ["email","public_profile"], from: self) { (result, error) in
+                if error != nil{
+                    let alert = UIAlertController(title: "Warning.", message: (error as! String), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }else if (result?.isCancelled)!{
+                    print("Cancelled")
+                }else{
+                    let FBRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"name, email"])
+                    FBRequest?.start(completionHandler: { (_ , response, error) in
+                        if error != nil{
+                            print(error as! String)
+                        }else{
+                            MySession.sharedInfo.registerNewUser(userName: (response as! NSDictionary).value(forKey: "email") as! String, emailAddress: (response as! NSDictionary).value(forKey: "email") as! String, password: "Facebook", registerWithFacebook: true, onSuccess: { (response) in
+                                if response.object(forKey: "status") as! Int == 200{
+                                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                    self.present(storyboard.instantiateViewController(withIdentifier: "MainNavigationScene"), animated: true, completion: nil)
+                                }else{
+                                    let alert = UIAlertController(title: "Warning", message: response.value(forKey: "message") as? String, preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                                    self.present(alert, animated: true, completion: nil)
+                                }
+                            }, onFailure: { (error) in
+                                print(error)
+                            })
+                        }
+                    })
+                }
+            }
+        }else{
+            let alert = UIAlertController(title: "Warning.", message: "You need check terms and conditions button!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }

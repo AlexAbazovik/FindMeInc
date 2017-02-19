@@ -43,6 +43,9 @@
 		635E48B21E46375A006072EC /* ArtistPageUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635E48B11E46375A006072EC /* ArtistPageUserViewController.swift */; };
 		636A02D71E56D0A6009188D4 /* Geolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A02D61E56D0A6009188D4 /* Geolocation.swift */; };
 		636A02D91E570396009188D4 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A02D81E570396009188D4 /* Data.swift */; };
+		636A02DD1E58483D009188D4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636A02DC1E58483C009188D4 /* FBSDKCoreKit.framework */; };
+		636A02DF1E58484A009188D4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636A02DE1E58484A009188D4 /* FBSDKLoginKit.framework */; };
+		636A02E51E58533D009188D4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636A02E41E58533D009188D4 /* Bolts.framework */; };
 		63F2CCF61E4B19FC00E14727 /* PopularInAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F2CCF51E4B19FC00E14727 /* PopularInAreaViewController.swift */; };
 		63F2CCF81E4B2EBF00E14727 /* PopularInYourAreaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F2CCF71E4B2EBF00E14727 /* PopularInYourAreaCollectionViewCell.swift */; };
 		63F2CCFC1E4B528B00E14727 /* CustomAlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F2CCFB1E4B528B00E14727 /* CustomAlertTableViewCell.swift */; };
@@ -117,6 +120,10 @@
 		635E48B11E46375A006072EC /* ArtistPageUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistPageUserViewController.swift; sourceTree = "<group>"; };
 		636A02D61E56D0A6009188D4 /* Geolocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geolocation.swift; path = ../Geolocation.swift; sourceTree = "<group>"; };
 		636A02D81E570396009188D4 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		636A02DC1E58483C009188D4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		636A02DE1E58484A009188D4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		636A02E01E584F7D009188D4 /* FindMeInc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FindMeInc-Bridging-Header.h"; sourceTree = "<group>"; };
+		636A02E41E58533D009188D4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		63F2CCF51E4B19FC00E14727 /* PopularInAreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularInAreaViewController.swift; sourceTree = "<group>"; };
 		63F2CCF71E4B2EBF00E14727 /* PopularInYourAreaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularInYourAreaCollectionViewCell.swift; sourceTree = "<group>"; };
 		63F2CCFB1E4B528B00E14727 /* CustomAlertTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertTableViewCell.swift; sourceTree = "<group>"; };
@@ -137,6 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FD053B9087BDF0DBA225C35 /* Pods_FindMeInc.framework in Frameworks */,
+				636A02DD1E58483D009188D4 /* FBSDKCoreKit.framework in Frameworks */,
+				636A02DF1E58484A009188D4 /* FBSDKLoginKit.framework in Frameworks */,
+				636A02E51E58533D009188D4 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +245,7 @@
 				635B61071E41D65C009F780C /* LaunchScreen.storyboard */,
 				635B610A1E41D65C009F780C /* Info.plist */,
 				635B61021E41D65C009F780C /* FindMeInc.xcdatamodeld */,
+				636A02E01E584F7D009188D4 /* FindMeInc-Bridging-Header.h */,
 			);
 			path = FindMeInc;
 			sourceTree = "<group>";
@@ -341,6 +352,9 @@
 		C87BDD907537506B6885CBD4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				636A02E41E58533D009188D4 /* Bolts.framework */,
+				636A02DE1E58484A009188D4 /* FBSDKLoginKit.framework */,
+				636A02DC1E58483C009188D4 /* FBSDKCoreKit.framework */,
 				2F74B559F345F4522F56EE20 /* Pods_FindMeInc.framework */,
 			);
 			name = Frameworks;
@@ -418,6 +432,7 @@
 					635B60F71E41D65C009F780C = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5YJ8TR27FR;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					635B610E1E41D65D009F780C = {
@@ -723,12 +738,19 @@
 			baseConfigurationReference = D69734139485841A36BAF812 /* Pods-FindMeInc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 5YJ8TR27FR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FindMeInc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tattoo.FMI.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FindMeInc/FindMeInc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -738,12 +760,18 @@
 			baseConfigurationReference = BB234CEFF22A38D9F00E36DA /* Pods-FindMeInc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 5YJ8TR27FR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FindMeInc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tattoo.FMI.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FindMeInc/FindMeInc-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
