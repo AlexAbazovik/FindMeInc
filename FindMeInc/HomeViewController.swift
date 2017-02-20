@@ -22,6 +22,14 @@ class HomeViewController: UIViewController {
             heightButtonConstraints.constant = heightButtonConstraints.constant * 1.2
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //If the user has already granted permissions an application
+        if FBSDKAccessToken.current() != nil{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            self.present(storyboard.instantiateViewController(withIdentifier: "MainNavigationScene"), animated: true, completion: nil)
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

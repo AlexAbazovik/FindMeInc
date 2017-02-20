@@ -41,6 +41,7 @@ class CreateAccountCustomerViewController: UIViewController, UITextFieldDelegate
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CreateAccountCustomerViewController.donePicker))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CreateAccountCustomerViewController.donePicker))
+        cancelButton.tag = 1
         
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
@@ -129,8 +130,11 @@ class CreateAccountCustomerViewController: UIViewController, UITextFieldDelegate
         stateCode = (Data.sharedInfo.states?.allKeys[row] as! String)
     }
     
-    func donePicker(){
-        self.view.endEditing(true)
+    func donePicker(_ sender: UIButton){
+        if sender.tag == 1{
+            stateTextField.text = ""
+        }
+            self.view.endEditing(true)
     }
     
     //MARK: Register new customer

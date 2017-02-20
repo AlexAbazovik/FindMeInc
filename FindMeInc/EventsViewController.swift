@@ -1,10 +1,13 @@
 import UIKit
 
-class EventsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class EventsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var conventionsCollectionView: UICollectionView!
     @IBOutlet weak var localEventsCollectionView: UICollectionView!
     
+    @IBOutlet var filteringButtonsCollection: [UIButton]!
+    
+    @IBOutlet weak var calendarTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,6 +17,9 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         localEventsCollectionView.delegate = self
         localEventsCollectionView.dataSource = self
+        
+        calendarTableView.delegate = self
+        calendarTableView.dataSource = self
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -31,5 +37,26 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func filteringChange(_ sender: UIButton){
+        for i in filteringButtonsCollection{
+            i.isSelected = false
+        }
+        sender.isSelected = true
+    }
+    
+    //MARK: Calendar
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = calendarTableView.dequeueReusableCell(withIdentifier: "todayCell")
+        return cell!
     }
 }

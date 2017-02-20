@@ -22,7 +22,6 @@
         <!--Navigation Controller-->
         <scene sceneID="9WZ-N8-HM9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0su-0U-JaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="ZaD-Nf-wKz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="FMI_All_Star_Icon" id="SkB-mj-rvy">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
@@ -45,13 +44,13 @@
                         <segue destination="rUu-sN-muP" kind="relationship" relationship="rootViewController" id="i6L-lD-pL4"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0su-0U-JaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2954" y="-1268"/>
         </scene>
         <!--P O P U L A R  I N  Y O U R  A R E A-->
         <scene sceneID="IiS-Q0-t0k">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8sg-qb-I2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="rUu-sN-muP" customClass="PopularInAreaViewController" customModule="FindMeInc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="flW-UD-3W1"/>
@@ -138,13 +137,13 @@
                         <outlet property="collectionView" destination="8aa-md-nrd" id="AvT-lF-i71"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8sg-qb-I2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3677.5999999999999" y="-1268.8155922038982"/>
         </scene>
         <!--Custom Alert View Controller-->
         <scene sceneID="8kB-Gu-wfr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YSa-fK-SoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Mtg-Tg-3ot" customClass="CustomAlertViewController" customModule="FindMeInc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hot-ub-SJa"/>
@@ -155,10 +154,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Wy-Fe-nKy">
-                                <rect key="frame" x="67" y="191.5" width="240" height="220"/>
+                                <rect key="frame" x="67" y="192" width="240" height="219"/>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="YGs-dQ-vVQ"/>
+                                    <constraint firstAttribute="height" constant="219" id="YGs-dQ-vVQ"/>
                                     <constraint firstAttribute="width" constant="240" id="bIq-Rg-zmr"/>
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -264,6 +263,7 @@
                         <outlet property="tableView" destination="0Wy-Fe-nKy" id="IJT-Sr-2wJ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YSa-fK-SoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4500" y="-1320"/>
         </scene>
@@ -271,6 +271,6 @@
     <resources>
         <image name="FMI_All_Flower_Icon" width="642" height="642"/>
         <image name="FMI_All_Options_Icon" width="22" height="22"/>
-        <image name="FMI_All_Star_Icon" width="29" height="29"/>
+        <image name="FMI_All_Star_Icon" width="22" height="22"/>
     </resources>
 </document>

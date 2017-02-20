@@ -36,14 +36,14 @@
                                 <gestureRecognizers/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="FMI_Home_Screen_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Zft-he-0lK">
-                                <rect key="frame" x="67.5" y="60" width="240" height="240"/>
+                                <rect key="frame" x="68" y="60" width="240" height="240"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Zft-he-0lK" secondAttribute="height" multiplier="1:1" id="wfs-Mz-A8k"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONNECT WITH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XH2-G2-Kdz">
-                                <rect key="frame" x="149.5" y="340" width="77.5" height="14"/>
+                                <rect key="frame" x="149" y="340" width="78" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="2Yk-E2-Q3Z"/>
                                 </constraints>
@@ -902,7 +902,7 @@
                                 </connections>
                             </imageView>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7X3-ka-RMP">
-                                <rect key="frame" x="52" y="308.5" width="270" height="120"/>
+                                <rect key="frame" x="52" y="309" width="270" height="120"/>
                                 <state key="normal" backgroundImage="FMI_Create_Account_Options_An_Artist"/>
                                 <connections>
                                     <action selector="selectOfUserType:" destination="2cA-dq-L99" eventType="touchUpInside" id="UAP-0d-Fi9"/>
@@ -910,13 +910,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A R E  Y O U . . ." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5n-US-hp5">
-                                <rect key="frame" x="126" y="110" width="124" height="23.5"/>
+                                <rect key="frame" x="126" y="110" width="124" height="24"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epc-Rx-ZLA">
-                                <rect key="frame" x="53" y="173.5" width="270" height="120"/>
+                                <rect key="frame" x="53" y="174" width="270" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="epc-Rx-ZLA" secondAttribute="height" multiplier="9:4" id="Gkh-7Y-4jl"/>
                                     <constraint firstAttribute="height" constant="120" id="Q1B-cW-TWn"/>
@@ -928,7 +928,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5s-va-tvs">
-                                <rect key="frame" x="52" y="443.5" width="270" height="120"/>
+                                <rect key="frame" x="52" y="444" width="270" height="120"/>
                                 <state key="normal" backgroundImage="FMI_Create_Account_Options_A_Parlor"/>
                                 <connections>
                                     <action selector="selectOfUserType:" destination="2cA-dq-L99" eventType="touchUpInside" id="cYt-Rr-UNv"/>
@@ -995,7 +995,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSX-Si-TQy">
-                                        <rect key="frame" x="188.5" y="359" width="38.5" height="14"/>
+                                        <rect key="frame" x="188" y="359" width="39" height="14"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
