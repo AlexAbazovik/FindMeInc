@@ -7,10 +7,11 @@ class todayTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         let date = NSDate()
-        let calendar = NSCalendar.current
+
         let formatter = DateFormatter()
+        formatter.dateStyle = .medium
         
-        dateLabel.text = "\(calendar.component(.month, from: date as Date))"
+        dateLabel.text = "\(formatter.string(from: date as Date))"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

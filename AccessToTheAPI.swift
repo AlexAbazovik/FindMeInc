@@ -1,5 +1,6 @@
 import Foundation
 import Alamofire
+import AlamofireImage
 
 class MySession {
     class var sharedInfo: MySession {
@@ -10,11 +11,12 @@ class MySession {
     }
     
     var token: String!
+    let serverURL: String = "http://104.238.176.105/"
     
     // MARK: Start session
     //Not used yet
     func startSession(onSuccess success: @escaping (_ resObject: Any) -> Void, onFailure failure: @escaping (_ error: Error) -> Void){
-        Alamofire.request("http://104.238.176.105/api/start").validate(statusCode: 200..<300).responseJSON(completionHandler: {
+        Alamofire.request("\(serverURL)api/start").validate(statusCode: 200..<300).responseJSON(completionHandler: {
             response in
             switch response.result{
             case .success:
@@ -28,7 +30,7 @@ class MySession {
     
     //MARK: Get states
     func getState(onSuccess success: @escaping (_ resObject: NSDictionary) -> Void ,onFailure failure: @escaping (_ error: Error) -> Void){
-        Alamofire.request("http://104.238.176.105/api/states").validate(statusCode: 200..<300).responseJSON { (response) in
+        Alamofire.request("\(serverURL)api/states").validate(statusCode: 200..<300).responseJSON { (response) in
             switch response.result{
             case .success:
                 success((response.result.value as! NSDictionary).object(forKey: "data") as! NSDictionary)
@@ -71,7 +73,7 @@ class MySession {
                 break
             }
         }
-                Alamofire.request("http://104.238.176.105/api/\(userType)/register", method: .post, parameters: params).validate(statusCode: 200..<300).responseJSON { (response) in
+                Alamofire.request("\(serverURL)api/\(userType)/register", method: .post, parameters: params).validate(statusCode: 200..<300).responseJSON { (response) in
             switch response.result{
             case .success:
                 success(response.result.value as! NSDictionary)
@@ -87,7 +89,7 @@ class MySession {
             "email": emailAddress,
             "password": password,
             ]
-        Alamofire.request("http://104.238.176.105/api/login", method: .post, parameters: parameters).validate(statusCode: 200..<300).responseJSON { (response) in
+        Alamofire.request("\(serverURL)api/login", method: .post, parameters: parameters).validate(statusCode: 200..<300).responseJSON { (response) in
             switch response.result{
             case .success:
                 success(response.result.value as! NSDictionary)
@@ -96,4 +98,49 @@ class MySession {
             }
         }
     }
+    
+    //MARK: Get image list for newsfeed
+    /*
+        Request can include parameters for filtering or no
+        Request can include parameter to get more photo to newsfeed
+     */
+    func getImagesList(parameters: [String]?, onSucsess success: @escaping (_ response: NSDictionary) -> Void, onFailure failure: @escaping (_ error: Error) -> Void ){
+        if parameters != nil{
+            var params = Parameters()
+            for i in parameters!{
+                params[i] = true
+            }
+            Alamofire.request("\(serverURL)api/getnewsfeed", method: .post, parameters: params).validate(statusCode: 200..<300).responseJSON {(response) in
+                switch response.result{
+                case .success:
+                    success(response.result.value as! NSDictionary)
+                case .failure(let error):
+                    failure(error)
+                }
+            }
+        }else{
+            Alamofire.request("\(serverURL)api/getnewsfeed", method: .post).validate(statusCode: 200..<300).responseJSON {(response) in
+                switch response.result{
+                case .success:
+                    success(response.result.value as! NSDictionary)
+                case .failure(let error):
+                    failure(error)
+                }
+            }
+        }
+    }
+    
+    //MARK: Download image
+    func downloadImage(imageURL: String, onSuccess success: @escaping (_ image:UIImage) -> Void, onFailure failure: @escaping(_ error: Error) -> Void){
+        Alamofire.request(imageURL).validate(statusCode: 200..<300).responseImage{(response) in
+            switch response.result{
+            case .success:
+                success(response.result.value!)
+            case .failure(let error):
+                failure(error)
+            }
+        }
+    }
+    
+    
 }

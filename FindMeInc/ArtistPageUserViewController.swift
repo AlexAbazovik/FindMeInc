@@ -17,6 +17,15 @@ class ArtistPageUserViewController: UIViewController, UICollectionViewDelegate, 
     
     @IBOutlet var filteringButtonsCollection: [UIButton]!
  
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Specific constraints for iPhone 5 and SE

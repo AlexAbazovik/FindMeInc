@@ -51,7 +51,7 @@
         <!--P O P U L A R  I N  Y O U R  A R E A-->
         <scene sceneID="IiS-Q0-t0k">
             <objects>
-                <viewController id="rUu-sN-muP" customClass="PopularInAreaViewController" customModule="FindMeInc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popularInArea" id="rUu-sN-muP" customClass="PopularInAreaViewController" customModule="FindMeInc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="flW-UD-3W1"/>
                         <viewControllerLayoutGuide type="bottom" id="dCF-yt-5lf"/>
@@ -60,31 +60,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8aa-md-nrd">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8aa-md-nrd">
                                 <rect key="frame" x="16" y="15" width="343" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="15" id="iJn-tg-wnE">
-                                    <size key="itemSize" width="160" height="160"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iJn-tg-wnE">
+                                    <size key="itemSize" width="160" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewCell" id="WU9-bX-eyy" customClass="PopularInYourAreaCollectionViewCell" customModule="FindMeInc" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="260"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="260"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4B0-Fy-wki">
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="260"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_All_Flower_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="dlI-Kl-lkE">
-                                                    <rect key="frame" x="13" y="13" width="30" height="30"/>
+                                                    <rect key="frame" x="13" y="13" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="dlI-Kl-lkE" secondAttribute="height" multiplier="1:1" id="SrI-dv-RH6"/>
-                                                        <constraint firstAttribute="width" constant="30" id="npa-IM-EIX"/>
+                                                        <constraint firstAttribute="width" constant="40" id="npa-IM-EIX"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -97,11 +97,36 @@
                                             <constraint firstAttribute="bottomMargin" secondItem="4B0-Fy-wki" secondAttribute="bottom" constant="-8" id="jsx-Zh-fXG"/>
                                             <constraint firstItem="dlI-Kl-lkE" firstAttribute="top" secondItem="WU9-bX-eyy" secondAttribute="topMargin" constant="5" id="nnp-Z6-IDc"/>
                                         </constraints>
-                                        <size key="customSize" width="160" height="260"/>
                                         <connections>
                                             <outlet property="mainImage" destination="4B0-Fy-wki" id="riq-jG-TBO"/>
                                             <outlet property="stamp" destination="dlI-Kl-lkE" id="gga-oq-Vkb"/>
                                         </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="lastCollectionViewCell" id="Oru-Jg-JLG">
+                                        <rect key="frame" x="183" y="0.0" width="160" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Che-j5-pFi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="200"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
+                                                    <state key="normal" title="SHOW MORE" backgroundImage="FMI_All_Border_For_Button">
+                                                        <color key="titleColor" red="0.25882352939999997" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="loadMorePhotoInNewsfeed:" destination="rUu-sN-muP" eventType="touchUpInside" id="Xlm-DK-W3F"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Che-j5-pFi" firstAttribute="leading" secondItem="Oru-Jg-JLG" secondAttribute="leadingMargin" constant="-8" id="3UJ-Cn-jFi"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Che-j5-pFi" secondAttribute="bottom" constant="-8" id="Eog-ob-LPp"/>
+                                            <constraint firstItem="Che-j5-pFi" firstAttribute="top" secondItem="Oru-Jg-JLG" secondAttribute="topMargin" constant="-8" id="oJe-Qx-bKt"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Che-j5-pFi" secondAttribute="trailing" constant="-8" id="zQD-kS-GnA"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -112,7 +137,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dCF-yt-5lf" firstAttribute="top" secondItem="eiM-Kq-E0G" secondAttribute="bottom" id="6yQ-rf-fPY"/>
                             <constraint firstItem="8aa-md-nrd" firstAttribute="leading" secondItem="MGr-Mf-dlG" secondAttribute="leadingMargin" id="8Ba-Lm-4iB"/>
@@ -177,7 +202,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agl-oC-wvp">
-                                                    <rect key="frame" x="102.5" y="12.5" width="36.5" height="19.5"/>
+                                                    <rect key="frame" x="102.5" y="12" width="36.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -239,6 +264,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="showButtonTap:" destination="Mtg-Tg-3ot" eventType="touchUpInside" id="cOm-xP-HLE"/>
+                                                        <segue destination="gWo-N7-WY0" kind="unwind" identifier="unwindSegueToPopularInAreaView" unwindAction="filteringOptionsDidSelect:" id="psW-ce-WpD"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -264,12 +290,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YSa-fK-SoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gWo-N7-WY0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4500" y="-1320"/>
         </scene>
     </scenes>
     <resources>
-        <image name="FMI_All_Flower_Icon" width="642" height="642"/>
+        <image name="FMI_All_Border_For_Button" width="646" height="646"/>
+        <image name="FMI_All_Flower_Icon" width="708" height="708"/>
         <image name="FMI_All_Options_Icon" width="22" height="22"/>
         <image name="FMI_All_Star_Icon" width="22" height="22"/>
     </resources>

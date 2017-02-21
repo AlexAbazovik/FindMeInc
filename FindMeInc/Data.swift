@@ -10,4 +10,5 @@ class Data{
     
     var tagsCollection = [String]()
     var states: NSDictionary?
+    var urlCollectionForNewsFeed: NSDictionary?
 }

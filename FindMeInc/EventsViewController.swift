@@ -9,6 +9,8 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var calendarTableView: UITableView!
     
+    @IBOutlet weak var calendarView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +46,11 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
             i.isSelected = false
         }
         sender.isSelected = true
+        if sender.tag == 1{
+            calendarView.isHidden = false
+        }else{
+            calendarView.isHidden = true
+        }
     }
     
     //MARK: Calendar
@@ -52,11 +59,26 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = calendarTableView.dequeueReusableCell(withIdentifier: "todayCell")
+        var cell = calendarTableView.dequeueReusableCell(withIdentifier: "todayCell")
+        switch indexPath.row{
+        case 1:
+            cell = calendarTableView.dequeueReusableCell(withIdentifier: "infoCell")
+        case 2:
+            cell = calendarTableView.dequeueReusableCell(withIdentifier: "infoCell")
+        case 3:
+            cell = calendarTableView.dequeueReusableCell(withIdentifier: "dayCell")
+            cell?.contentView.backgroundColor = #colorLiteral(red: 0.2588235294, green: 0.2549019608, blue: 0.2588235294, alpha: 1)
+        case 4:
+            cell = calendarTableView.dequeueReusableCell(withIdentifier: "infoCell")
+        case 5:
+            cell = calendarTableView.dequeueReusableCell(withIdentifier: "dayCell")
+        default:
+            break
+        }
         return cell!
     }
 }

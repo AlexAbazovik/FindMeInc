@@ -226,7 +226,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="873-eP-kaJ">
                                 <rect key="frame" x="31" y="69" width="313" height="26"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S88-2X-4pR">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S88-2X-4pR">
                                         <rect key="frame" x="0.0" y="0.0" width="154" height="26"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="10"/>
                                         <state key="normal" title="C A L E N D A R">
@@ -272,12 +272,12 @@
                                     <constraint firstAttribute="height" constant="1" id="LlV-y3-KRt"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKm-TO-k1S">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKm-TO-k1S">
                                 <rect key="frame" x="0.0" y="103" width="375" height="564"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uPc-ay-F2l">
                                         <rect key="frame" x="10" y="10" width="355" height="544"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todayCell" id="rDG-sU-OJe" customClass="todayTableViewCell" customModule="FindMeInc" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="355" height="44"/>
@@ -390,11 +390,12 @@
                                                         <constraint firstItem="qr8-VL-Lsz" firstAttribute="top" secondItem="eWR-Km-bXu" secondAttribute="top" id="rLu-MI-j4r"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="uPc-ay-F2l" firstAttribute="leading" secondItem="EKm-TO-k1S" secondAttribute="leading" constant="10" id="GCh-Tw-NaJ"/>
                                     <constraint firstAttribute="bottom" secondItem="uPc-ay-F2l" secondAttribute="bottom" constant="10" id="SRi-UZ-Khi"/>
@@ -438,6 +439,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calendarTableView" destination="uPc-ay-F2l" id="b94-QC-SAE"/>
+                        <outlet property="calendarView" destination="EKm-TO-k1S" id="YkG-JF-enK"/>
                         <outlet property="conventionsCollectionView" destination="9l9-GS-G5l" id="ckg-lD-2SG"/>
                         <outlet property="localEventsCollectionView" destination="TFq-OU-6a0" id="8sh-9P-uZj"/>
                         <outletCollection property="filteringButtonsCollection" destination="S88-2X-4pR" collectionClass="NSMutableArray" id="xsT-0e-iov"/>
@@ -1032,10 +1034,10 @@
                                         <rect key="frame" x="5" y="0.0" width="355" height="38"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_All_Search_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="9F4-px-bXo">
-                                                <rect key="frame" x="0.0" y="2.5" width="33" height="33"/>
+                                                <rect key="frame" x="0.0" y="8" width="22" height="22"/>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FhW-Ts-Fnp">
-                                                <rect key="frame" x="43" y="10.5" width="312" height="17"/>
+                                                <rect key="frame" x="32" y="10.5" width="323" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -1205,9 +1207,9 @@
         <image name="FMI_ALL_Preferences_Icon" width="22" height="22"/>
         <image name="FMI_All_Border_For_Button" width="646" height="646"/>
         <image name="FMI_All_Horizontal_Row" width="2043" height="3"/>
-        <image name="FMI_All_Ivents_Icon" width="33" height="33"/>
+        <image name="FMI_All_Ivents_Icon" width="22" height="22"/>
         <image name="FMI_All_Left_Arrow" width="40" height="67"/>
-        <image name="FMI_All_Search_Icon" width="33" height="33"/>
+        <image name="FMI_All_Search_Icon" width="22" height="22"/>
         <image name="FMI_Inbox_Plus" width="22" height="22"/>
         <image name="FMI_Ivents_Add_New_Ivent_Button" width="313" height="313"/>
         <image name="FMI_Temp_Evenr_Logo" width="865" height="1216"/>
