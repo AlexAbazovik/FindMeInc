@@ -113,7 +113,7 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
         }
         //MARK: Specific cell size for iPhone PLUS
         if(UIScreen.main.bounds.size.height == 736){
-            size = CGSize(width: 180, height: 270)
+            size = CGSize(width: 180, height: 250)
         }
 
         if indexPath.row != (Data.sharedInfo.urlCollectionForNewsFeed?.count)!{

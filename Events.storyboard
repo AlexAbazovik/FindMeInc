@@ -544,7 +544,7 @@
                                 </cells>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Mes-z4-Rse">
-                                <rect key="frame" x="77.5" y="327" width="221" height="50"/>
+                                <rect key="frame" x="77" y="327" width="221" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="i11-ge-wNB">
                                         <rect key="frame" x="0.0" y="8.5" width="152" height="33.5"/>
@@ -916,7 +916,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wfd-hh-4pJ">
-                                <rect key="frame" x="84" y="518" width="207.5" height="20"/>
+                                <rect key="frame" x="84.5" y="518" width="207.5" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO NUDITY OR OFFENCIVE CONTENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqu-Tr-Yu8">
                                         <rect key="frame" x="0.0" y="0.0" width="177.5" height="20"/>

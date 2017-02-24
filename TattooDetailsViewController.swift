@@ -13,13 +13,13 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     //This variable used for transfer data from alert view controller
     var dataPassed : Int?
     
-    var tagsCollection: [String]
+    var tagsCollection: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tagsCollectionView.delegate = self
-        
+        tagsCollectionView.dataSource = self
         MySession.sharedInfo.getTattooDetails(photoID: (Data.sharedInfo.urlCollectionForNewsFeed![dataPassed!] as! NSDictionary).value(forKey: "id") as! Int, userType: (Data.sharedInfo.urlCollectionForNewsFeed![dataPassed!] as! NSDictionary).value(forKey: "code") as! Int, onSuccess: { (photoDescription) in
             print(photoDescription)
             self.userName.title = photoDescription.value(forKey: "username") as! String?
@@ -29,7 +29,8 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
             self.likesCount.text = photoDescription.value(forKey: "likes") as? String
             self.chatCount.text = photoDescription.value(forKey: "comments") as? String
             self.photoDescription.text = photoDescription.value(forKey: "title") as? String
-            self.tagsCollection = photoDescription.value(forKey: "tags") as! [String]
+            self.tagsCollection = photoDescription.value(forKey: "tags") as? [String]
+            self.tagsCollectionView.reloadData()
         }) { (error) in
             print(error)
         }
@@ -46,12 +47,19 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tagsCollection.count
+        if tagsCollection != nil{
+            return tagsCollection!.count
+        }else{
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath)
+        (cell.viewWithTag(1) as! UILabel).text = tagsCollection?[indexPath.row]
+        return cell
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
