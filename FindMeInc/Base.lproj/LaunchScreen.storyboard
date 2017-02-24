@@ -23,15 +23,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_App_Design_Background" translatesAutoresizingMaskIntoConstraints="NO" id="Zc5-QC-STK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="-14" y="0.0" width="403" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Zc5-QC-STK" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="0GP-g6-YvG"/>
-                            <constraint firstItem="Zc5-QC-STK" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-16" id="3Wa-50-bdt"/>
+                            <constraint firstItem="Zc5-QC-STK" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-30" id="3Wa-50-bdt"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Zc5-QC-STK" secondAttribute="bottom" id="L0T-5l-QTs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Zc5-QC-STK" secondAttribute="trailing" constant="-16" id="rWb-M5-irs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zc5-QC-STK" secondAttribute="trailing" constant="-30" id="rWb-M5-irs"/>
                         </constraints>
                     </view>
                 </viewController>

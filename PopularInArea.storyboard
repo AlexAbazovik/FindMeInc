@@ -48,6 +48,14 @@
             </objects>
             <point key="canvasLocation" x="2954" y="-1268"/>
         </scene>
+        <!--tattooDetail-->
+        <scene sceneID="agj-aN-9lA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserPage" referencedIdentifier="tattooDetail" id="98I-Id-g4P" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hMw-Wa-R7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3510" y="-1745"/>
+        </scene>
         <!--P O P U L A R  I N  Y O U R  A R E A-->
         <scene sceneID="IiS-Q0-t0k">
             <objects>
@@ -100,6 +108,7 @@
                                         <connections>
                                             <outlet property="mainImage" destination="4B0-Fy-wki" id="riq-jG-TBO"/>
                                             <outlet property="stamp" destination="dlI-Kl-lkE" id="gga-oq-Vkb"/>
+                                            <segue destination="98I-Id-g4P" kind="show" identifier="segueToTattoDetail" id="PCN-DX-a2B"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="lastCollectionViewCell" id="Oru-Jg-JLG">
@@ -119,14 +128,25 @@
                                                         <action selector="loadMorePhotoInNewsfeed:" destination="rUu-sN-muP" eventType="touchUpInside" id="Xlm-DK-W3F"/>
                                                     </connections>
                                                 </button>
+                                                <activityIndicatorView opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="eLD-Ga-hfT">
+                                                    <rect key="frame" x="62" y="82" width="37" height="37"/>
+                                                    <color key="color" red="0.8980392157" green="0.61568627450000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="Che-j5-pFi" firstAttribute="leading" secondItem="Oru-Jg-JLG" secondAttribute="leadingMargin" constant="-8" id="3UJ-Cn-jFi"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="Che-j5-pFi" secondAttribute="bottom" constant="-8" id="Eog-ob-LPp"/>
+                                            <constraint firstItem="eLD-Ga-hfT" firstAttribute="centerY" secondItem="Oru-Jg-JLG" secondAttribute="centerY" id="aPr-Ns-Yw3"/>
                                             <constraint firstItem="Che-j5-pFi" firstAttribute="top" secondItem="Oru-Jg-JLG" secondAttribute="topMargin" constant="-8" id="oJe-Qx-bKt"/>
+                                            <constraint firstItem="eLD-Ga-hfT" firstAttribute="centerX" secondItem="Oru-Jg-JLG" secondAttribute="centerX" id="uql-60-VVe"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Che-j5-pFi" secondAttribute="trailing" constant="-8" id="zQD-kS-GnA"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="Che-j5-pFi"/>
+                                            </mask>
+                                        </variation>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -136,6 +156,10 @@
                                     <segue destination="Mtg-Tg-3ot" kind="embed" id="3Kf-SW-eyf"/>
                                 </connections>
                             </containerView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lln-MT-swk">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <color key="color" red="0.8980392157" green="0.61568627450000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -143,9 +167,11 @@
                             <constraint firstItem="8aa-md-nrd" firstAttribute="leading" secondItem="MGr-Mf-dlG" secondAttribute="leadingMargin" id="8Ba-Lm-4iB"/>
                             <constraint firstItem="dCF-yt-5lf" firstAttribute="top" secondItem="8aa-md-nrd" secondAttribute="bottom" constant="5" id="Dgg-yY-9WW"/>
                             <constraint firstAttribute="trailing" secondItem="eiM-Kq-E0G" secondAttribute="trailing" id="Hec-cD-0Rf"/>
+                            <constraint firstItem="lln-MT-swk" firstAttribute="centerX" secondItem="MGr-Mf-dlG" secondAttribute="centerX" id="Nf0-Sn-iMm"/>
                             <constraint firstItem="eiM-Kq-E0G" firstAttribute="top" secondItem="flW-UD-3W1" secondAttribute="bottom" id="PGE-MA-EeG"/>
                             <constraint firstItem="8aa-md-nrd" firstAttribute="top" secondItem="MGr-Mf-dlG" secondAttribute="topMargin" constant="15" id="Y8c-wB-SUT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8aa-md-nrd" secondAttribute="trailing" id="c0f-xX-e56"/>
+                            <constraint firstItem="lln-MT-swk" firstAttribute="centerY" secondItem="MGr-Mf-dlG" secondAttribute="centerY" id="cyf-pv-BXq"/>
                             <constraint firstItem="eiM-Kq-E0G" firstAttribute="leading" secondItem="MGr-Mf-dlG" secondAttribute="leading" id="oy2-t2-FVW"/>
                         </constraints>
                     </view>
@@ -160,6 +186,7 @@
                     <connections>
                         <outlet property="alertView" destination="eiM-Kq-E0G" id="0Hk-0U-8B4"/>
                         <outlet property="collectionView" destination="8aa-md-nrd" id="AvT-lF-i71"/>
+                        <outlet property="mainActivityIndicator" destination="lln-MT-swk" id="Gb3-P2-qTY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8sg-qb-I2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -202,7 +229,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agl-oC-wvp">
-                                                    <rect key="frame" x="102.5" y="12" width="36.5" height="19.5"/>
+                                                    <rect key="frame" x="103.5" y="13.5" width="34.5" height="16.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>

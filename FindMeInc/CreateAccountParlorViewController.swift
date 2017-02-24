@@ -48,6 +48,7 @@ class CreateAccountParlorViewController: UIViewController, UITextFieldDelegate {
         unregisterForKeyboardNotification()
     }
     
+    //MARK: Register for keyboard notifications
     func registerForKeyboardNotification(){
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: .UIKeyboardWillHide, object: nil)

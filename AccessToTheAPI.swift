@@ -104,8 +104,8 @@ class MySession {
         Request can include parameters for filtering or no
         Request can include parameter to get more photo to newsfeed
      */
-    func getImagesList(parameters: [String]?, onSucsess success: @escaping (_ response: NSDictionary) -> Void, onFailure failure: @escaping (_ error: Error) -> Void ){
-        if parameters != nil{
+    func getImagesList(parameters: [String]?, onSucsess success: @escaping (_ response: NSArray) -> Void, onFailure failure: @escaping (_ error: Error) -> Void ){
+        if parameters?.count != 0{
             var params = Parameters()
             for i in parameters!{
                 params[i] = true
@@ -113,16 +113,16 @@ class MySession {
             Alamofire.request("\(serverURL)api/getnewsfeed", method: .post, parameters: params).validate(statusCode: 200..<300).responseJSON {(response) in
                 switch response.result{
                 case .success:
-                    success(response.result.value as! NSDictionary)
+                    success(((response.result.value as! NSDictionary).value(forKey: "data") as! NSArray))
                 case .failure(let error):
                     failure(error)
                 }
             }
         }else{
-            Alamofire.request("\(serverURL)api/getnewsfeed", method: .post).validate(statusCode: 200..<300).responseJSON {(response) in
+            Alamofire.request("\(serverURL)api/getnewsfeed", method: .post).validate(statusCode: 200..<300).responseJSON{(response) in
                 switch response.result{
                 case .success:
-                    success(response.result.value as! NSDictionary)
+                    success(((response.result.value as! NSDictionary).value(forKey: "data") as! NSArray))
                 case .failure(let error):
                     failure(error)
                 }
@@ -130,7 +130,7 @@ class MySession {
         }
     }
     
-    //MARK: Download image
+    //MARK: Download images from server
     func downloadImage(imageURL: String, onSuccess success: @escaping (_ image:UIImage) -> Void, onFailure failure: @escaping(_ error: Error) -> Void){
         Alamofire.request(imageURL).validate(statusCode: 200..<300).responseImage{(response) in
             switch response.result{
@@ -142,5 +142,20 @@ class MySession {
         }
     }
     
-    
+    //MARK: Get tattoo details
+    func getTattooDetails(photoID: Int, userType: Int, onSuccess sucsess: @escaping (_ response: NSDictionary) -> Void, onFailure failure: @escaping (_ error: Error) -> Void){
+        let parameters: Parameters = [
+            "code" : "\(userType)",
+            "id" : "\(photoID)"
+        ]
+        print (parameters)
+        Alamofire.request("\(serverURL)api/photoinfo", method: .post, parameters: parameters).validate(statusCode: 200..<300).responseJSON { (response) in
+            switch response.result{
+            case .success:
+                sucsess((response.result.value as! NSDictionary).value(forKey: "data") as! NSDictionary)
+            case .failure(let error):
+                failure(error)
+            }
+        }
+    }
 }

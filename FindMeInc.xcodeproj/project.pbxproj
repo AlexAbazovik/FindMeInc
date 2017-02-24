@@ -21,6 +21,8 @@
 		63098D541E52F7DB00924B3D /* Inbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63098D531E52F7DB00924B3D /* Inbox.storyboard */; };
 		63098D561E52F85600924B3D /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63098D551E52F85600924B3D /* Events.storyboard */; };
 		63098D581E52F8E400924B3D /* UserPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63098D571E52F8E400924B3D /* UserPage.storyboard */; };
+		634B2F581E5F263C008A31AC /* TattooDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F571E5F263C008A31AC /* TattooDetailsViewController.swift */; };
+		634B2F5A1E60154E008A31AC /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F591E60154E008A31AC /* TermsAndConditionsViewController.swift */; };
 		635B60FC1E41D65C009F780C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FB1E41D65C009F780C /* AppDelegate.swift */; };
 		635B60FE1E41D65C009F780C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FD1E41D65C009F780C /* ViewController.swift */; };
 		635B61011E41D65C009F780C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635B60FF1E41D65C009F780C /* Main.storyboard */; };
@@ -93,6 +95,8 @@
 		63098D531E52F7DB00924B3D /* Inbox.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Inbox.storyboard; path = ../Inbox.storyboard; sourceTree = "<group>"; };
 		63098D551E52F85600924B3D /* Events.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Events.storyboard; path = ../Events.storyboard; sourceTree = "<group>"; };
 		63098D571E52F8E400924B3D /* UserPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = UserPage.storyboard; path = ../UserPage.storyboard; sourceTree = "<group>"; };
+		634B2F571E5F263C008A31AC /* TattooDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TattooDetailsViewController.swift; path = ../TattooDetailsViewController.swift; sourceTree = "<group>"; };
+		634B2F591E60154E008A31AC /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 		635B60F81E41D65C009F780C /* FindMeInc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMeInc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635B60FB1E41D65C009F780C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635B60FD1E41D65C009F780C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +293,7 @@
 				635B61451E446914009F780C /* CreateAccountParlorViewController.swift */,
 				635E48AC1E44891C006072EC /* CreateAccountCustomerViewController.swift */,
 				635E48AE1E44C043006072EC /* CreateAccountOptionsViewController.swift */,
+				634B2F591E60154E008A31AC /* TermsAndConditionsViewController.swift */,
 			);
 			name = "Login-register";
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 		635E48B01E46373C006072EC /* Artist page user */ = {
 			isa = PBXGroup;
 			children = (
+				634B2F571E5F263C008A31AC /* TattooDetailsViewController.swift */,
 				635E48B11E46375A006072EC /* ArtistPageUserViewController.swift */,
 			);
 			name = "Artist page user";
@@ -442,7 +448,7 @@
 				TargetAttributes = {
 					635B60F71E41D65C009F780C = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 5YJ8TR27FR;
+						DevelopmentTeam = 9F8TSXP9SD;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -571,6 +577,7 @@
 				63F2CD081E4C747600E14727 /* EventCollectionViewCell.swift in Sources */,
 				63098D3A1E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift in Sources */,
 				636A02D91E570396009188D4 /* Data.swift in Sources */,
+				634B2F581E5F263C008A31AC /* TattooDetailsViewController.swift in Sources */,
 				63F2CD051E4B7AE900E14727 /* InboxTableViewCell.swift in Sources */,
 				635E48AD1E44891C006072EC /* CreateAccountCustomerViewController.swift in Sources */,
 				635B61461E446914009F780C /* CreateAccountParlorViewController.swift in Sources */,
@@ -597,6 +604,7 @@
 				63F2CCFE1E4B575300E14727 /* CustomAlertViewController.swift in Sources */,
 				63F2CCF81E4B2EBF00E14727 /* PopularInYourAreaCollectionViewCell.swift in Sources */,
 				635B61371E4228B3009F780C /* Helpers.swift in Sources */,
+				634B2F5A1E60154E008A31AC /* TermsAndConditionsViewController.swift in Sources */,
 				63098D501E52F20800924B3D /* MainTabBarController.swift in Sources */,
 				63F2CD0D1E4DA65B00E14727 /* EventDetailsViewController.swift in Sources */,
 				635B613E1E4244FF009F780C /* HomeViewController.swift in Sources */,
@@ -751,7 +759,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 5YJ8TR27FR;
+				DEVELOPMENT_TEAM = 9F8TSXP9SD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -773,7 +781,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 5YJ8TR27FR;
+				DEVELOPMENT_TEAM = 9F8TSXP9SD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -26,7 +26,7 @@
         <scene sceneID="qYx-J3-xv9">
             <objects>
                 <navigationController id="Wq0-YY-oyG" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zzu-Q7-6YN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Zzu-Q7-6YN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -364,7 +364,7 @@
                                                 </constraints>
                                             </collectionViewCell>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="usualCell" id="CbD-BK-VVi">
-                                                <rect key="frame" x="117.5" y="0.0" width="100" height="100"/>
+                                                <rect key="frame" x="118" y="0.0" width="100" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -534,7 +534,7 @@
         <!--E S H L Y  S I M O N E L U X-->
         <scene sceneID="Ayy-va-CPY">
             <objects>
-                <viewController id="mP1-SD-dk1" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tattooDetail" id="mP1-SD-dk1" customClass="TattooDetailsViewController" customModule="FindMeInc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="97H-TL-kCj"/>
                         <viewControllerLayoutGuide type="bottom" id="ret-HK-dh8"/>
@@ -543,28 +543,154 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HLa-xp-cmF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_Temp_Tattoo_Photo" translatesAutoresizingMaskIntoConstraints="NO" id="HLa-xp-cmF">
                                 <rect key="frame" x="15" y="79" width="345" height="345"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HLa-xp-cmF" secondAttribute="height" multiplier="1:1" id="ZKb-Sr-mXV"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8W2-FG-PmD">
-                                <rect key="frame" x="16" y="432" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Ghw-Nx-wAm">
+                                <rect key="frame" x="15" y="434" width="51" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8W2-FG-PmD">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="SOF-Rc-0LP"/>
+                                            <constraint firstAttribute="width" secondItem="8W2-FG-PmD" secondAttribute="height" multiplier="1:1" id="vjh-e2-0dk"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.8980392157" green="0.61568627450000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="FMI_All_Star_Without_Cercle_Icon"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="540" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6s-tV-25x">
+                                        <rect key="frame" x="30" y="13.5" width="21" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                                        <color key="textColor" red="0.25882352939999997" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lHK-hP-uv2">
+                                <rect key="frame" x="76" y="439" width="46" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dR3-yv-CkM">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Hri-5o-77y"/>
+                                            <constraint firstAttribute="width" constant="30" id="qXS-DI-6Vk"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button" image="FMI_All_Chat_Without_Points_Icon"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="49" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGg-GJ-sTj">
+                                        <rect key="frame" x="32" y="0.0" width="14" height="30"/>
+                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                                        <color key="textColor" red="0.25882352939999997" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1K-g7-HiN">
+                                <rect key="frame" x="314" y="434" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="x1K-g7-HiN" secondAttribute="height" multiplier="1:1" id="KWV-cp-y6u"/>
+                                    <constraint firstAttribute="height" constant="30" id="tWm-li-KuF"/>
+                                </constraints>
+                                <color key="tintColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="FMI_All_Share_Icon"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v71-XE-IrO">
+                                <rect key="frame" x="269" y="434" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="v71-XE-IrO" secondAttribute="height" multiplier="1:1" id="Jcd-3D-k1S"/>
+                                    <constraint firstAttribute="height" constant="30" id="Kax-pS-sJP"/>
+                                </constraints>
+                                <color key="tintColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button" image="FMI_All_Save_Icon"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2W-QH-Vdp">
+                                <rect key="frame" x="16" y="479" width="343" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="KkH-rv-TRl"/>
+                                </constraints>
+                                <state key="normal" image="FMI_All_Horizontal_Row"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leg Piece done by Ashley @MarioInk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0A9-BW-YJt">
+                                <rect key="frame" x="31" y="495" width="245" height="19.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
+                                <color key="textColor" red="0.25882352939999997" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="r5D-40-5aB">
+                                <rect key="frame" x="16" y="524.5" width="343" height="132.5"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O5B-IU-y21">
+                                    <size key="itemSize" width="70" height="15"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Wud-15-y4y">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#Tag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyX-ZV-eaZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="15"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
+                                                    <color key="textColor" red="0.25882352939999997" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="MyX-ZV-eaZ" firstAttribute="leading" secondItem="Wud-15-y4y" secondAttribute="leading" id="4QH-LV-Nih"/>
+                                            <constraint firstAttribute="trailing" secondItem="MyX-ZV-eaZ" secondAttribute="trailing" id="DO1-D8-edc"/>
+                                            <constraint firstAttribute="bottom" secondItem="MyX-ZV-eaZ" secondAttribute="bottom" id="GvA-41-44x"/>
+                                            <constraint firstItem="MyX-ZV-eaZ" firstAttribute="top" secondItem="Wud-15-y4y" secondAttribute="top" id="fsE-vu-wBd"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="r5D-40-5aB" firstAttribute="leading" secondItem="WNS-DZ-ccK" secondAttribute="leadingMargin" id="4fC-iY-Vm2"/>
                             <constraint firstAttribute="trailing" secondItem="HLa-xp-cmF" secondAttribute="trailing" constant="15" id="7cx-UX-eok"/>
+                            <constraint firstItem="Ghw-Nx-wAm" firstAttribute="top" secondItem="HLa-xp-cmF" secondAttribute="bottom" constant="10" id="CSt-K5-c44"/>
+                            <constraint firstItem="r5D-40-5aB" firstAttribute="trailing" secondItem="WNS-DZ-ccK" secondAttribute="trailingMargin" id="Gly-zf-K5w"/>
+                            <constraint firstItem="0A9-BW-YJt" firstAttribute="top" secondItem="x2W-QH-Vdp" secondAttribute="bottom" constant="15" id="ILB-Eq-Sv0"/>
                             <constraint firstItem="HLa-xp-cmF" firstAttribute="leading" secondItem="WNS-DZ-ccK" secondAttribute="leading" constant="15" id="JRU-Gh-1U1"/>
+                            <constraint firstItem="v71-XE-IrO" firstAttribute="top" secondItem="HLa-xp-cmF" secondAttribute="bottom" constant="10" id="Nea-Ku-oYq"/>
+                            <constraint firstItem="Ghw-Nx-wAm" firstAttribute="leading" secondItem="WNS-DZ-ccK" secondAttribute="leading" constant="15" id="PKz-My-ka3"/>
+                            <constraint firstItem="lHK-hP-uv2" firstAttribute="top" secondItem="HLa-xp-cmF" secondAttribute="bottom" constant="15" id="PRz-lx-KlC"/>
+                            <constraint firstItem="0A9-BW-YJt" firstAttribute="leading" secondItem="WNS-DZ-ccK" secondAttribute="leadingMargin" constant="15" id="QTL-BO-tcf"/>
                             <constraint firstItem="HLa-xp-cmF" firstAttribute="top" secondItem="97H-TL-kCj" secondAttribute="bottom" constant="15" id="TdM-k8-9Kc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="x2W-QH-Vdp" secondAttribute="trailing" id="UxO-vF-dOl"/>
+                            <constraint firstItem="x2W-QH-Vdp" firstAttribute="top" secondItem="Ghw-Nx-wAm" secondAttribute="bottom" constant="15" id="XWM-5j-x72"/>
+                            <constraint firstItem="lHK-hP-uv2" firstAttribute="leading" secondItem="Ghw-Nx-wAm" secondAttribute="trailing" constant="10" id="YEX-Mv-mVO"/>
+                            <constraint firstItem="x1K-g7-HiN" firstAttribute="top" secondItem="HLa-xp-cmF" secondAttribute="bottom" constant="10" id="ZJ0-La-SgV"/>
+                            <constraint firstItem="ret-HK-dh8" firstAttribute="top" secondItem="r5D-40-5aB" secondAttribute="bottom" constant="10" id="j62-b4-1UR"/>
+                            <constraint firstItem="x2W-QH-Vdp" firstAttribute="leading" secondItem="WNS-DZ-ccK" secondAttribute="leadingMargin" id="jy8-2l-nRc"/>
+                            <constraint firstItem="r5D-40-5aB" firstAttribute="top" secondItem="0A9-BW-YJt" secondAttribute="bottom" constant="10" id="mjF-Os-z9I"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="x1K-g7-HiN" secondAttribute="trailing" constant="15" id="xGU-u0-tts"/>
+                            <constraint firstItem="x1K-g7-HiN" firstAttribute="leading" secondItem="v71-XE-IrO" secondAttribute="trailing" constant="15" id="zWM-8o-gMC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="E S H L Y  S I M O N E L U X" id="3hl-Mz-SpC">
                         <barButtonItem key="rightBarButtonItem" image="FMI_All_User_Icon" id="9Wd-uW-wmK"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="chatCount" destination="cGg-GJ-sTj" id="bSR-EK-wIP"/>
+                        <outlet property="likeButoon" destination="8W2-FG-PmD" id="zXF-ch-8ek"/>
+                        <outlet property="likesCount" destination="v6s-tV-25x" id="Zip-ZN-To1"/>
+                        <outlet property="photo" destination="HLa-xp-cmF" id="ilL-Co-fpD"/>
+                        <outlet property="photoDescription" destination="0A9-BW-YJt" id="uDo-MT-cAT"/>
+                        <outlet property="tagsCollectionView" destination="r5D-40-5aB" id="z3X-Yp-se8"/>
+                        <outlet property="userName" destination="3hl-Mz-SpC" id="JVl-1C-teF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4m-NO-Qgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -573,10 +699,14 @@
     </scenes>
     <resources>
         <image name="FMI_All_Border_For_Button" width="646" height="646"/>
+        <image name="FMI_All_Chat_Without_Points_Icon" width="286" height="254"/>
         <image name="FMI_All_Facebook_Logo" width="125" height="125"/>
         <image name="FMI_All_Horizontal_Row" width="2043" height="3"/>
         <image name="FMI_All_Insta_Logo" width="125" height="125"/>
         <image name="FMI_All_Photo_Icon" width="175" height="157"/>
+        <image name="FMI_All_Save_Icon" width="225" height="225"/>
+        <image name="FMI_All_Share_Icon" width="135" height="167"/>
+        <image name="FMI_All_Star_Without_Cercle_Icon" width="144" height="137"/>
         <image name="FMI_All_Twitter_Logo" width="126" height="125"/>
         <image name="FMI_All_User_Icon" width="22" height="22"/>
         <image name="FMI_My_Account_Button_Border" width="632" height="173"/>
