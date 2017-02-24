@@ -1,6 +1,8 @@
 import UIKit
 
-class EventsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource{
+class EventsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
+    
+    //MARK: - Outlets
 
     @IBOutlet weak var conventionsCollectionView: UICollectionView!
     @IBOutlet weak var localEventsCollectionView: UICollectionView!
@@ -11,8 +13,98 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var calendarView: UIView!
     
+    var calendarInfo: NSDictionary!
+    
+    //MARK: - ViewController life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+       calendarInfo = [
+            "TODAY": [
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ],
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ]
+            ],
+            "FEB25": [
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ],
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ]
+            ],
+            "FEB26": [
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ],
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ]
+            ],
+            "FEB27": [
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ],
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ],
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ],
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ],
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ],
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ]
+            ]
+        ]
+        
+        print(calendarInfo!)
         
         conventionsCollectionView.delegate = self
         conventionsCollectionView.dataSource = self
@@ -23,6 +115,12 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         calendarTableView.delegate = self
         calendarTableView.dataSource = self
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    //MARK: - UICollectionViewDataSource
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -36,49 +134,55 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         let cell = conventionsCollectionView.dequeueReusableCell(withReuseIdentifier: "eventsCollectionViewCell", for: indexPath) as! EventCollectionViewCell
         return cell
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     @IBAction func filteringChange(_ sender: UIButton){
-        for i in filteringButtonsCollection{
+        for i in filteringButtonsCollection {
             i.isSelected = false
         }
         sender.isSelected = true
-        if sender.tag == 1{
+        if sender.tag == 1 {
             calendarView.isHidden = false
-        }else{
+        } else {
             calendarView.isHidden = true
         }
     }
     
     //MARK: Calendar
+    
+    //MARK: - UITableViewDataSource
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return calendarInfo.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return calendarInfo.allKeys[section] as? String
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return (calendarInfo.object(forKey: calendarInfo.allKeys[section]) as! NSArray).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = calendarTableView.dequeueReusableCell(withIdentifier: "todayCell")
-        switch indexPath.row{
-        case 1:
-            cell = calendarTableView.dequeueReusableCell(withIdentifier: "infoCell")
-        case 2:
-            cell = calendarTableView.dequeueReusableCell(withIdentifier: "infoCell")
-        case 3:
-            cell = calendarTableView.dequeueReusableCell(withIdentifier: "dayCell")
-            cell?.contentView.backgroundColor = #colorLiteral(red: 0.2588235294, green: 0.2549019608, blue: 0.2588235294, alpha: 1)
-        case 4:
-            cell = calendarTableView.dequeueReusableCell(withIdentifier: "infoCell")
-        case 5:
-            cell = calendarTableView.dequeueReusableCell(withIdentifier: "dayCell")
-        default:
-            break
-        }
-        return cell!
+        let key = calendarInfo.allKeys[indexPath.section]
+        let info = (calendarInfo.object(forKey: key) as! NSArray)[indexPath.row] as! NSDictionary
+        let cell = tableView.dequeueReusableCell(withIdentifier: "calendarCell") as! CalendarTableViewCell
+        
+        cell.name.text = info.object(forKey: "name") as! String?
+        cell.money.text = info.object(forKey: "money") as! String?
+        cell.time.text = info.object(forKey: "time") as! String?
+        cell.tattooDescription.text = info.object(forKey: "tattooDescription") as! String?
+       
+        return cell
+    }
+    
+    //MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        print(section)
+        let view = UIView()
+        view.frame = CGRect(x: 0, y: 0, width: 35, height: self.calendarTableView.frame.width)
+        view.backgroundColor = UIColor.green
+        return view
     }
 }
