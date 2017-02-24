@@ -883,7 +883,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="393"/>
                                     </imageView>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag to Reposition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiY-uW-9Ih">
-                                        <rect key="frame" x="207.5" y="346.5" width="117.5" height="16.5"/>
+                                        <rect key="frame" x="203.5" y="343.5" width="121.5" height="19.5"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -904,16 +904,16 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zxv-LA-Jgl">
-                                <rect key="frame" x="115.5" y="477" width="144.5" height="31"/>
+                                <rect key="frame" x="114.5" y="477" width="146.5" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD WATERMARK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KU-Ky-L9A">
-                                        <rect key="frame" x="0.0" y="0.0" width="85.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="87.5" height="31"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                         <color key="textColor" red="0.25882352939999997" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JGd-AJ-2Sz">
-                                        <rect key="frame" x="95.5" y="0.0" width="51" height="31"/>
+                                        <rect key="frame" x="97.5" y="0.0" width="51" height="31"/>
                                         <color key="onTintColor" red="0.8980392157" green="0.61568627450000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="addWatermarkSwitchOff:" destination="tbE-9A-mda" eventType="valueChanged" id="J2P-0P-AYL"/>
@@ -922,16 +922,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wfd-hh-4pJ">
-                                <rect key="frame" x="84.5" y="518" width="208" height="20"/>
+                                <rect key="frame" x="84" y="518" width="207.5" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO NUDITY OR OFFENCIVE CONTENT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqu-Tr-Yu8">
-                                        <rect key="frame" x="0.0" y="0.0" width="178" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="20"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="10"/>
                                         <color key="textColor" red="0.25882352939999997" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPl-Us-o7A" customClass="CustomRadioButton" customModule="FindMeInc" customModuleProvider="target">
-                                        <rect key="frame" x="188" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="187.5" y="0.0" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="ZAo-Jf-qXJ"/>
                                             <constraint firstAttribute="width" secondItem="fPl-Us-o7A" secondAttribute="height" multiplier="1:1" id="oOI-45-Luv"/>
