@@ -140,7 +140,7 @@ class CreateAccountCustomerViewController: UIViewController, UITextFieldDelegate
     //MARK: Register new customer
     @IBAction func registerNewCustomer(_ sender: UIButton){
         if termsAndConditionsButton.isSelected {
-            MySession.sharedInfo.registerNewUser(userName: customerNameTextField.text!, emailAddress: emailTextField.text!, password: passwordTextField.text!, state: stateCode!, city: cityTextField.text!, onSuccess: { (response) in
+            MySession.sharedInfo.registerNewUser(userName: customerNameTextField.text!, emailAddress: emailTextField.text!, password: passwordTextField.text!, state: stateCode, city: cityTextField.text!, onSuccess: { (response) in
                 if response.object(forKey: "status") as! Int == 200{
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     self.present(storyboard.instantiateViewController(withIdentifier: "MainNavigationScene"), animated: true, completion: nil)

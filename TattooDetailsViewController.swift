@@ -1,6 +1,6 @@
 import UIKit
 
-class TattooDetailsViewController: UIViewController {
+class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var userName: UINavigationItem!
     @IBOutlet weak var photo: UIImageView!
@@ -13,16 +13,44 @@ class TattooDetailsViewController: UIViewController {
     //This variable used for transfer data from alert view controller
     var dataPassed : Int?
     
+    var tagsCollection: [String]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tagsCollectionView.delegate = self
+        
         MySession.sharedInfo.getTattooDetails(photoID: (Data.sharedInfo.urlCollectionForNewsFeed![dataPassed!] as! NSDictionary).value(forKey: "id") as! Int, userType: (Data.sharedInfo.urlCollectionForNewsFeed![dataPassed!] as! NSDictionary).value(forKey: "code") as! Int, onSuccess: { (photoDescription) in
-            print(self.dataPassed)
+            print(photoDescription)
             self.userName.title = photoDescription.value(forKey: "username") as! String?
             let url = URL.init(string: (Data.sharedInfo.urlCollectionForNewsFeed?[self.dataPassed!] as! NSDictionary).value(forKey: "url") as! String)
             self.photo.kf.setImage(with: url)
+            self.likeButoon.isSelected = photoDescription.value(forKey: "is_like") as! Bool
+            self.likesCount.text = photoDescription.value(forKey: "likes") as? String
+            self.chatCount.text = photoDescription.value(forKey: "comments") as? String
+            self.photoDescription.text = photoDescription.value(forKey: "title") as? String
+            self.tagsCollection = photoDescription.value(forKey: "tags") as! [String]
         }) { (error) in
             print(error)
         }
+    }
+    
+    //MARK: Like button tap
+    //TO DO: Send button state on the server
+    @IBAction func like(_ sender: UIButton){
+        sender.isSelected = !sender.isSelected
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tagsCollection.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath)
     }
 
     override func didReceiveMemoryWarning() {

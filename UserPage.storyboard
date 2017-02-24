@@ -552,14 +552,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Ghw-Nx-wAm">
                                 <rect key="frame" x="15" y="434" width="51" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8W2-FG-PmD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8W2-FG-PmD">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="SOF-Rc-0LP"/>
                                             <constraint firstAttribute="width" secondItem="8W2-FG-PmD" secondAttribute="height" multiplier="1:1" id="vjh-e2-0dk"/>
                                         </constraints>
-                                        <color key="tintColor" red="0.8980392157" green="0.61568627450000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="FMI_All_Star_Without_Cercle_Icon"/>
+                                        <state key="selected" image="FMI_All_Star_Without_Cercle_Orange_Icon"/>
+                                        <connections>
+                                            <action selector="like:" destination="mP1-SD-dk1" eventType="touchUpInside" id="Tpd-WS-eoZ"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="540" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6s-tV-25x">
                                         <rect key="frame" x="30" y="13.5" width="21" height="16.5"/>
@@ -707,6 +710,7 @@
         <image name="FMI_All_Save_Icon" width="225" height="225"/>
         <image name="FMI_All_Share_Icon" width="135" height="167"/>
         <image name="FMI_All_Star_Without_Cercle_Icon" width="144" height="137"/>
+        <image name="FMI_All_Star_Without_Cercle_Orange_Icon" width="144" height="137"/>
         <image name="FMI_All_Twitter_Logo" width="126" height="125"/>
         <image name="FMI_All_User_Icon" width="22" height="22"/>
         <image name="FMI_My_Account_Button_Border" width="632" height="173"/>
