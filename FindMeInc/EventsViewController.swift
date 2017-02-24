@@ -154,6 +154,42 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
                     "money": "1000$ - 1250$",
                     "time": "10:00 - 16:00",
                     "tattooDescription": "Spyder(black and gray)"
+                ],
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ],
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ],
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ],
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ],
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
+                ],
+                [
+                    "name": "Steve Jobs",
+                    "money": "1000$ - 1250$",
+                    "time": "10:00 - 16:00",
+                    "tattooDescription": "Spyder(black and gray)"
                 ]
             ]
         ]
@@ -196,8 +232,10 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         sender.isSelected = true
         if sender.tag == 1 {
             calendarView.isHidden = false
+            self.navigationItem.title = "C A L E N D A R"
         } else {
             calendarView.isHidden = true
+            self.navigationItem.title = "E V E N T S"
         }
     }
     
@@ -224,19 +262,13 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "calendarCell") as! CalendarTableViewCell
         
-        if ((data.object(forKey: key) as! NSArray).count != 0) {
-            cell.frame = CGRect(x: 0.0, y: 0.0, width: self.calendarTableView.frame.width, height: 50.0)
-            
-            let info = (data.object(forKey: key) as! NSArray)[indexPath.row] as! NSDictionary
-            
-            cell.name.text = info.object(forKey: "name") as! String?
-            cell.money.text = info.object(forKey: "money") as! String?
-            cell.time.text = info.object(forKey: "time") as! String?
-            cell.tattooDescription.text = info.object(forKey: "tattooDescription") as! String?
-        } else {
-            cell.frame = CGRect(x: 0.0, y: 0.0, width: self.calendarTableView.frame.width, height: 0.0)
-        }
-       
+        let info = (data.object(forKey: key) as! NSArray)[indexPath.row] as! NSDictionary
+        
+        cell.name.text = info.object(forKey: "name") as! String?
+        cell.money.text = info.object(forKey: "money") as! String?
+        cell.time.text = info.object(forKey: "time") as! String?
+        cell.tattooDescription.text = info.object(forKey: "tattooDescription") as! String?
+        
         return cell
     }
     
