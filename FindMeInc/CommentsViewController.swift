@@ -56,6 +56,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
         return (chatInfo.value(forKey: "info") as! NSArray).count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let avatar = ((chatInfo.value(forKey: "info") as! NSArray)[indexPath.row] as! NSDictionary).value(forKey: "avatar")
         let cell = messageTableView.dequeueReusableCell(withIdentifier: "commentCell") as! CommentsTableViewCell
