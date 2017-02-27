@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3DA8138E1E604E7200CE0FE4 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8138D1E604E7200CE0FE4 /* CalendarTableViewCell.swift */; };
+		3DF5FDDA1E644A290038626A /* AddConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF5FDD91E644A290038626A /* AddConsultationViewController.swift */; };
 		63098D3A1E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D391E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift */; };
 		63098D3C1E4E015500924B3D /* UploadImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D3B1E4E015500924B3D /* UploadImageViewController.swift */; };
 		63098D3F1E51B05F00924B3D /* AddTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D3E1E51B05F00924B3D /* AddTagsViewController.swift */; };
@@ -82,6 +83,7 @@
 /* Begin PBXFileReference section */
 		2F74B559F345F4522F56EE20 /* Pods_FindMeInc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindMeInc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA8138D1E604E7200CE0FE4 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		3DF5FDD91E644A290038626A /* AddConsultationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddConsultationViewController.swift; sourceTree = "<group>"; };
 		63098D391E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistAttendingTableViewCell.swift; sourceTree = "<group>"; };
 		63098D3B1E4E015500924B3D /* UploadImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadImageViewController.swift; sourceTree = "<group>"; };
 		63098D3E1E51B05F00924B3D /* AddTagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTagsViewController.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				63098D3D1E51B02C00924B3D /* Add tags */,
 				63F2CD0B1E4DA64100E14727 /* Event details */,
 				63F2CD071E4C747600E14727 /* EventCollectionViewCell.swift */,
+				3DF5FDD91E644A290038626A /* AddConsultationViewController.swift */,
 				63F2CD091E4C755600E14727 /* EventsViewController.swift */,
 				63098D3B1E4E015500924B3D /* UploadImageViewController.swift */,
 			);
@@ -580,6 +583,7 @@
 				634B2F581E5F263C008A31AC /* TattooDetailsViewController.swift in Sources */,
 				63F2CD051E4B7AE900E14727 /* InboxTableViewCell.swift in Sources */,
 				635E48AD1E44891C006072EC /* CreateAccountCustomerViewController.swift in Sources */,
+				3DF5FDDA1E644A290038626A /* AddConsultationViewController.swift in Sources */,
 				635B61461E446914009F780C /* CreateAccountParlorViewController.swift in Sources */,
 				635B613B1E422B1A009F780C /* CreateAccountArtistViewController.swift in Sources */,
 				635B61041E41D65C009F780C /* FindMeInc.xcdatamodeld in Sources */,
