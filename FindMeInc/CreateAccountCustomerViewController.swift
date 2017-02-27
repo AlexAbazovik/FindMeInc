@@ -2,24 +2,32 @@ import UIKit
 
 class CreateAccountCustomerViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    //MARK: Outlets
     @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var connectWithFacebookButton: UIButton!
     @IBOutlet weak var buttonsHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var radioButtonHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var termsAndConditionsButton: CustomRadioButton!
     @IBOutlet weak var customerNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var stateTextField: UITextField!
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var logo: UIImageView!
     
     var stateCode: String?
     
-    
+    //MARK: View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //MARK: Add gesture recognizer for hide keyboard
+        let tapOnBackground = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardByTap(_:)))
+        let tapOnLogo = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardByTap(_:)))
+        
+        background.addGestureRecognizer(tapOnBackground)
+        logo.addGestureRecognizer(tapOnLogo)
         
         // MARK: Add picker view
         //Add picker view to select the state
@@ -66,10 +74,6 @@ class CreateAccountCustomerViewController: UIViewController, UITextFieldDelegate
         }
     }
     
-    @IBAction func radioButtonTap(_ sender: CustomRadioButton) {
-        sender.isSelected = !sender.isSelected
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -82,6 +86,10 @@ class CreateAccountCustomerViewController: UIViewController, UITextFieldDelegate
         unregisterForKeyboardNotification()
     }
     
+    @IBAction func radioButtonTap(_ sender: CustomRadioButton) {
+        sender.isSelected = !sender.isSelected
+    }
+
     
     // MARK: Register for keyboard notifications
     func registerForKeyboardNotification(){
@@ -105,7 +113,7 @@ class CreateAccountCustomerViewController: UIViewController, UITextFieldDelegate
     }
 
     func keyboardWillHide(){
-                scrollView.contentOffset = CGPoint(x: 0.0, y: 0.0)
+        scrollView.contentOffset = CGPoint(x: 0.0, y: 0.0)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -113,6 +121,12 @@ class CreateAccountCustomerViewController: UIViewController, UITextFieldDelegate
         return true
     }
     
+    //MARK: Hide keyboard by tap on Screen
+    @IBAction func hideKeyboardByTap(_ sender: Any) {
+        self.view.endEditing(true)
+    }
+    
+    //MARK: Picker view data source
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -125,6 +139,7 @@ class CreateAccountCustomerViewController: UIViewController, UITextFieldDelegate
         return (Data.sharedInfo.states?.allValues[row] as! String)
     }
     
+    //MARK: Picker view delegate
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         stateTextField.text = (Data.sharedInfo.states?.allValues[row] as! String)
         stateCode = (Data.sharedInfo.states?.allKeys[row] as! String)

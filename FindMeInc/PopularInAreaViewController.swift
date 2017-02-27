@@ -3,15 +3,17 @@ import Kingfisher
 
 class PopularInAreaViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    //MARK: Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var alertView: UIView!
     @IBOutlet weak var mainActivityIndicator: UIActivityIndicatorView!
     
-    //This variable used for transfer data from alert view controller
+    //MARK: Getting data from alert view controller
+    //This variable used for transfer data from alert view controller which contains info about filtering
     var dataPassed = [String]()
-    
     let refresher = UIRefreshControl()
     
+    //MARK: View controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,9 +32,10 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        sendRequestToRetrieveListPhoto()
+        sendRequestToRetrieveListPhoto(nil, false)
     }
 
+    //MARK: Collection view data source
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -42,22 +45,10 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if Data.sharedInfo.urlCollectionForNewsFeed != nil{
-            return (Data.sharedInfo.urlCollectionForNewsFeed?.count)! + 1
+        if Data.sharedInfo.dataCollectionForNewsFeed != nil{
+            return (Data.sharedInfo.dataCollectionForNewsFeed?.count)! + 1
         }else{
             return 0
-        }
-    }
-    
-    //MARK: Send request to list of images
-    func sendRequestToRetrieveListPhoto(){
-        MySession.sharedInfo.getImagesList(parameters: dataPassed, onSucsess: { (response) in
-            Data.sharedInfo.urlCollectionForNewsFeed = response
-            self.collectionView.reloadData()
-            self.refresher.endRefreshing()
-            self.mainActivityIndicator.stopAnimating()
-        }) { (error) in
-            print(error)
         }
     }
     
@@ -72,7 +63,7 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
         
         //If cell the last cell in this collection show cell with ActivityIndicator
         
-        if indexPath.row == (Data.sharedInfo.urlCollectionForNewsFeed?.count)!{
+        if indexPath.row == (Data.sharedInfo.dataCollectionForNewsFeed?.count)!{
             let lastCell = collectionView.dequeueReusableCell(withReuseIdentifier: "lastCollectionViewCell", for: indexPath)
             
             //MARK: Start animate activity indicator
@@ -82,13 +73,13 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
             var cell: PopularInYourAreaCollectionViewCell
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! PopularInYourAreaCollectionViewCell
             cell.mainImage.image = nil
-            let url = URL.init(string: (Data.sharedInfo.urlCollectionForNewsFeed![indexPath.row] as! NSDictionary).value(forKey: "url") as! String)
+            let url = URL.init(string: (Data.sharedInfo.dataCollectionForNewsFeed![indexPath.row] as! NSDictionary).value(forKey: "url") as! String)
             
-            //MARK: Download photo
+            //MARK: Download photo and caching
             cell.mainImage.kf.setImage(with: url)
             
             //MARK: Add different stamp on iamge depending on type of content
-            switch (Data.sharedInfo.urlCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int{
+            switch (Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int{
             case 0:
                 cell.stamp.image = #imageLiteral(resourceName: "FMI_All_Ivent_Icon")
             case 1:
@@ -113,13 +104,13 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
         }
         //MARK: Specific cell size for iPhone PLUS
         if(UIScreen.main.bounds.size.height == 736){
-            size = CGSize(width: 180, height: 250)
+            size = CGSize(width: 180, height: 270)
         }
 
-        if indexPath.row != (Data.sharedInfo.urlCollectionForNewsFeed?.count)!{
+        if indexPath.row != (Data.sharedInfo.dataCollectionForNewsFeed?.count)!{
             
-            // Specific cell size for one with event contemt type
-            if (Data.sharedInfo.urlCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int == 0{
+            // Specific cell size for one with event content type
+            if (Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int == 0{
                 size = CGSize(width: collectionView.frame.width, height: 200.0)
                 if(UIScreen.main.bounds.size.height == 736){
                     size = CGSize(width: collectionView.frame.width, height: 240)
@@ -135,26 +126,33 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
         return size
     }
     
+    //MARK: Show view for choose filter options
     @IBAction func optionsButtonTap(_ sender: UIBarButtonItem){
         alertView.isHidden = false
     }
     
     //MARK: Reload data in collection view with filter
     @IBAction func filteringOptionsDidSelect(_ sender: UIStoryboardSegue?){
-        sendRequestToRetrieveListPhoto()
+        sendRequestToRetrieveListPhoto(dataPassed)
         collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: true)
     }
     
-    //MARK: Show more buton
-    //If the user reached the bottom of collection view he can load more photos in newsfeed
-    //At the moment, function not works by push the button, but when collection view swipe almoust antil the end.
-    @IBAction func loadMorePhotoInNewsfeed(_ sender: UIButton?){
-        dataPassed.append("more")
-        sendRequestToRetrieveListPhoto()
-    }
+    //MARK: Show more function
+    //If the user reached the bottom of collection view new collection load
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == (Data.sharedInfo.urlCollectionForNewsFeed?.count)! - 10{
-            loadMorePhotoInNewsfeed(nil)
+        if indexPath.row == (Data.sharedInfo.dataCollectionForNewsFeed?.count)! - 10{
+            sendRequestToRetrieveListPhoto(dataPassed, true)
+        }
+    }
+    
+    //MARK: Send request to list of images
+    @objc func sendRequestToRetrieveListPhoto(_ params: [String]? = nil,_ more: Bool = false){
+        MySession.sharedInfo.getImagesList(parameters: params, more: more, onSucsess: {(success) in
+            self.collectionView.reloadData()
+            self.refresher.endRefreshing()
+            self.mainActivityIndicator.stopAnimating()
+        }) { (error) in
+            print(error)
         }
     }
     
@@ -162,7 +160,7 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToTattoDetail"{
         let recipeViewController = segue.destination as! TattooDetailsViewController
-        recipeViewController.dataPassed = (self.collectionView.indexPathsForSelectedItems?[0].row)!
+        recipeViewController.indexPathItemInNewsFeed = (self.collectionView.indexPathsForSelectedItems?[0].row)!
         }
     }
 }

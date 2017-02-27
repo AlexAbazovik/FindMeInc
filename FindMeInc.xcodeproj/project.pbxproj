@@ -24,6 +24,8 @@
 		63098D581E52F8E400924B3D /* UserPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63098D571E52F8E400924B3D /* UserPage.storyboard */; };
 		634B2F581E5F263C008A31AC /* TattooDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F571E5F263C008A31AC /* TattooDetailsViewController.swift */; };
 		634B2F5A1E60154E008A31AC /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F591E60154E008A31AC /* TermsAndConditionsViewController.swift */; };
+		634B2F5F1E640E3A008A31AC /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F5E1E640E3A008A31AC /* CommentsViewController.swift */; };
+		634B2F621E641575008A31AC /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F611E641575008A31AC /* CommentsTableViewCell.swift */; };
 		635B60FC1E41D65C009F780C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FB1E41D65C009F780C /* AppDelegate.swift */; };
 		635B60FE1E41D65C009F780C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FD1E41D65C009F780C /* ViewController.swift */; };
 		635B61011E41D65C009F780C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635B60FF1E41D65C009F780C /* Main.storyboard */; };
@@ -99,6 +101,8 @@
 		63098D571E52F8E400924B3D /* UserPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = UserPage.storyboard; path = ../UserPage.storyboard; sourceTree = "<group>"; };
 		634B2F571E5F263C008A31AC /* TattooDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TattooDetailsViewController.swift; path = ../TattooDetailsViewController.swift; sourceTree = "<group>"; };
 		634B2F591E60154E008A31AC /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
+		634B2F5E1E640E3A008A31AC /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		634B2F611E641575008A31AC /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		635B60F81E41D65C009F780C /* FindMeInc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMeInc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635B60FB1E41D65C009F780C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635B60FD1E41D65C009F780C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +207,15 @@
 			name = Subscribe;
 			sourceTree = "<group>";
 		};
+		634B2F601E64154D008A31AC /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				634B2F5E1E640E3A008A31AC /* CommentsViewController.swift */,
+				634B2F611E641575008A31AC /* CommentsTableViewCell.swift */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
 		635B60EF1E41D65C009F780C = {
 			isa = PBXGroup;
 			children = (
@@ -233,7 +246,7 @@
 				63F2CD061E4C6DFA00E14727 /* Events */,
 				63F2CD011E4B7AAA00E14727 /* Inbox */,
 				63F2CCF41E4B19D800E14727 /* Popular in your area */,
-				635E48B01E46373C006072EC /* Artist page user */,
+				635E48B01E46373C006072EC /* User page */,
 				635B61421E431B94009F780C /* CustomUIElements */,
 				635B61391E422ABF009F780C /* Login-register */,
 				635B61361E4228B3009F780C /* Helpers.swift */,
@@ -308,13 +321,14 @@
 			name = CustomUIElements;
 			sourceTree = "<group>";
 		};
-		635E48B01E46373C006072EC /* Artist page user */ = {
+		635E48B01E46373C006072EC /* User page */ = {
 			isa = PBXGroup;
 			children = (
+				634B2F601E64154D008A31AC /* Comments */,
 				634B2F571E5F263C008A31AC /* TattooDetailsViewController.swift */,
 				635E48B11E46375A006072EC /* ArtistPageUserViewController.swift */,
 			);
-			name = "Artist page user";
+			name = "User page";
 			sourceTree = "<group>";
 		};
 		636A02E81E5AD64E009188D4 /* Calendar */ = {
@@ -600,7 +614,9 @@
 				635E48B21E46375A006072EC /* ArtistPageUserViewController.swift in Sources */,
 				635B61411E43104B009F780C /* CustomRadioButton.swift in Sources */,
 				63F2CCFC1E4B528B00E14727 /* CustomAlertTableViewCell.swift in Sources */,
+				634B2F621E641575008A31AC /* CommentsTableViewCell.swift in Sources */,
 				635E48AF1E44C043006072EC /* CreateAccountOptionsViewController.swift in Sources */,
+				634B2F5F1E640E3A008A31AC /* CommentsViewController.swift in Sources */,
 				63098D3C1E4E015500924B3D /* UploadImageViewController.swift in Sources */,
 				63F2CD031E4B7AC500E14727 /* InboxViewController.swift in Sources */,
 				63098D4C1E52114200924B3D /* SubscribeTableViewCell.swift in Sources */,

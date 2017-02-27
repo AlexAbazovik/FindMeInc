@@ -1,19 +1,19 @@
 import UIKit
 
 class CreateAccountArtistViewController: UIViewController, UITextFieldDelegate {
-    
+    //MARK: Outlets
     @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var radioButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomLogoConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var connectWithFacebookButton: UIButton!
     @IBOutlet weak var buttonsHeightConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var refferedByTextField: UITextField!
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var logo: UIImageView!
     
     @IBOutlet weak var termsAndConditionsButton: CustomRadioButton!
     
@@ -24,6 +24,13 @@ class CreateAccountArtistViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         refferedByTextField.delegate = self
+        
+        //MARK: Add gesture recognizer for hide keyboard
+        let tapOnBackground = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardByTap(_:)))
+        let tapOnLogo = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardByTap(_:)))
+        
+        background.addGestureRecognizer(tapOnBackground)
+        logo.addGestureRecognizer(tapOnLogo)
         
         registerForKeyboardNotification()
         
@@ -68,7 +75,7 @@ class CreateAccountArtistViewController: UIViewController, UITextFieldDelegate {
         
         scrollView.contentOffset = CGPoint(x: 0.0, y: keyboardHeight/2)
     }
-    
+    //MARK: Keyboard notification unregister
     func unregisterForKeyboardNotification(){
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
@@ -82,6 +89,11 @@ class CreateAccountArtistViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
+    }
+    
+    //MARK: Hide keyboard by tap on Screen
+    @IBAction func hideKeyboardByTap(_ sender: Any) {
+        self.view.endEditing(true)
     }
     
     //MARK: Register new artist

@@ -2,6 +2,7 @@ import UIKit
 
 class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    //MARK: Outlets
     @IBOutlet weak var userName: UINavigationItem!
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var likeButoon: UIButton!
@@ -9,28 +10,51 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var chatCount: UILabel!
     @IBOutlet weak var photoDescription: UILabel!
     @IBOutlet weak var tagsCollectionView: UICollectionView!
+    @IBOutlet weak var savedLabel: UILabel!
     
     //This variable used for transfer data from alert view controller
-    var dataPassed : Int?
+    var indexPathItemInNewsFeed : Int?
     
     var tagsCollection: [String]?
+    var photoTransitionsOptions = UIViewAnimationOptions.showHideTransitionViews
     
+    //MARK: Var for sent to Chat view controller
+    var photoID: Int?
+    var userType: Int = 1
+    
+    //MARK: View life cilce
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tagsCollectionView.delegate = self
         tagsCollectionView.dataSource = self
-        MySession.sharedInfo.getTattooDetails(photoID: (Data.sharedInfo.urlCollectionForNewsFeed![dataPassed!] as! NSDictionary).value(forKey: "id") as! Int, userType: (Data.sharedInfo.urlCollectionForNewsFeed![dataPassed!] as! NSDictionary).value(forKey: "code") as! Int, onSuccess: { (photoDescription) in
+        
+        loadData()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    //MARK: Load data on the view from the server
+    func loadData(){
+        MySession.sharedInfo.getTattooDetails(photoID: (Data.sharedInfo.dataCollectionForNewsFeed![indexPathItemInNewsFeed!] as! NSDictionary).value(forKey: "id") as! Int, userType: (Data.sharedInfo.dataCollectionForNewsFeed![indexPathItemInNewsFeed!] as! NSDictionary).value(forKey: "code") as! Int, onSuccess: { (photoDescription) in
             print(photoDescription)
             self.userName.title = photoDescription.value(forKey: "username") as! String?
-            let url = URL.init(string: (Data.sharedInfo.urlCollectionForNewsFeed?[self.dataPassed!] as! NSDictionary).value(forKey: "url") as! String)
-            self.photo.kf.setImage(with: url)
+            let url = URL.init(string: (Data.sharedInfo.dataCollectionForNewsFeed?[self.indexPathItemInNewsFeed!] as! NSDictionary).value(forKey: "url") as! String)
+            UIView.transition(with: self.photo, duration: 0.5, options: self.photoTransitionsOptions, animations: {
+                self.photo.kf.setImage(with: url)
+            }, completion: nil)
             self.likeButoon.isSelected = photoDescription.value(forKey: "is_like") as! Bool
             self.likesCount.text = photoDescription.value(forKey: "likes") as? String
             self.chatCount.text = photoDescription.value(forKey: "comments") as? String
             self.photoDescription.text = photoDescription.value(forKey: "title") as? String
             self.tagsCollection = photoDescription.value(forKey: "tags") as? [String]
             self.tagsCollectionView.reloadData()
+            
+            self.photoID = photoDescription.value(forKey: "user_id") as! Int?
+            //TO DO: Get user type from server
+            //self.userType = photoDescription.value(forKey: "user_type") as! Int?
         }) { (error) in
             print(error)
         }
@@ -39,9 +63,15 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     //MARK: Like button tap
     //TO DO: Send button state on the server
     @IBAction func like(_ sender: UIButton){
+        if sender.isSelected{
+            likesCount.text = String(Int(likesCount.text!)! - 1)
+        }else{
+            likesCount.text = String(Int(likesCount.text!)! + 1)
+        }
         sender.isSelected = !sender.isSelected
     }
     
+    //MARK: Tags collection view data source
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -57,11 +87,60 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath)
         (cell.viewWithTag(1) as! UILabel).text = tagsCollection?[indexPath.row]
+        (cell.viewWithTag(1) as! UILabel).adjustsFontSizeToFitWidth = true
         return cell
     }
     
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    //MARK: Transition to other image by swipe
+    @IBAction func previousPhotoPresent(_ sender: Any) {
+        if indexPathItemInNewsFeed != 0{
+            indexPathItemInNewsFeed = indexPathItemInNewsFeed! - 1
+            photoTransitionsOptions = [UIViewAnimationOptions.transitionFlipFromLeft]
+            loadData()
+        }
     }
+    
+    @IBAction func nextPhotoPresent(_ sender: Any) {
+        if indexPathItemInNewsFeed! != (Data.sharedInfo.dataCollectionForNewsFeed?.count)! - 10{
+            indexPathItemInNewsFeed = indexPathItemInNewsFeed! + 1
+                        photoTransitionsOptions = [UIViewAnimationOptions.transitionFlipFromRight]
+            loadData()
+        }
+        else{
+            MySession.sharedInfo.getImagesList(parameters: nil, more: true, onSucsess: { (success) in
+            }, onFailure: { (error) in
+                print(error)
+            })
+            self.indexPathItemInNewsFeed = self.indexPathItemInNewsFeed! + 1
+        }
+    }
+    
+    //MARK: Share image function
+    @IBAction func sharePhoto(){
+        let activityViewController = UIActivityViewController(activityItems: [photo.image!], applicationActivities: nil)
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    //MARK: Save image in library
+    //TO DO: Save photo to user page collection
+    @IBAction func savePhotoToLibrary(){
+        UIImageWriteToSavedPhotosAlbum(photo.image!, photoSaved(), nil, nil)
+    }
+    
+    //MARK: Show message when photo saved
+    func photoSaved(){
+        savedLabel.alpha = 1.0
+        UIView.animate(withDuration: 1.0, delay: 0.0, animations: {
+            self.savedLabel.alpha = 0.0
+        }, completion: nil)
+    }
+    
+    //MARK: Prepare for transition
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueFromTattoDetailsToComments"{
+        let recipeViewContorller = segue.destination as! CommentsViewController
+            recipeViewContorller.photoID = photoID
+            recipeViewContorller.userType = userType
+    }
+}
 }
