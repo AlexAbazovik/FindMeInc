@@ -27,6 +27,7 @@
 		634B2F5A1E60154E008A31AC /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F591E60154E008A31AC /* TermsAndConditionsViewController.swift */; };
 		634B2F5F1E640E3A008A31AC /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F5E1E640E3A008A31AC /* CommentsViewController.swift */; };
 		634B2F621E641575008A31AC /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F611E641575008A31AC /* CommentsTableViewCell.swift */; };
+		634B2F661E659639008A31AC /* Consultation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634B2F651E659639008A31AC /* Consultation.storyboard */; };
 		635B60FC1E41D65C009F780C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FB1E41D65C009F780C /* AppDelegate.swift */; };
 		635B60FE1E41D65C009F780C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FD1E41D65C009F780C /* ViewController.swift */; };
 		635B61011E41D65C009F780C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635B60FF1E41D65C009F780C /* Main.storyboard */; };
@@ -104,6 +105,7 @@
 		634B2F591E60154E008A31AC /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 		634B2F5E1E640E3A008A31AC /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		634B2F611E641575008A31AC /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		634B2F651E659639008A31AC /* Consultation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Consultation.storyboard; sourceTree = "<group>"; };
 		635B60F81E41D65C009F780C /* FindMeInc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMeInc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635B60FB1E41D65C009F780C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635B60FD1E41D65C009F780C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				63098D531E52F7DB00924B3D /* Inbox.storyboard */,
 				63098D551E52F85600924B3D /* Events.storyboard */,
 				63098D571E52F8E400924B3D /* UserPage.storyboard */,
+				634B2F651E659639008A31AC /* Consultation.storyboard */,
 				635B61051E41D65C009F780C /* Assets.xcassets */,
 				63098D431E51C31100924B3D /* AccessToTheAPI.swift */,
 				636A02D61E56D0A6009188D4 /* Geolocation.swift */,
@@ -507,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				635B61301E41E0EB009F780C /* OpenSans-Bold.ttf in Resources */,
+				634B2F661E659639008A31AC /* Consultation.storyboard in Resources */,
 				63098D4E1E52EE1E00924B3D /* PopularInArea.storyboard in Resources */,
 				63098D541E52F7DB00924B3D /* Inbox.storyboard in Resources */,
 				63098D581E52F8E400924B3D /* UserPage.storyboard in Resources */,
