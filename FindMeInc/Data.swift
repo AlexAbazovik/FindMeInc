@@ -12,4 +12,5 @@ class Data{
     var states: NSDictionary?
     var dataCollectionForNewsFeed: NSArray?
     var chatInfo: NSDictionary?
+    var iventDescription: NSDictionary?
 }

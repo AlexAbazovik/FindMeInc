@@ -5,11 +5,8 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
     //MARK: - Outlets
     @IBOutlet weak var conventionsCollectionView: UICollectionView!
     @IBOutlet weak var localEventsCollectionView: UICollectionView!
-    
     @IBOutlet var filteringButtonsCollection: [UIButton]!
-    
     @IBOutlet weak var calendarTableView: UITableView!
-    
     @IBOutlet weak var calendarView: UIView!
     
     var calendarInfo: NSArray?
@@ -192,7 +189,19 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
             ]
         ]
         ]
-        print(calendarInfo!)
+        
+        Data.sharedInfo.iventDescription = [
+            "name" : "13-TH ANNUAL BRIGHTON TATTOO CONVENTION",
+            "time" : "@14-00",
+            "address" : "123 Apple Street, New York, NY, 10024",
+            "description" : "Some description",
+            "attendingCount" : "238",
+            "isAttend" : true,
+            "images" :
+                [
+                    "http://www.aal-europe.eu/wp-content/uploads/2013/12/events_medium.jpg"
+                ]
+        ]
         
         conventionsCollectionView.delegate = self
         conventionsCollectionView.dataSource = self
