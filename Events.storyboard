@@ -994,7 +994,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="102"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_Temp_Profile_Picture" translatesAutoresizingMaskIntoConstraints="NO" id="yZ2-Sf-BL9">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="FMI_Temp_Profile_Picture" translatesAutoresizingMaskIntoConstraints="NO" id="yZ2-Sf-BL9">
                                                             <rect key="frame" x="13" y="13" width="70" height="70"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="yZ2-Sf-BL9" secondAttribute="height" multiplier="1:1" id="9wS-TU-7jz"/>
@@ -1006,13 +1006,13 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEVE BRULE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ju-oj-YGB">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="STEVE BRULE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ju-oj-YGB">
                                                             <rect key="frame" x="98" y="28" width="66" height="12"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DurkHarbor Studio" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOV-iJ-8rQ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="DurkHarbor Studio" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOV-iJ-8rQ">
                                                             <rect key="frame" x="98" y="45" width="120" height="9.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="120" id="UMZ-FR-H5S"/>
@@ -1021,7 +1021,7 @@
                                                             <color key="textColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oun-tQ-z0y">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oun-tQ-z0y">
                                                             <rect key="frame" x="282" y="44" width="10" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="15" id="dHG-bJ-5my"/>
@@ -1062,7 +1062,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="102"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_Temp_Profile_Picture" translatesAutoresizingMaskIntoConstraints="NO" id="iVh-Ur-Q0L">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="FMI_Temp_Profile_Picture" translatesAutoresizingMaskIntoConstraints="NO" id="iVh-Ur-Q0L">
                                                             <rect key="frame" x="13" y="13" width="70" height="70"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="70" id="OEl-a3-1rh"/>
@@ -1074,13 +1074,13 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEVE BRULE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdR-gU-iFM">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="STEVE BRULE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdR-gU-iFM">
                                                             <rect key="frame" x="98" y="23" width="64" height="14"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi! i'm looking to get a piece on my calf." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYo-Oe-esn">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hi! i'm looking to get a piece on my calf." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYo-Oe-esn">
                                                             <rect key="frame" x="98" y="47" width="120" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="120" id="d7x-EO-UcN"/>
@@ -1089,13 +1089,13 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MAR 25, 15:35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyA-MP-d8I">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="MAR 25, 15:35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyA-MP-d8I">
                                                             <rect key="frame" x="327" y="48" width="40" height="9"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="6"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aei-nb-OcO">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aei-nb-OcO">
                                                             <rect key="frame" x="357" y="23" width="10" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="15" id="WI7-3O-btD"/>
@@ -1184,9 +1184,7 @@
                     <navigationItem key="navigationItem" title="E V E N T  D E T A I L S" id="aKK-3F-KPh">
                         <barButtonItem key="rightBarButtonItem" image="FMI_ALL_Preferences_Icon" id="AIG-8E-ahx">
                             <connections>
-                                <segue destination="tbE-9A-mda" kind="show" id="UL5-2a-E10">
-                                    <nil key="action"/>
-                                </segue>
+                                <segue destination="G84-H5-VMF" kind="show" id="Ci4-S4-J3c"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1212,6 +1210,16 @@
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4566" y="878"/>
+        </scene>
+        <!--Consultation-->
+        <scene sceneID="YHC-AB-iBS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Consultation" id="G84-H5-VMF" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="SKQ-QN-BDW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EJ6-1P-eLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5247" y="594"/>
         </scene>
         <!--U P L O A D   I M A G E-->
         <scene sceneID="I79-6U-gSk">
@@ -1571,7 +1579,4 @@
         <image name="FMI_Temp_Profile_Picture" width="288" height="266"/>
         <image name="FMI_Temp_Tattoo_Photo" width="646" height="646"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Gry-Sc-5rO"/>
-    </inferredMetricsTieBreakers>
 </document>
