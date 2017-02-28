@@ -5,15 +5,16 @@ class CreateAccountParlorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var termsAndConditionsButton: CustomRadioButton!
-
     @IBOutlet weak var radioButtonHeight: NSLayoutConstraint!
     @IBOutlet weak var connectWithFacebookButton: UIButton!
     @IBOutlet weak var buttonsHeightConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var parlorNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var logo: UIImageView!
     
+    //MARK: View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +22,12 @@ class CreateAccountParlorViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
+        //MARK: Add gesture recognizer for hide keyboard
+        let tapOnBackground = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardByTap(_:)))
+        let tapOnLogo = UITapGestureRecognizer(target: self, action: #selector(hideKeyboardByTap(_:)))
+        
+        background.addGestureRecognizer(tapOnBackground)
+        logo.addGestureRecognizer(tapOnLogo)
         
         //Specific constraints for iPhone 5 and SE
         if(UIScreen.main.bounds.size.height == 568){
@@ -76,6 +83,11 @@ class CreateAccountParlorViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
+    }
+    
+    //MARK: Hide keyboard by tap
+    func hideKeyboardByTap(_ sender: Any) {
+        self.view.endEditing(true)
     }
     
     //MARK: Register new parlor

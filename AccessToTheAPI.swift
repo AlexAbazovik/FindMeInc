@@ -104,16 +104,22 @@ class MySession {
         Request can include parameters for filtering or no
         Request can include parameter to get more photo to newsfeed
      */
-    func getImagesList(parameters: [String]?, onSucsess success: @escaping (_ response: NSArray) -> Void, onFailure failure: @escaping (_ error: Error) -> Void ){
-        if parameters?.count != 0{
+    func getImagesList(parameters: [String]?, more: Bool?, onSucsess success: @escaping (_ sucsess: Bool) -> Void, onFailure failure: @escaping (_ error: Error) -> Void ){
+        if (parameters != nil || more == true){
             var params = Parameters()
-            for i in parameters!{
-                params[i] = true
+            if parameters != nil{
+                for i in parameters!{
+                    params[i] = true
+                }
+            }
+            if more!{
+                params["more"] = "true"
             }
             Alamofire.request("\(serverURL)api/getnewsfeed", method: .post, parameters: params).validate(statusCode: 200..<300).responseJSON {(response) in
                 switch response.result{
                 case .success:
-                    success(((response.result.value as! NSDictionary).value(forKey: "data") as! NSArray))
+                    Data.sharedInfo.dataCollectionForNewsFeed = ((response.result.value as! NSDictionary).value(forKey: "data") as! NSArray)
+                    success(true)
                 case .failure(let error):
                     failure(error)
                 }
@@ -122,7 +128,8 @@ class MySession {
             Alamofire.request("\(serverURL)api/getnewsfeed", method: .post).validate(statusCode: 200..<300).responseJSON{(response) in
                 switch response.result{
                 case .success:
-                    success(((response.result.value as! NSDictionary).value(forKey: "data") as! NSArray))
+                    Data.sharedInfo.dataCollectionForNewsFeed = ((response.result.value as! NSDictionary).value(forKey: "data") as! NSArray)
+                    success(true)
                 case .failure(let error):
                     failure(error)
                 }
@@ -157,5 +164,40 @@ class MySession {
                 failure(error)
             }
         }
+    }
+    
+    //MARK: Like or dislike photo
+    func photoLike(photoID: Int, userID: Int, like: Bool){
+        let params: Parameters = [
+            "photo_id" : photoID,
+            "user_id" : userID,
+            "like": like
+        ]
+        Alamofire.request("\(serverURL)api/photolike", method: .post, parameters: params).validate(statusCode: 200..<300).responseJSON{
+            (response) in
+            if response.result.error != nil{
+                print(response.result.error!)
+            }
+        }
+    }
+    
+    //MARK: Get comments to photo in photo description
+    func getComents(photoID: Int, onSuccess success:@escaping (_ response: NSDictionary) -> Void, onFailure failure: @escaping(_ error: Error) -> Void){
+        let params: Parameters = [
+            "photo_id" : photoID
+        ]
+        Alamofire.request("\(serverURL)api/photocomments", method: .post, parameters: params).validate(statusCode: 200..<300).responseJSON { (response) in
+            switch response.result{
+            case .success:
+                success((response.result.value as! NSDictionary).value(forKey: "data") as! NSDictionary)
+            case .failure(let error):
+                failure(error)
+            }
+        }
+    }
+    
+    //MARK: Get user info for own page
+    func getUserInfo( userID: Int, onSuccess success: @escaping (_ response: NSDictionary) -> Void, onFailure failure: @escaping (_ error:Error) -> Void){
+        
     }
 }

@@ -43,7 +43,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONNECT WITH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XH2-G2-Kdz">
-                                <rect key="frame" x="149.5" y="340" width="77.5" height="14"/>
+                                <rect key="frame" x="149" y="340" width="77.5" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="2Yk-E2-Q3Z"/>
                                 </constraints>
@@ -178,7 +178,7 @@
                                             <outletCollection property="gestureRecognizers" destination="09F-U7-36M" appends="YES" id="hLt-gZ-X4O"/>
                                         </connections>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_Create_Account_Artist_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lHr-nu-HKT">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_Create_Account_Artist_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lHr-nu-HKT">
                                         <rect key="frame" x="104" y="80" width="208" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="hEF-nJ-Sh2"/>
@@ -316,7 +316,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWQ-dj-bnF">
-                                        <rect key="frame" x="200.5" y="564" width="15" height="14"/>
+                                        <rect key="frame" x="201" y="564" width="15" height="14"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -385,11 +385,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="background" destination="vc9-nz-QBS" id="hGE-h1-cAm"/>
                         <outlet property="bottomConstraint" destination="kHa-tg-cXa" id="hnO-kg-bYy"/>
                         <outlet property="bottomLogoConstraint" destination="527-QW-g7l" id="ob7-H9-Iy7"/>
                         <outlet property="buttonsHeightConstraint" destination="Cw3-Wl-z1M" id="OKz-Nh-BYa"/>
                         <outlet property="connectWithFacebookButton" destination="TrQ-np-MyE" id="qUB-vf-ttw"/>
                         <outlet property="emailTextField" destination="z1f-Zh-O41" id="dUw-iu-Eub"/>
+                        <outlet property="logo" destination="lHr-nu-HKT" id="w1g-Mt-AS2"/>
                         <outlet property="passwordTextField" destination="7rT-af-VrV" id="ndp-RC-nml"/>
                         <outlet property="radioButtonHeightConstraint" destination="Sny-g3-PN3" id="TR2-8v-5Gv"/>
                         <outlet property="refferedByTextField" destination="VLh-HR-mAY" id="E2l-3w-zIP"/>
@@ -527,7 +529,7 @@
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_Create_Account_Parlor_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Of6-oz-1ay">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_Create_Account_Parlor_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Of6-oz-1ay">
                                         <rect key="frame" x="103" y="80" width="208" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="Pmu-Pu-xYc"/>
@@ -545,7 +547,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPe-ZR-hDl">
-                                        <rect key="frame" x="200.5" y="530" width="15" height="14"/>
+                                        <rect key="frame" x="201" y="530" width="15" height="14"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -607,9 +609,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="background" destination="gGw-Yc-2s7" id="uEG-N6-gUO"/>
                         <outlet property="buttonsHeightConstraint" destination="VLU-hN-cgl" id="Ume-Pe-m4Y"/>
                         <outlet property="connectWithFacebookButton" destination="RVp-hu-BTe" id="dI9-Pa-jX7"/>
                         <outlet property="emailTextField" destination="Wda-60-6ny" id="v5W-BP-ym5"/>
+                        <outlet property="logo" destination="Of6-oz-1ay" id="EES-DH-Qpi"/>
                         <outlet property="parlorNameTextField" destination="diz-vI-e44" id="r51-ya-9TV"/>
                         <outlet property="passwordTextField" destination="oZ0-k0-7QU" id="amy-Dt-Xdj"/>
                         <outlet property="radioButtonHeight" destination="Mrk-rm-OLa" id="aBN-9Q-ZKs"/>
@@ -643,7 +647,7 @@
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">By checking the box, accessing, or using the Find Me Ink app or www.findmeink.com (all “FMI”), you agree to the following terms and conditions (the “Agreement”):
+                                        <string key="content">By checking the box, accessing, or using the Find Me Ink app or www.findmeink.com (all “FMI”), you agree to the following terms and conditions (the “Agreement”):
 
 A. User Conduct
 1. You will comply with all applicable laws when using FMI.
@@ -684,7 +688,7 @@ H. Miscellaneous
 
 App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporation dba Find Me Ink (FMI), except as stated. Individual images and any trademarks are the property of their respective owners. Find Me Ink, Every Tattoo Tells a Story, I'd Tat That, and the FMI tattoo machine logo are trademarks of TTI. 
 
-</mutableString>
+</string>
                                         <attributes>
                                             <color key="NSColor" red="0.25882352939999997" green="0.25490196079999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="10" name="OpenSans"/>
@@ -835,7 +839,7 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_Create_Account_Customer_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lKH-Il-wW7">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_Create_Account_Customer_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lKH-Il-wW7">
                                         <rect key="frame" x="70" y="80" width="275" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="lKH-Il-wW7" secondAttribute="height" multiplier="10:4" id="Fh2-MX-NEK"/>
@@ -894,7 +898,7 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDK-Gy-QKe">
-                                        <rect key="frame" x="200.5" y="554" width="15" height="14"/>
+                                        <rect key="frame" x="201" y="554" width="15" height="14"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -964,11 +968,13 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="background" destination="Dw1-KX-yoT" id="C3m-Te-LMV"/>
                         <outlet property="buttonsHeightConstraint" destination="9Ck-Pn-5VR" id="14U-y8-MBJ"/>
                         <outlet property="cityTextField" destination="ehv-ue-VJU" id="YGO-Ek-9pt"/>
                         <outlet property="connectWithFacebookButton" destination="lg9-bv-yRx" id="j0O-b5-HFI"/>
                         <outlet property="customerNameTextField" destination="1Jv-N4-uWV" id="dz2-fL-6It"/>
                         <outlet property="emailTextField" destination="01H-uX-T1b" id="CzZ-Py-PTT"/>
+                        <outlet property="logo" destination="lKH-Il-wW7" id="rgW-M3-cNY"/>
                         <outlet property="passwordTextField" destination="nXk-0o-ccl" id="zzY-RO-eAV"/>
                         <outlet property="radioButtonHeight" destination="LMf-i8-3Dc" id="Ey2-eA-QYl"/>
                         <outlet property="scrollView" destination="JJn-bo-Ku0" id="12R-q3-hLs"/>
@@ -1115,8 +1121,9 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                             <outletCollection property="gestureRecognizers" destination="L2b-tb-9X0" appends="YES" id="VvE-Yl-Ytc"/>
                                         </connections>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="FMI_Home_Screen_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="3jw-7H-AFQ">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="FMI_Home_Screen_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="3jw-7H-AFQ">
                                         <rect key="frame" x="88" y="80" width="239" height="239"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="3jw-7H-AFQ" secondAttribute="height" multiplier="1:1" id="5tX-hw-2ep"/>
                                         </constraints>
@@ -1215,7 +1222,9 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="background" destination="fty-Wt-n3y" id="YLL-aN-7tB"/>
                         <outlet property="heightButtonsConstraints" destination="h6l-gn-FuW" id="tWg-xi-LiW"/>
+                        <outlet property="logo" destination="3jw-7H-AFQ" id="sXH-6b-JHY"/>
                         <outlet property="password" destination="bgU-XE-sLx" id="SDz-Fz-VL6"/>
                         <outlet property="scrollView" destination="nQW-Bb-Nqw" id="gzj-79-Xmd"/>
                         <outlet property="userName" destination="XVf-u9-E6H" id="wCZ-KP-0oV"/>
@@ -1300,8 +1309,8 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
         <image name="FMI_Home_Screen_Logo" width="1336" height="1356"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Vsc-Up-DaS"/>
-        <segue reference="hmd-aR-wtY"/>
         <segue reference="3ad-Yp-nLb"/>
+        <segue reference="Bem-UL-mZz"/>
+        <segue reference="x5t-ve-460"/>
     </inferredMetricsTieBreakers>
 </document>
