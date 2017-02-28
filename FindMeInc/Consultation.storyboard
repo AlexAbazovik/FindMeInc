@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--TATTOO CONSULTATION-->
         <scene sceneID="XFM-gP-4Ji">
             <objects>
-                <viewController id="tFc-zT-CSj" sceneMemberID="viewController">
+                <viewController title="TATTOO CONSULTATION" id="tFc-zT-CSj" customClass="TattooConsultationViewController" customModule="FindMeInc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DFX-1n-6bt"/>
                         <viewControllerLayoutGuide type="bottom" id="ig5-51-f4f"/>
@@ -22,10 +22,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Pu-M2-vgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="267"/>
+            <point key="canvasLocation" x="294" y="277"/>
         </scene>
     </scenes>
 </document>
