@@ -22,7 +22,7 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
         }
         
         //MARK: Add refresher on the collection view
-        refresher.addTarget(self, action: #selector(sendRequestToRetrieveListPhoto), for: .valueChanged)
+        refresher.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         collectionView.addSubview(refresher)
         
         //MARK: Start main activity indicator
@@ -58,6 +58,8 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
         0 - event stamp
         1 - user stamp
         2 - parlor stamp
+        3 - guest
+        4 - convention
      */
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -86,6 +88,8 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
                 cell.stamp.image = #imageLiteral(resourceName: "FMI_All_Flower_Icon")
             case 2:
                 cell.stamp.image = #imageLiteral(resourceName: "FMI_All_Parlor_Icon")
+            case 4:
+                cell.stamp.image = #imageLiteral(resourceName: "FMI_All_Ivent_Icon")
             default: break
             }
             return cell
@@ -110,7 +114,7 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
         if indexPath.row != (Data.sharedInfo.dataCollectionForNewsFeed?.count)!{
             
             // Specific cell size for one with event content type
-            if (Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int == 0{
+            if (Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int == 0||(Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int == 4{
                 size = CGSize(width: collectionView.frame.width, height: 200.0)
                 if(UIScreen.main.bounds.size.height == 736){
                     size = CGSize(width: collectionView.frame.width, height: 240)
@@ -154,6 +158,11 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
         }) { (error) in
             print(error)
         }
+    }
+    
+    //Refresh data in newsfeed
+    func refreshData(){
+        sendRequestToRetrieveListPhoto()
     }
     
     //MARK: Send data to Tatto details view controller

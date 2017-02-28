@@ -81,6 +81,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBAction func loginButtonTap( _ sender: UIButton){
         MySession.sharedInfo.loginUser(emailAddress: userName.text!, password: password.text!, onSuccess: { (response) in
             if response.object(forKey: "status") as! Int == 200{
+                UserDefaults.standard.set((response.value(forKey: "data") as! NSDictionary).value(forKey: "id"), forKey: "userID")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 self.present(storyboard.instantiateViewController(withIdentifier: "MainNavigationScene"), animated: true, completion: nil)
             }else{

@@ -20,7 +20,7 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     
     //MARK: Var for sent to Chat view controller
     var photoID: Int?
-    var userType: Int = 1
+    var userType: Int?
     
     //MARK: View life cilce
     override func viewDidLoad() {
@@ -38,13 +38,20 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     
     //MARK: Load data on the view from the server
     func loadData(){
-        MySession.sharedInfo.getTattooDetails(photoID: (Data.sharedInfo.dataCollectionForNewsFeed![indexPathItemInNewsFeed!] as! NSDictionary).value(forKey: "id") as! Int, userType: (Data.sharedInfo.dataCollectionForNewsFeed![indexPathItemInNewsFeed!] as! NSDictionary).value(forKey: "code") as! Int, onSuccess: { (photoDescription) in
-            print(photoDescription)
+        self.photoID = (Data.sharedInfo.dataCollectionForNewsFeed![indexPathItemInNewsFeed!] as! NSDictionary).value(forKey: "id") as? Int
+        self.userType = (Data.sharedInfo.dataCollectionForNewsFeed![indexPathItemInNewsFeed!] as! NSDictionary).value(forKey: "code") as? Int
+        
+        MySession.sharedInfo.getTattooDetails(photoID: photoID!, userType: userType!, onSuccess: { (photoDescription) in
             self.userName.title = photoDescription.value(forKey: "username") as! String?
             let url = URL.init(string: (Data.sharedInfo.dataCollectionForNewsFeed?[self.indexPathItemInNewsFeed!] as! NSDictionary).value(forKey: "url") as! String)
             UIView.transition(with: self.photo, duration: 0.5, options: self.photoTransitionsOptions, animations: {
                 self.photo.kf.setImage(with: url)
             }, completion: nil)
+            //______________________________________________________
+            print(UserDefaults.standard.value(forKey: "userID"))
+            print(photoDescription)
+            print(photoDescription.value(forKey: "is_like") as! Bool)
+            //______________________________________________________
             self.likeButoon.isSelected = photoDescription.value(forKey: "is_like") as! Bool
             self.likesCount.text = photoDescription.value(forKey: "likes") as? String
             self.chatCount.text = photoDescription.value(forKey: "comments") as? String
@@ -52,9 +59,6 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
             self.tagsCollection = photoDescription.value(forKey: "tags") as? [String]
             self.tagsCollectionView.reloadData()
             
-            self.photoID = photoDescription.value(forKey: "user_id") as! Int?
-            //TO DO: Get user type from server
-            //self.userType = photoDescription.value(forKey: "user_type") as! Int?
         }) { (error) in
             print(error)
         }
@@ -65,8 +69,10 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     @IBAction func like(_ sender: UIButton){
         if sender.isSelected{
             likesCount.text = String(Int(likesCount.text!)! - 1)
+            MySession.sharedInfo.photoLike(photoID: photoID!, userID: UserDefaults.standard.value(forKey: "userID") as! Int, like: false)
         }else{
             likesCount.text = String(Int(likesCount.text!)! + 1)
+                        MySession.sharedInfo.photoLike(photoID: photoID!, userID: UserDefaults.standard.value(forKey: "userID") as! Int, like: true)
         }
         sender.isSelected = !sender.isSelected
     }
