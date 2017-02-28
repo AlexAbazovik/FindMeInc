@@ -59,6 +59,7 @@ class HomeViewController: UIViewController {
                         print(response as! NSDictionary)
                         MySession.sharedInfo.loginUser(emailAddress: (response as! NSDictionary).value(forKey: "email") as! String, password: "Facebook", onSuccess: { (response) in
                             if response.object(forKey: "status") as! Int == 200{
+                                UserDefaults.standard.set((response.value(forKey: "data") as! NSDictionary).value(forKey: "id"), forKey: "userID")
                                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                                 self.present(storyboard.instantiateViewController(withIdentifier: "MainNavigationScene"), animated: true, completion: nil)
                             }else{

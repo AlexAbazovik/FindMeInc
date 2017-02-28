@@ -165,4 +165,39 @@ class MySession {
             }
         }
     }
+    
+    //MARK: Like or dislike photo
+    func photoLike(photoID: Int, userID: Int, like: Bool){
+        let params: Parameters = [
+            "photo_id" : photoID,
+            "user_id" : userID,
+            "like": like
+        ]
+        Alamofire.request("\(serverURL)api/photolike", method: .post, parameters: params).validate(statusCode: 200..<300).responseJSON{
+            (response) in
+            if response.result.error != nil{
+                print(response.result.error!)
+            }
+        }
+    }
+    
+    //MARK: Get comments to photo in photo description
+    func getComents(photoID: Int, onSuccess success:@escaping (_ response: NSDictionary) -> Void, onFailure failure: @escaping(_ error: Error) -> Void){
+        let params: Parameters = [
+            "photo_id" : photoID
+        ]
+        Alamofire.request("\(serverURL)api/photocomments", method: .post, parameters: params).validate(statusCode: 200..<300).responseJSON { (response) in
+            switch response.result{
+            case .success:
+                success((response.result.value as! NSDictionary).value(forKey: "data") as! NSDictionary)
+            case .failure(let error):
+                failure(error)
+            }
+        }
+    }
+    
+    //MARK: Get user info for own page
+    func getUserInfo( userID: Int, onSuccess success: @escaping (_ response: NSDictionary) -> Void, onFailure failure: @escaping (_ error:Error) -> Void){
+        
+    }
 }

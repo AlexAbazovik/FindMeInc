@@ -86,7 +86,7 @@ class CreateAccountParlorViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: Hide keyboard by tap
-    @IBAction func hideKeyboardByTap(_ sender: Any) {
+    func hideKeyboardByTap(_ sender: Any) {
         self.view.endEditing(true)
     }
     
