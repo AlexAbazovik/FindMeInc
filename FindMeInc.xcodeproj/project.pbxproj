@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D462F951E65A8F9008DA0AA /* TattooConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D462F941E65A8F8008DA0AA /* TattooConsultationViewController.swift */; };
+		3D462F971E65B8F0008DA0AA /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D462F961E65B8F0008DA0AA /* RangeSlider.swift */; };
+		3D462F991E66C1D0008DA0AA /* AddConsultationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D462F981E66C1D0008DA0AA /* AddConsultationCollectionViewCell.swift */; };
 		3DA8138E1E604E7200CE0FE4 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8138D1E604E7200CE0FE4 /* CalendarTableViewCell.swift */; };
 		3DF5FDDA1E644A290038626A /* AddConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF5FDD91E644A290038626A /* AddConsultationViewController.swift */; };
 		63098D3A1E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D391E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift */; };
@@ -85,6 +88,9 @@
 
 /* Begin PBXFileReference section */
 		2F74B559F345F4522F56EE20 /* Pods_FindMeInc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindMeInc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D462F941E65A8F8008DA0AA /* TattooConsultationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TattooConsultationViewController.swift; sourceTree = "<group>"; };
+		3D462F961E65B8F0008DA0AA /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
+		3D462F981E66C1D0008DA0AA /* AddConsultationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddConsultationCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DA8138D1E604E7200CE0FE4 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		3DF5FDD91E644A290038626A /* AddConsultationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddConsultationViewController.swift; sourceTree = "<group>"; };
 		63098D391E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistAttendingTableViewCell.swift; sourceTree = "<group>"; };
@@ -188,6 +194,15 @@
 				BB234CEFF22A38D9F00E36DA /* Pods-FindMeInc.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3D462F9A1E66C1DE008DA0AA /* Consultation */ = {
+			isa = PBXGroup;
+			children = (
+				3D462F941E65A8F8008DA0AA /* TattooConsultationViewController.swift */,
+				3D462F981E66C1D0008DA0AA /* AddConsultationCollectionViewCell.swift */,
+			);
+			name = Consultation;
 			sourceTree = "<group>";
 		};
 		63098D3D1E51B02C00924B3D /* Add tags */ = {
@@ -320,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				635B61401E43104B009F780C /* CustomRadioButton.swift */,
+				3D462F961E65B8F0008DA0AA /* RangeSlider.swift */,
 			);
 			name = CustomUIElements;
 			sourceTree = "<group>";
@@ -373,6 +389,7 @@
 				3DF5FDD91E644A290038626A /* AddConsultationViewController.swift */,
 				63F2CD091E4C755600E14727 /* EventsViewController.swift */,
 				63098D3B1E4E015500924B3D /* UploadImageViewController.swift */,
+				3D462F9A1E66C1DE008DA0AA /* Consultation */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -606,6 +623,7 @@
 				635B613B1E422B1A009F780C /* CreateAccountArtistViewController.swift in Sources */,
 				635B61041E41D65C009F780C /* FindMeInc.xcdatamodeld in Sources */,
 				63F2CCF61E4B19FC00E14727 /* PopularInAreaViewController.swift in Sources */,
+				3D462F991E66C1D0008DA0AA /* AddConsultationCollectionViewCell.swift in Sources */,
 				63098D471E51C7F900924B3D /* TagsCollectionViewCell.swift in Sources */,
 				635B60FE1E41D65C009F780C /* ViewController.swift in Sources */,
 				635B60FC1E41D65C009F780C /* AppDelegate.swift in Sources */,
@@ -623,6 +641,8 @@
 				634B2F5F1E640E3A008A31AC /* CommentsViewController.swift in Sources */,
 				63098D3C1E4E015500924B3D /* UploadImageViewController.swift in Sources */,
 				63F2CD031E4B7AC500E14727 /* InboxViewController.swift in Sources */,
+				3D462F971E65B8F0008DA0AA /* RangeSlider.swift in Sources */,
+				3D462F951E65A8F9008DA0AA /* TattooConsultationViewController.swift in Sources */,
 				63098D4C1E52114200924B3D /* SubscribeTableViewCell.swift in Sources */,
 				3DA8138E1E604E7200CE0FE4 /* CalendarTableViewCell.swift in Sources */,
 				63F2CCFE1E4B575300E14727 /* CustomAlertViewController.swift in Sources */,
