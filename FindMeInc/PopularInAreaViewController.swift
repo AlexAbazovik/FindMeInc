@@ -13,6 +13,9 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
     var dataPassed = [String]()
     let refresher = UIRefreshControl()
     
+    var selectedItemType: Int?
+    var selectedItemID: Int?
+    
     //MARK: View controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +66,8 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
      */
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        let type = (Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int
+        let urlString = (Data.sharedInfo.dataCollectionForNewsFeed![indexPath.row] as! NSDictionary).value(forKey: "url") as! String
         //If cell the last cell in this collection show cell with ActivityIndicator
         
         if indexPath.row == (Data.sharedInfo.dataCollectionForNewsFeed?.count)!{
@@ -75,13 +80,16 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
             var cell: PopularInYourAreaCollectionViewCell
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! PopularInYourAreaCollectionViewCell
             cell.mainImage.image = nil
-            let url = URL.init(string: (Data.sharedInfo.dataCollectionForNewsFeed![indexPath.row] as! NSDictionary).value(forKey: "url") as! String)
+            
+            
+
+            let url = URL.init(string: (urlString))
             
             //MARK: Download photo and caching
             cell.mainImage.kf.setImage(with: url)
             
             //MARK: Add different stamp on iamge depending on type of content
-            switch (Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int{
+            switch type {
             case 0:
                 cell.stamp.image = #imageLiteral(resourceName: "FMI_All_Ivent_Icon")
             case 1:
@@ -130,6 +138,18 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
         return size
     }
     
+    //MARK: Collection view delegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let type = (Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int
+        selectedItemType = type
+        selectedItemID = (Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "id") as? Int
+        if type == 0 || type == 4 {
+            self.performSegue(withIdentifier: "segueToEventsDetail", sender: self)
+        }else {
+            self.performSegue(withIdentifier: "segueToTattoDetail", sender: self)
+        }
+    }
+    
     //MARK: Show view for choose filter options
     @IBAction func optionsButtonTap(_ sender: UIBarButtonItem){
         alertView.isHidden = false
@@ -167,9 +187,13 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
     
     //MARK: Send data to Tatto details view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToTattoDetail"{
+        if segue.identifier == "segueToTattoDetail" {
         let recipeViewController = segue.destination as! TattooDetailsViewController
         recipeViewController.indexPathItemInNewsFeed = (self.collectionView.indexPathsForSelectedItems?[0].row)!
+        }else if segue.identifier == "segueToEventsDetail" {
+            let recipeViewController = segue.destination as! EventDetailsViewController
+            recipeViewController.typeOfEvent = selectedItemType!
+            recipeViewController.eventID = selectedItemID
         }
     }
 }

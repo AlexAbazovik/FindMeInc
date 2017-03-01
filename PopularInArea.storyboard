@@ -57,6 +57,14 @@
             </objects>
             <point key="canvasLocation" x="3510" y="-1745"/>
         </scene>
+        <!--eventsDetail-->
+        <scene sceneID="d2a-4i-yCg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Events" referencedIdentifier="eventsDetail" id="h77-6J-f0p" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iqr-Qb-sLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3887" y="-1746"/>
+        </scene>
         <!--P O P U L A R  I N  Y O U R  A R E A-->
         <scene sceneID="IiS-Q0-t0k">
             <objects>
@@ -109,7 +117,6 @@
                                         <connections>
                                             <outlet property="mainImage" destination="4B0-Fy-wki" id="riq-jG-TBO"/>
                                             <outlet property="stamp" destination="dlI-Kl-lkE" id="gga-oq-Vkb"/>
-                                            <segue destination="98I-Id-g4P" kind="show" identifier="segueToTattoDetail" id="PCN-DX-a2B"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="lastCollectionViewCell" id="Oru-Jg-JLG">
@@ -188,6 +195,8 @@
                         <outlet property="alertView" destination="eiM-Kq-E0G" id="0Hk-0U-8B4"/>
                         <outlet property="collectionView" destination="8aa-md-nrd" id="AvT-lF-i71"/>
                         <outlet property="mainActivityIndicator" destination="lln-MT-swk" id="Gb3-P2-qTY"/>
+                        <segue destination="98I-Id-g4P" kind="show" identifier="segueToTattoDetail" id="szg-LX-eST"/>
+                        <segue destination="h77-6J-f0p" kind="show" identifier="segueToEventsDetail" id="Rbn-D5-fEf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8sg-qb-I2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
