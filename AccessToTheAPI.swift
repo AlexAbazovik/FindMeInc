@@ -196,8 +196,40 @@ class MySession {
         }
     }
     
+    //MARK: Get event details
+    func getEventDetail(type: Int, eventID: Int, onSuccess success: @escaping (_ response: NSDictionary) -> Void, onFailure failure: @escaping(_ error: Error) -> Void){
+        let params: Parameters = [
+            "code" : type,
+            "eventId": eventID
+        ]
+        Alamofire.request("\(serverURL)api/eventinfo", method: .post, parameters: params).validate(statusCode: 200..<300).responseJSON { (response) in
+            switch response.result{
+            case .success:
+                success((response.result.value as! NSDictionary).value(forKey: "data") as! NSDictionary)
+            case .failure(let error):
+                failure(error)
+            }
+        }
+    }
+    
+    //Attend or no to event
+    func eventAttending(type: Int, eventID: Int, isAttend: Bool) {
+        let params: Parameters = [
+            "code" : type,
+            "eventId" : eventID,
+            "isAttend" : isAttend
+        ]
+        Alamofire.request("\(serverURL)api/seteventattend", method: .post, parameters: params).validate(statusCode: 200..<300).responseJSON { (response) in
+            if response.result.error != nil{
+                print(response.result.error!)
+            }
+        }
+    }
+    
     //MARK: Get user info for own page
     func getUserInfo( userID: Int, onSuccess success: @escaping (_ response: NSDictionary) -> Void, onFailure failure: @escaping (_ error:Error) -> Void){
         
     }
+    
+    
 }
