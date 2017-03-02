@@ -451,7 +451,7 @@
             </objects>
             <point key="canvasLocation" x="3747.826086956522" y="176.08695652173915"/>
         </scene>
-        <!--E V E N T S-->
+        <!--EVENTS-->
         <scene sceneID="yP4-Nq-XSr">
             <objects>
                 <viewController id="K9U-jY-Arr" customClass="EventsViewController" customModule="FindMeInc" customModuleProvider="target" sceneMemberID="viewController">
@@ -782,7 +782,7 @@
                             <constraint firstAttribute="trailing" secondItem="fiq-kj-0w1" secondAttribute="trailing" constant="15" id="wx9-M3-hmF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="E V E N T S" id="Mf6-e1-hkD">
+                    <navigationItem key="navigationItem" title="EVENTS" id="Mf6-e1-hkD">
                         <barButtonItem key="backBarButtonItem" title="Back" id="wyt-8R-ZXN"/>
                         <barButtonItem key="rightBarButtonItem" image="FMI_ALL_Preferences_Icon" id="zsm-qr-DO4"/>
                     </navigationItem>
@@ -800,7 +800,7 @@
             </objects>
             <point key="canvasLocation" x="3752.8000000000002" y="877.51124437781118"/>
         </scene>
-        <!--E V E N T  D E T A I L S-->
+        <!--EVENT DETAILS-->
         <scene sceneID="U9o-wW-ixG">
             <objects>
                 <viewController storyboardIdentifier="eventsDetail" id="mvJ-aQ-h3p" customClass="EventDetailsViewController" customModule="FindMeInc" customModuleProvider="target" sceneMemberID="viewController">
@@ -983,7 +983,7 @@
                             <constraint firstItem="WSp-j7-rpg" firstAttribute="top" secondItem="JSU-rO-DfL" secondAttribute="bottom" constant="15" id="z8d-x0-E4t"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="E V E N T  D E T A I L S" id="aKK-3F-KPh">
+                    <navigationItem key="navigationItem" title="EVENT DETAILS" id="aKK-3F-KPh">
                         <barButtonItem key="rightBarButtonItem" image="FMI_ALL_Preferences_Icon" id="AIG-8E-ahx"/>
                     </navigationItem>
                     <connections>
@@ -1028,7 +1028,7 @@
             </objects>
             <point key="canvasLocation" x="6124" y="208"/>
         </scene>
-        <!--U P L O A D   I M A G E-->
+        <!--UPLOAD IMAGE-->
         <scene sceneID="I79-6U-gSk">
             <objects>
                 <viewController id="tbE-9A-mda" customClass="UploadImageViewController" customModule="FindMeInc" customModuleProvider="target" sceneMemberID="viewController">
@@ -1068,7 +1068,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zxv-LA-Jgl">
-                                <rect key="frame" x="87" y="418" width="146.5" height="31"/>
+                                <rect key="frame" x="87.5" y="418" width="146.5" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD WATERMARK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KU-Ky-L9A">
                                         <rect key="frame" x="0.0" y="0.0" width="87.5" height="31"/>
@@ -1152,7 +1152,7 @@
                             <constraint firstItem="Wfd-hh-4pJ" firstAttribute="top" secondItem="Zxv-LA-Jgl" secondAttribute="bottom" constant="10" id="t4c-a1-Wwo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="U P L O A D   I M A G E" id="kSc-XX-Cf7">
+                    <navigationItem key="navigationItem" title="UPLOAD IMAGE" id="kSc-XX-Cf7">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ihz-UI-niu"/>
                     </navigationItem>
                     <connections>
@@ -1170,7 +1170,7 @@
             </objects>
             <point key="canvasLocation" x="4566" y="1636"/>
         </scene>
-        <!--A D D  T A G S-->
+        <!--ADD TAGS-->
         <scene sceneID="zBg-ig-OZ2">
             <objects>
                 <viewController id="edh-S8-Dn3" customClass="AddTagsViewController" customModule="FindMeInc" customModuleProvider="target" sceneMemberID="viewController">
@@ -1360,7 +1360,7 @@
                             <constraint firstItem="gob-h7-Gqd" firstAttribute="top" secondItem="Asx-Ih-iBq" secondAttribute="bottom" constant="15" id="mnZ-K7-EKs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="A D D  T A G S" id="Qq3-y8-MJn">
+                    <navigationItem key="navigationItem" title="ADD TAGS" id="Qq3-y8-MJn">
                         <barButtonItem key="rightBarButtonItem" image="FMI_ALL_Preferences_Icon" id="Xl0-l0-nCh"/>
                     </navigationItem>
                     <connections>

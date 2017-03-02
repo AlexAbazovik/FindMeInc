@@ -43,7 +43,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONNECT WITH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XH2-G2-Kdz">
-                                <rect key="frame" x="149" y="340" width="77.5" height="14"/>
+                                <rect key="frame" x="150" y="340" width="76" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="2Yk-E2-Q3Z"/>
                                 </constraints>
@@ -98,7 +98,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7Q-G4-rqZ">
-                                <rect key="frame" x="137" y="600" width="102" height="44"/>
+                                <rect key="frame" x="136.5" y="600" width="103" height="44"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="CONTINUE AS GUEST">
@@ -316,7 +316,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWQ-dj-bnF">
-                                        <rect key="frame" x="201" y="564" width="15" height="14"/>
+                                        <rect key="frame" x="200.5" y="564" width="15" height="14"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -547,7 +547,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPe-ZR-hDl">
-                                        <rect key="frame" x="201" y="530" width="15" height="14"/>
+                                        <rect key="frame" x="200.5" y="530" width="15" height="14"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -643,7 +643,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhj-gn-K6g">
-                                <rect key="frame" x="16" y="20" width="343" height="577.5"/>
+                                <rect key="frame" x="16" y="20" width="343" height="579.5"/>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -699,7 +699,7 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xYx-3L-O5B">
-                                <rect key="frame" x="172.5" y="621.5" width="30" height="25.5"/>
+                                <rect key="frame" x="172.5" y="623.5" width="30" height="23.5"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Close">
@@ -898,7 +898,7 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDK-Gy-QKe">
-                                        <rect key="frame" x="201" y="554" width="15" height="14"/>
+                                        <rect key="frame" x="200.5" y="554" width="15" height="14"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1031,7 +1031,7 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                 </connections>
                             </imageView>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7X3-ka-RMP">
-                                <rect key="frame" x="52" y="308.5" width="270" height="120"/>
+                                <rect key="frame" x="52" y="305" width="270" height="120"/>
                                 <state key="normal" backgroundImage="FMI_Create_Account_Options_An_Artist"/>
                                 <connections>
                                     <action selector="selectOfUserType:" destination="2cA-dq-L99" eventType="touchUpInside" id="UAP-0d-Fi9"/>
@@ -1039,13 +1039,13 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A R E  Y O U . . ." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5n-US-hp5">
-                                <rect key="frame" x="126" y="110" width="124" height="23.5"/>
+                                <rect key="frame" x="125" y="110" width="126" height="20"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epc-Rx-ZLA">
-                                <rect key="frame" x="53" y="173.5" width="270" height="120"/>
+                                <rect key="frame" x="53" y="170" width="270" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="epc-Rx-ZLA" secondAttribute="height" multiplier="9:4" id="Gkh-7Y-4jl"/>
                                     <constraint firstAttribute="height" constant="120" id="Q1B-cW-TWn"/>
@@ -1057,7 +1057,7 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5s-va-tvs">
-                                <rect key="frame" x="52" y="443.5" width="270" height="120"/>
+                                <rect key="frame" x="52" y="440" width="270" height="120"/>
                                 <state key="normal" backgroundImage="FMI_Create_Account_Options_A_Parlor"/>
                                 <connections>
                                     <action selector="selectOfUserType:" destination="2cA-dq-L99" eventType="touchUpInside" id="cYt-Rr-UNv"/>
@@ -1129,13 +1129,13 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSX-Si-TQy">
-                                        <rect key="frame" x="188.5" y="359" width="38.5" height="14"/>
+                                        <rect key="frame" x="189.5" y="359" width="36.5" height="12"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="U S E R N A M E / E M A I L" textAlignment="center" minimumFontSize="17" background="FMI_All_Text_Field_Border" translatesAutoresizingMaskIntoConstraints="NO" id="XVf-u9-E6H">
-                                        <rect key="frame" x="68" y="393" width="280" height="44"/>
+                                        <rect key="frame" x="68" y="391" width="280" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="XVf-u9-E6H" secondAttribute="height" multiplier="70:11" id="ZYZ-7T-pv3"/>
                                             <constraint firstAttribute="height" constant="44" id="h6l-gn-FuW"/>
@@ -1150,7 +1150,7 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="P A S S W O R D" textAlignment="center" minimumFontSize="17" background="FMI_All_Text_Field_Border" translatesAutoresizingMaskIntoConstraints="NO" id="bgU-XE-sLx">
-                                        <rect key="frame" x="68" y="457" width="280" height="44"/>
+                                        <rect key="frame" x="68" y="455" width="280" height="44"/>
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -1161,7 +1161,7 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rea-ts-mhx">
-                                        <rect key="frame" x="68" y="521" width="280" height="44"/>
+                                        <rect key="frame" x="68" y="519" width="280" height="44"/>
                                         <color key="backgroundColor" red="0.8980392157" green="0.61568627450000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="S I G N  I N">
                                             <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1171,7 +1171,7 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ha4-Lj-VNr">
-                                        <rect key="frame" x="158" y="619" width="99" height="44"/>
+                                        <rect key="frame" x="157.5" y="617" width="100" height="44"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="FORGOT PASSWORD">
@@ -1310,7 +1310,7 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3ad-Yp-nLb"/>
-        <segue reference="Bem-UL-mZz"/>
+        <segue reference="DH2-WU-he4"/>
         <segue reference="x5t-ve-460"/>
     </inferredMetricsTieBreakers>
 </document>

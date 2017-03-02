@@ -26,8 +26,9 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         //If the user has already granted permissions an application
         if FBSDKAccessToken.current() != nil{
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            self.present(storyboard.instantiateViewController(withIdentifier: "MainNavigationScene"), animated: true, completion: nil)
+            sendRequestToFacebook()
+            /*let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            self.present(storyboard.instantiateViewController(withIdentifier: "MainNavigationScene"), animated: true, completion: nil)*/
         }
     }
 
@@ -38,6 +39,31 @@ class HomeViewController: UIViewController {
     //MARK: Use application as a guest
     @IBAction func useApplicationUsAGuestTap(_ sender: UIButton) {
         UserDefaults.standard.set(sender.tag, forKey: "userType")
+    }
+    
+    //MARK: Send request to facebook
+    func sendRequestToFacebook(){
+        let FBRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":" email"])
+        FBRequest?.start(completionHandler: { (_, response, error) in
+            if error != nil{
+                print(error)
+            }else{
+                print(response as! NSDictionary)
+                MySession.sharedInfo.loginUser(emailAddress: (response as! NSDictionary).value(forKey: "email") as! String, password: "Facebook", onSuccess: { (response) in
+                    if response.object(forKey: "status") as! Int == 200{
+                        UserDefaults.standard.set((response.value(forKey: "data") as! NSDictionary).value(forKey: "id"), forKey: "userID")
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        self.present(storyboard.instantiateViewController(withIdentifier: "MainNavigationScene"), animated: true, completion: nil)
+                    }else{
+                        let alert = UIAlertController(title: "Warning", message: response.value(forKey: "message") as? String, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }, onFailure: { (error) in
+                    print(error)
+                })
+            }
+        })
     }
     
     //MARK: Login with facebook
@@ -51,27 +77,7 @@ class HomeViewController: UIViewController {
             }else if (result?.isCancelled)!{
                 print("Cancelled")
             }else{
-                let FBRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":" email"])
-                FBRequest?.start(completionHandler: { (_, response, error) in
-                    if error != nil{
-                        print(error)
-                    }else{
-                        print(response as! NSDictionary)
-                        MySession.sharedInfo.loginUser(emailAddress: (response as! NSDictionary).value(forKey: "email") as! String, password: "Facebook", onSuccess: { (response) in
-                            if response.object(forKey: "status") as! Int == 200{
-                                UserDefaults.standard.set((response.value(forKey: "data") as! NSDictionary).value(forKey: "id"), forKey: "userID")
-                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                self.present(storyboard.instantiateViewController(withIdentifier: "MainNavigationScene"), animated: true, completion: nil)
-                            }else{
-                                let alert = UIAlertController(title: "Warning", message: response.value(forKey: "message") as? String, preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                                self.present(alert, animated: true, completion: nil)
-                            }
-                        }, onFailure: { (error) in
-                            print(error)
-                        })
-                    }
-                })
+                self.sendRequestToFacebook()
             }
         }
     }
