@@ -1610,7 +1610,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TattooDetailsViewController.swift"
-            timestampString = "510069826.916771"
+            timestampString = "510147609.720167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -1626,7 +1626,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TattooDetailsViewController.swift"
-            timestampString = "510069826.916771"
+            timestampString = "510147609.720167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -1642,7 +1642,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TattooDetailsViewController.swift"
-            timestampString = "510069826.916771"
+            timestampString = "510147609.720167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
@@ -1706,7 +1706,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TattooDetailsViewController.swift"
-            timestampString = "510069826.916771"
+            timestampString = "510147609.720167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
@@ -1722,7 +1722,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TattooDetailsViewController.swift"
-            timestampString = "510069826.916771"
+            timestampString = "510147609.720167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
@@ -1770,7 +1770,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TattooDetailsViewController.swift"
-            timestampString = "510069826.916771"
+            timestampString = "510147609.720167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
@@ -1818,7 +1818,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TattooDetailsViewController.swift"
-            timestampString = "509885568.663456"
+            timestampString = "510147609.720167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -1866,7 +1866,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TattooDetailsViewController.swift"
-            timestampString = "509887310.087561"
+            timestampString = "510147609.720167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -1882,7 +1882,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TattooDetailsViewController.swift"
-            timestampString = "509887310.087561"
+            timestampString = "510147609.720167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -1962,7 +1962,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TattooDetailsViewController.swift"
-            timestampString = "510069826.916771"
+            timestampString = "510147609.720167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -2042,11 +2042,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindMeInc/CommentsViewController.swift"
-            timestampString = "509967441.42991"
+            timestampString = "510157590.033964"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2058,11 +2058,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindMeInc/CommentsViewController.swift"
-            timestampString = "509967274.299748"
+            timestampString = "510157590.033964"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "keyboardWillShow(notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2074,11 +2074,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindMeInc/CommentsViewController.swift"
-            timestampString = "509967274.299748"
+            timestampString = "510157590.033964"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "hideKeyboardByTap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2090,11 +2090,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindMeInc/CommentsViewController.swift"
-            timestampString = "509967274.299748"
+            timestampString = "510157590.033964"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "hideKeyboardByTap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2145,54 +2145,6 @@
                   offsetFromSymbolStart = "36">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FindMeInc/HomeViewController.swift"
-            timestampString = "509906207.353765"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "loginWithFacebook(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FindMeInc/HomeViewController.swift"
-            timestampString = "509906207.353765"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "loginWithFacebook(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FindMeInc/HomeViewController.swift"
-            timestampString = "509906207.353765"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "loginWithFacebook(_:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2361,7 +2313,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TattooDetailsViewController.swift"
-            timestampString = "510069826.916771"
+            timestampString = "510147609.720167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -2377,7 +2329,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TattooDetailsViewController.swift"
-            timestampString = "510069826.916771"
+            timestampString = "510147609.720167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -2393,7 +2345,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TattooDetailsViewController.swift"
-            timestampString = "510069826.916771"
+            timestampString = "510147609.720167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -2585,11 +2537,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindMeInc/EventDetailsViewController.swift"
-            timestampString = "510144978.508708"
+            timestampString = "510146053.059424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "EventDetailsViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -2633,11 +2585,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindMeInc/EventDetailsViewController.swift"
-            timestampString = "510144978.508708"
+            timestampString = "510146053.059424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "attendingSwitchOn(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2649,11 +2601,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindMeInc/EventDetailsViewController.swift"
-            timestampString = "510144978.508708"
+            timestampString = "510146053.059424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "attendingSwitchOn(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2681,11 +2633,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindMeInc/CommentsViewController.swift"
-            timestampString = "510069819.407974"
+            timestampString = "510157590.033964"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2703,6 +2655,22 @@
             startingLineNumber = "25"
             endingLineNumber = "25"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FindMeInc/HomeViewController.swift"
+            timestampString = "510155191.728141"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "loginWithFacebook(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

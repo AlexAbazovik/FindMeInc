@@ -33,6 +33,7 @@
 		634B2F621E641575008A31AC /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F611E641575008A31AC /* CommentsTableViewCell.swift */; };
 		634B2F661E659639008A31AC /* Consultation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634B2F651E659639008A31AC /* Consultation.storyboard */; };
 		634B2F681E67EF2C008A31AC /* BookingConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F671E67EF2C008A31AC /* BookingConsultationViewController.swift */; };
+		634B2F6A1E686A8B008A31AC /* UploadToServerThroughAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F691E686A8B008A31AC /* UploadToServerThroughAPI.swift */; };
 		635B60FC1E41D65C009F780C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FB1E41D65C009F780C /* AppDelegate.swift */; };
 		635B60FE1E41D65C009F780C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FD1E41D65C009F780C /* ViewController.swift */; };
 		635B61011E41D65C009F780C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635B60FF1E41D65C009F780C /* Main.storyboard */; };
@@ -115,6 +116,7 @@
 		634B2F611E641575008A31AC /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		634B2F651E659639008A31AC /* Consultation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Consultation.storyboard; sourceTree = "<group>"; };
 		634B2F671E67EF2C008A31AC /* BookingConsultationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingConsultationViewController.swift; sourceTree = "<group>"; };
+		634B2F691E686A8B008A31AC /* UploadToServerThroughAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadToServerThroughAPI.swift; sourceTree = "<group>"; };
 		635B60F81E41D65C009F780C /* FindMeInc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMeInc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635B60FB1E41D65C009F780C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635B60FD1E41D65C009F780C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				634B2F651E659639008A31AC /* Consultation.storyboard */,
 				635B61051E41D65C009F780C /* Assets.xcassets */,
 				63098D431E51C31100924B3D /* AccessToTheAPI.swift */,
+				634B2F691E686A8B008A31AC /* UploadToServerThroughAPI.swift */,
 				636A02D61E56D0A6009188D4 /* Geolocation.swift */,
 				636A02D81E570396009188D4 /* Data.swift */,
 				635B61071E41D65C009F780C /* LaunchScreen.storyboard */,
@@ -648,6 +651,7 @@
 				3D462F951E65A8F9008DA0AA /* TattooConsultationViewController.swift in Sources */,
 				63098D4C1E52114200924B3D /* SubscribeTableViewCell.swift in Sources */,
 				3DA8138E1E604E7200CE0FE4 /* CalendarTableViewCell.swift in Sources */,
+				634B2F6A1E686A8B008A31AC /* UploadToServerThroughAPI.swift in Sources */,
 				63F2CCFE1E4B575300E14727 /* CustomAlertViewController.swift in Sources */,
 				63F2CCF81E4B2EBF00E14727 /* PopularInYourAreaCollectionViewCell.swift in Sources */,
 				635B61371E4228B3009F780C /* Helpers.swift in Sources */,

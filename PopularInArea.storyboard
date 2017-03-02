@@ -65,7 +65,7 @@
             </objects>
             <point key="canvasLocation" x="3887" y="-1746"/>
         </scene>
-        <!--P O P U L A R  I N  Y O U R  A R E A-->
+        <!--POPULAR IN YOUR AREA-->
         <scene sceneID="IiS-Q0-t0k">
             <objects>
                 <viewController storyboardIdentifier="popularInArea" id="rUu-sN-muP" customClass="PopularInAreaViewController" customModule="FindMeInc" customModuleProvider="target" sceneMemberID="viewController">
@@ -183,8 +183,8 @@
                             <constraint firstItem="eiM-Kq-E0G" firstAttribute="leading" secondItem="MGr-Mf-dlG" secondAttribute="leading" id="oy2-t2-FVW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="P O P U L A R  I N  Y O U R  A R E A" id="R0A-mK-jzP">
-                        <barButtonItem key="backBarButtonItem" title="BACK" id="GZB-JV-I4m"/>
+                    <navigationItem key="navigationItem" title="POPULAR IN YOUR AREA" id="R0A-mK-jzP">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="GZB-JV-I4m"/>
                         <barButtonItem key="rightBarButtonItem" image="FMI_All_Options_Icon" id="dF4-jI-yOa">
                             <connections>
                                 <action selector="optionsButtonTap:" destination="rUu-sN-muP" id="CjR-9A-HbY"/>

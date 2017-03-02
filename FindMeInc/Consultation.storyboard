@@ -56,14 +56,14 @@
                                         <state key="normal" image="FMI_All_Horizontal_Row"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can upload up to 5 images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2e-B1-GS7">
-                                        <rect key="frame" x="0.0" y="237.5" width="343" height="20"/>
+                                        <rect key="frame" x="0.0" y="238" width="343" height="20"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="8"/>
                                         <color key="textColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdX-ih-4s2">
-                                        <rect key="frame" x="111.5" y="202" width="120" height="28"/>
+                                        <rect key="frame" x="112" y="202" width="120" height="28"/>
                                         <color key="backgroundColor" red="0.25490196079999999" green="0.25882352939999997" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="DKO-DL-n7o"/>
@@ -189,7 +189,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRW-Kt-Bu1">
-                                <rect key="frame" x="118.5" y="629" width="138" height="30"/>
+                                <rect key="frame" x="119" y="629" width="138" height="30"/>
                                 <color key="backgroundColor" red="0.8980392157" green="0.61568627450000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="li4-Wz-S12"/>
@@ -224,7 +224,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beq-iC-njc">
-                                <rect key="frame" x="32" y="556" width="40.5" height="19.5"/>
+                                <rect key="frame" x="32" y="556" width="41" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19.5" id="gqg-FN-fsC"/>
                                     <constraint firstAttribute="width" constant="40.5" id="rrz-jD-UAB"/>

@@ -14,33 +14,8 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     var photoID: Int?
     var userType: Int?
     
-    
     var viewCenter: CGPoint?
     
-    //Temp data
-    /*
-    var chatInfo: NSDictionary = [
-        "isLiked" : true,
-        "likesCount" : "12",
-        "chatCount" : "3",
-        "info" : [
-            [
-                "commentatorID" : "1",
-                "avatarURL" : "https://s-media-cache-ak0.pinimg.com/originals/d4/e7/aa/d4e7aa60eb6a782d5d25340debaa1ad6.jpg",
-                "name" : "STEVE BRULE",
-                "message" : "Hi! It's a good idea! Nice!",
-                "date" : "3 Jan 2017 @ 10:41"
-            ],
-            [
-                "commentatorID" : "2",
-                "avatarURL" : "https://s-media-cache-ak0.pinimg.com/originals/d4/e7/aa/d4e7aa60eb6a782d5d25340debaa1ad6.jpg",
-                "name" : "TIM HEIDECKER",
-                "message" : "GREAT!",
-                "date" : "3 Jan 2017 @ 10:51"
-            ]
-        ]
-    ]
-    */
     //MARK: View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,7 +100,6 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
             return 0
         }
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let elementInfo = (Data.sharedInfo.chatInfo?.value(forKey: "info") as! NSArray)[indexPath.row] as! NSDictionary
