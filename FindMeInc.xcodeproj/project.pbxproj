@@ -10,6 +10,7 @@
 		3D462F951E65A8F9008DA0AA /* TattooConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D462F941E65A8F8008DA0AA /* TattooConsultationViewController.swift */; };
 		3D462F971E65B8F0008DA0AA /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D462F961E65B8F0008DA0AA /* RangeSlider.swift */; };
 		3D462F991E66C1D0008DA0AA /* AddConsultationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D462F981E66C1D0008DA0AA /* AddConsultationCollectionViewCell.swift */; };
+		3D462FDB1E67FA84008DA0AA /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D462FDA1E67FA84008DA0AA /* UserPageViewController.swift */; };
 		3DA8138E1E604E7200CE0FE4 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8138D1E604E7200CE0FE4 /* CalendarTableViewCell.swift */; };
 		3DF5FDDA1E644A290038626A /* AddConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF5FDD91E644A290038626A /* AddConsultationViewController.swift */; };
 		63098D3A1E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63098D391E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift */; };
@@ -50,7 +51,6 @@
 		635B61461E446914009F780C /* CreateAccountParlorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B61451E446914009F780C /* CreateAccountParlorViewController.swift */; };
 		635E48AD1E44891C006072EC /* CreateAccountCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635E48AC1E44891C006072EC /* CreateAccountCustomerViewController.swift */; };
 		635E48AF1E44C043006072EC /* CreateAccountOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635E48AE1E44C043006072EC /* CreateAccountOptionsViewController.swift */; };
-		635E48B21E46375A006072EC /* ArtistPageUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635E48B11E46375A006072EC /* ArtistPageUserViewController.swift */; };
 		636A02D71E56D0A6009188D4 /* Geolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A02D61E56D0A6009188D4 /* Geolocation.swift */; };
 		636A02D91E570396009188D4 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636A02D81E570396009188D4 /* Data.swift */; };
 		636A02DD1E58483D009188D4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636A02DC1E58483C009188D4 /* FBSDKCoreKit.framework */; };
@@ -91,6 +91,7 @@
 		3D462F941E65A8F8008DA0AA /* TattooConsultationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TattooConsultationViewController.swift; sourceTree = "<group>"; };
 		3D462F961E65B8F0008DA0AA /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		3D462F981E66C1D0008DA0AA /* AddConsultationCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddConsultationCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D462FDA1E67FA84008DA0AA /* UserPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
 		3DA8138D1E604E7200CE0FE4 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		3DF5FDD91E644A290038626A /* AddConsultationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddConsultationViewController.swift; sourceTree = "<group>"; };
 		63098D391E4DDDF200924B3D /* ArtistAttendingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistAttendingTableViewCell.swift; sourceTree = "<group>"; };
@@ -137,7 +138,6 @@
 		635B61451E446914009F780C /* CreateAccountParlorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountParlorViewController.swift; sourceTree = "<group>"; };
 		635E48AC1E44891C006072EC /* CreateAccountCustomerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountCustomerViewController.swift; sourceTree = "<group>"; };
 		635E48AE1E44C043006072EC /* CreateAccountOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountOptionsViewController.swift; sourceTree = "<group>"; };
-		635E48B11E46375A006072EC /* ArtistPageUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistPageUserViewController.swift; sourceTree = "<group>"; };
 		636A02D61E56D0A6009188D4 /* Geolocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Geolocation.swift; path = ../Geolocation.swift; sourceTree = "<group>"; };
 		636A02D81E570396009188D4 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		636A02DC1E58483C009188D4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -345,7 +345,7 @@
 			children = (
 				634B2F601E64154D008A31AC /* Comments */,
 				634B2F571E5F263C008A31AC /* TattooDetailsViewController.swift */,
-				635E48B11E46375A006072EC /* ArtistPageUserViewController.swift */,
+				3D462FDA1E67FA84008DA0AA /* UserPageViewController.swift */,
 			);
 			name = "User page";
 			sourceTree = "<group>";
@@ -633,7 +633,6 @@
 				63098D4A1E52112300924B3D /* SubscribeViewController.swift in Sources */,
 				635B61441E445BC8009F780C /* SignInViewController.swift in Sources */,
 				63F2CD0A1E4C755600E14727 /* EventsViewController.swift in Sources */,
-				635E48B21E46375A006072EC /* ArtistPageUserViewController.swift in Sources */,
 				635B61411E43104B009F780C /* CustomRadioButton.swift in Sources */,
 				63F2CCFC1E4B528B00E14727 /* CustomAlertTableViewCell.swift in Sources */,
 				634B2F621E641575008A31AC /* CommentsTableViewCell.swift in Sources */,
@@ -652,6 +651,7 @@
 				63098D501E52F20800924B3D /* MainTabBarController.swift in Sources */,
 				63F2CD0D1E4DA65B00E14727 /* EventDetailsViewController.swift in Sources */,
 				635B613E1E4244FF009F780C /* HomeViewController.swift in Sources */,
+				3D462FDB1E67FA84008DA0AA /* UserPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
