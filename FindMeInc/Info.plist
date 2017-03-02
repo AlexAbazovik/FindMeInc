@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Application needs access to your library.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -46,6 +44,8 @@
 	<string>For further work the application need to confirm access to the current geolocation.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>For further work the application need to confirm access to the current geolocation.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Application needs access to your library.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>OpenSans-Regular.ttf</string>

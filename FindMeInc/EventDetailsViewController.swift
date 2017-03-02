@@ -1,16 +1,12 @@
 import UIKit
 
-class EventDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource{
+class EventDetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     //MAARK: Outlets
-    @IBOutlet weak var chatTableView: UITableView!
-    @IBOutlet weak var artistAttendingTableView: UITableView!
     @IBOutlet weak var photosCollectionView: UICollectionView!
     
-    @IBOutlet var filteringButtonsCollection: [UIButton]!
-    
-    @IBOutlet weak var upperLayerTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var upperLayerView: UIView!
+    @IBOutlet weak var upperLayerScrollView: UIScrollView!
+    @IBOutlet weak var attendingStack: UIStackView!
     
     @IBOutlet weak var mainPhoto: UIImageView!
     @IBOutlet weak var eventName: UILabel!
@@ -22,69 +18,39 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
     
     var typeOfEvent: Int?
     var eventID: Int?
+    var plusBarButtonItem = UIBarButtonItem()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        chatTableView.delegate = self
-        chatTableView.dataSource = self
         
         photosCollectionView.dataSource = self
         photosCollectionView.delegate = self
         
-        artistAttendingTableView.delegate = self
-        artistAttendingTableView.dataSource = self
-        
         sendRequest()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        upperLayerScrollViewShow()
+    }
+    
     //MARK: Subviews life cycle
     //MARK: Show or hide upper view
     override func viewDidLayoutSubviews() {
+        
+        //TO DO: Add definse of height navigation bar
         if areYouAttending.isOn {
-            upperLayerTopConstraint.constant = 0
+            upperLayerScrollViewShow()
+            plusBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "FMI_Inbox_Plus"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(transitionToConsultation))
+            plusBarButtonItem.tag = 1
+            self.navigationItem.rightBarButtonItem = plusBarButtonItem
         } else {
-            upperLayerView.center = CGPoint(x: upperLayerView.center.x, y: UIScreen.main.bounds.size.height * 2)
+            upperLayerScrollViewHide()
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    @IBAction func filteringButtonTap(_ sender: UIButton){
-        for i in filteringButtonsCollection{
-            i.isSelected = false
-        }
-        sender.isSelected = true
-        chatTableView.isHidden = true
-        if sender.tag == 0{
-            chatTableView.isHidden = false
-            artistAttendingTableView.isHidden = true
-        }else{
-            chatTableView.isHidden = true
-            artistAttendingTableView.isHidden = false
-        }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableView == chatTableView{
-            let cell = chatTableView.dequeueReusableCell(withIdentifier: "inboxTableViewCell", for: indexPath) as! InboxTableViewCell
-            return cell
-        }else{
-            let cell = artistAttendingTableView.dequeueReusableCell(withIdentifier: "artistAttendingTableViewCell", for: indexPath) as! ArtistAttendingTableViewCell
-            return cell
-        }
-    }
-    
     
     //MARK: Photo collection view delegate
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -131,11 +97,38 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
         photosCollectionView.reloadData()
     }
     
+    //MARK: UpperLayerScrollView hide
+    func upperLayerScrollViewHide(){
+        upperLayerScrollView.contentOffset = CGPoint(x: 0.0, y: UIScreen.main.bounds.height)
+        attendingStack.isHidden = false
+    }
+    
+    //MARK: UpperLayerScrollView show part
+    func upperLayerScrollViewPartShow(){
+        upperLayerScrollView.contentOffset = CGPoint(x: 0.0, y: -UIScreen.main.bounds.height * 0.8)
+        attendingStack.isHidden = false
+    }
+    
+    //MARK: UpperLayerScrollView show
+    func upperLayerScrollViewShow(){
+        upperLayerScrollView.contentOffset = CGPoint(x: 0.0, y: -65.0)
+        attendingStack.isHidden = true
+    }
+    
+    //MARK: Move view by swipe
+    @IBAction func swipeUp(_ sender: Any) {
+        upperLayerScrollViewShow()
+    }
+    @IBAction func swipeDown(_ sender: Any) {
+        upperLayerScrollViewPartShow()
+    }
+    
+    
     //MARK: attendingSwitchOn
     @IBAction func attendingSwitchOn(_ sender:UISwitch) {
         if sender.isOn {
             attendingCount.text = String(Int(attendingCount.text!)! + 1)
-            showBottomView()
+            showAlert()
             MySession.sharedInfo.eventAttending(type: typeOfEvent!, eventID: eventID!, isAttend: true)
         } else {
             attendingCount.text = String(Int(attendingCount.text!)! - 1)
@@ -143,20 +136,22 @@ class EventDetailsViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
-    
-    func showBottomView() {
-        //MARK: Create alert
+    //MARK: Create alert
+    func showAlert() {
         let eventName = Data.sharedInfo.iventDescription?.value(forKey: "name")
         let alert = UIAlertController(title: "You are checked in to \(eventName!)", message: "Tell your friends your going or create tattoo consultation for this Convention to find an artist before you attend!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Back to event detail", style: .default, handler: { (action) in
-            self.areYouAttending.isOn = false
-            self.attendingSwitchOn(self.areYouAttending)
+            self.upperLayerScrollViewPartShow()
         }))
         alert.addAction(UIAlertAction(title: "Create tattoo consultation", style: .default, handler: { (action) in
-            print("Create")
+            self.transitionToConsultation()
         }))
         self.present(alert, animated: true, completion: nil)
     }
     
-    
+    //MARK: Transition to consultation
+    func transitionToConsultation(){
+        self.performSegue(withIdentifier: "segueFromEventDetailToConsultation", sender: nil)
+    }
 }
+

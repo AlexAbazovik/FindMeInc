@@ -143,6 +143,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     func loadData(){
         MySession.sharedInfo.getComents(photoID: photoID!, onSuccess: { (response) in
             Data.sharedInfo.chatInfo = response
+            print(Data.sharedInfo.chatInfo?.value(forKey: "isLiked") as! Bool)
             self.likeButton.isSelected = Data.sharedInfo.chatInfo?.value(forKey: "isLiked") as! Bool
             self.likesCount.text = Data.sharedInfo.chatInfo?.value(forKey: "likesCount") as? String
             self.chatCount.text = Data.sharedInfo.chatInfo?.value(forKey: "chatCount") as? String
@@ -155,11 +156,27 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     //MARK: Like button tap
     //TO DO: Send button state on the server
     @IBAction func like(_ sender: UIButton){
+        MySession.sharedInfo.photoLike(photoID: photoID!, userID: UserDefaults.standard.value(forKey: "userID") as! Int)
         if sender.isSelected{
             likesCount.text = String(Int(likesCount.text!)! - 1)
         }else{
             likesCount.text = String(Int(likesCount.text!)! + 1)
         }
         sender.isSelected = !sender.isSelected
+    }
+    
+    //MARK: Sent comment to the server
+    @IBAction func sendComment(){
+        if inputTextView.text != "" {
+            MySession.sharedInfo.sendComment(photoID: photoID!, message: inputTextView.text, onSuccess: { (response) in
+                if response {
+                    self.loadData()
+                }
+            })
+        } else {
+            let alert = UIAlertController(title: "Warning", message: "You need write some message.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }

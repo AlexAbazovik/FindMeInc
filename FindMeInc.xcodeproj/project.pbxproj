@@ -31,6 +31,7 @@
 		634B2F5F1E640E3A008A31AC /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F5E1E640E3A008A31AC /* CommentsViewController.swift */; };
 		634B2F621E641575008A31AC /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F611E641575008A31AC /* CommentsTableViewCell.swift */; };
 		634B2F661E659639008A31AC /* Consultation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634B2F651E659639008A31AC /* Consultation.storyboard */; };
+		634B2F681E67EF2C008A31AC /* BookingConsultationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634B2F671E67EF2C008A31AC /* BookingConsultationViewController.swift */; };
 		635B60FC1E41D65C009F780C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FB1E41D65C009F780C /* AppDelegate.swift */; };
 		635B60FE1E41D65C009F780C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635B60FD1E41D65C009F780C /* ViewController.swift */; };
 		635B61011E41D65C009F780C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635B60FF1E41D65C009F780C /* Main.storyboard */; };
@@ -112,6 +113,7 @@
 		634B2F5E1E640E3A008A31AC /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		634B2F611E641575008A31AC /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		634B2F651E659639008A31AC /* Consultation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Consultation.storyboard; sourceTree = "<group>"; };
+		634B2F671E67EF2C008A31AC /* BookingConsultationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingConsultationViewController.swift; sourceTree = "<group>"; };
 		635B60F81E41D65C009F780C /* FindMeInc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMeInc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635B60FB1E41D65C009F780C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635B60FD1E41D65C009F780C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				3D462F941E65A8F8008DA0AA /* TattooConsultationViewController.swift */,
 				3D462F981E66C1D0008DA0AA /* AddConsultationCollectionViewCell.swift */,
+				634B2F671E67EF2C008A31AC /* BookingConsultationViewController.swift */,
 			);
 			name = Consultation;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				635E48B21E46375A006072EC /* ArtistPageUserViewController.swift in Sources */,
 				635B61411E43104B009F780C /* CustomRadioButton.swift in Sources */,
 				63F2CCFC1E4B528B00E14727 /* CustomAlertTableViewCell.swift in Sources */,
+				634B2F681E67EF2C008A31AC /* BookingConsultationViewController.swift in Sources */,
 				634B2F621E641575008A31AC /* CommentsTableViewCell.swift in Sources */,
 				635E48AF1E44C043006072EC /* CreateAccountOptionsViewController.swift in Sources */,
 				634B2F5F1E640E3A008A31AC /* CommentsViewController.swift in Sources */,

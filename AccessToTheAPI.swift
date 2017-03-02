@@ -167,11 +167,11 @@ class MySession {
     }
     
     //MARK: Like or dislike photo
-    func photoLike(photoID: Int, userID: Int, like: Bool){
+    func photoLike(photoID: Int, userID: Int, like: Bool? = true){
         let params: Parameters = [
             "photo_id" : photoID,
             "user_id" : userID,
-            "like": like
+            "like": like!
         ]
         Alamofire.request("\(serverURL)api/photolike", method: .post, parameters: params).validate(statusCode: 200..<300).responseJSON{
             (response) in
@@ -186,12 +186,28 @@ class MySession {
         let params: Parameters = [
             "photo_id" : photoID
         ]
-        Alamofire.request("\(serverURL)api/photocomments", method: .post, parameters: params).validate(statusCode: 200..<300).responseJSON { (response) in
+        Alamofire.request("\(serverURL)api/photocomments", method: .get, parameters: params).validate(statusCode: 200..<300).responseJSON { (response) in
             switch response.result{
             case .success:
                 success((response.result.value as! NSDictionary).value(forKey: "data") as! NSDictionary)
             case .failure(let error):
                 failure(error)
+            }
+        }
+    }
+    
+    //MARK: Send comment
+    func sendComment(photoID: Int, message: String, onSuccess success: @escaping (_ response: Bool) -> Void) {
+        let params: Parameters = [
+            "photo_id" : photoID,
+            "message" : message
+        ]
+        Alamofire.request("\(serverURL)api/photocomments", method: .post, parameters: params).validate(statusCode: 200..<300).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                success(true)
+            case .failure(let error):
+                print(response.result.error!)
             }
         }
     }
@@ -230,6 +246,5 @@ class MySession {
     func getUserInfo( userID: Int, onSuccess success: @escaping (_ response: NSDictionary) -> Void, onFailure failure: @escaping (_ error:Error) -> Void){
         
     }
-    
     
 }
