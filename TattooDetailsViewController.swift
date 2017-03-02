@@ -47,11 +47,6 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
             UIView.transition(with: self.photo, duration: 0.5, options: self.photoTransitionsOptions, animations: {
                 self.photo.kf.setImage(with: url)
             }, completion: nil)
-            //______________________________________________________
-            print(UserDefaults.standard.value(forKey: "userID"))
-            print(photoDescription)
-            print(photoDescription.value(forKey: "is_like") as! Bool)
-            //______________________________________________________
             self.likeButoon.isSelected = photoDescription.value(forKey: "is_like") as! Bool
             self.likesCount.text = photoDescription.value(forKey: "likes") as? String
             self.chatCount.text = photoDescription.value(forKey: "comments") as? String

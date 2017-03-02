@@ -66,8 +66,7 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
      */
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let type = (Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int
-        let urlString = (Data.sharedInfo.dataCollectionForNewsFeed![indexPath.row] as! NSDictionary).value(forKey: "url") as! String
+
         //If cell the last cell in this collection show cell with ActivityIndicator
         
         if indexPath.row == (Data.sharedInfo.dataCollectionForNewsFeed?.count)!{
@@ -77,6 +76,8 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
             (lastCell.viewWithTag(1) as! UIActivityIndicatorView).startAnimating()
             return lastCell
         }else{
+            let type = (Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int
+            let urlString = (Data.sharedInfo.dataCollectionForNewsFeed![indexPath.row] as! NSDictionary).value(forKey: "url") as! String
             var cell: PopularInYourAreaCollectionViewCell
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! PopularInYourAreaCollectionViewCell
             cell.mainImage.image = nil
@@ -182,7 +183,7 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
     
     //Refresh data in newsfeed
     func refreshData(){
-        sendRequestToRetrieveListPhoto()
+        sendRequestToRetrieveListPhoto(dataPassed, false)
     }
     
     //MARK: Send data to Tatto details view controller
