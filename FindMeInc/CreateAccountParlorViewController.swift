@@ -94,10 +94,11 @@ class CreateAccountParlorViewController: UIViewController, UITextFieldDelegate {
     @IBAction func registerNewParlor(_ sender: UIButton){
         if termsAndConditionsButton.isSelected {
             MySession.sharedInfo.registerNewUser(userName: parlorNameTextField.text!, emailAddress: emailTextField.text!, password: passwordTextField.text!, onSuccess: { (response) in
-                if response.object(forKey: "status") as! Int == 200{
+                if response.object(forKey: "status") as! Int == 200 {
+                    UserDefaults.standard.set((response.value(forKey: "data") as! NSDictionary).value(forKey: "id"), forKey: "userID")
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     self.present(storyboard.instantiateViewController(withIdentifier: "MainNavigationScene"), animated: true, completion: nil)
-                }else{
+                } else {
                     let alert = UIAlertController(title: "Warning", message: response.value(forKey: "message") as? String, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
@@ -105,7 +106,7 @@ class CreateAccountParlorViewController: UIViewController, UITextFieldDelegate {
             }) { (error) in
                 print(error)
             }
-        }else{
+        } else {
             let alert = UIAlertController(title: "Warning.", message: "You need check terms and conditions button!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -117,7 +118,7 @@ class CreateAccountParlorViewController: UIViewController, UITextFieldDelegate {
         if termsAndConditionsButton.isSelected{
             let loginManager = FBSDKLoginManager()
             loginManager.logIn(withReadPermissions: ["email","public_profile"], from: self) { (result, error) in
-                if error != nil{
+                if error != nil {
                     let alert = UIAlertController(title: "Warning.", message: (error as! String), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
@@ -126,9 +127,9 @@ class CreateAccountParlorViewController: UIViewController, UITextFieldDelegate {
                 }else{
                     let FBRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"name, email"])
                     FBRequest?.start(completionHandler: { (_ , response, error) in
-                        if error != nil{
+                        if error != nil {
                             print(error as! String)
-                        }else{
+                        } else {
                             MySession.sharedInfo.registerNewUser(userName: (response as! NSDictionary).value(forKey: "email") as! String, emailAddress: (response as! NSDictionary).value(forKey: "email") as! String, password: "Facebook", registerWithFacebook: true, onSuccess: { (response) in
                                 if response.object(forKey: "status") as! Int == 200{
                                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -145,7 +146,7 @@ class CreateAccountParlorViewController: UIViewController, UITextFieldDelegate {
                     })
                 }
             }
-        }else{
+        } else {
             let alert = UIAlertController(title: "Warning.", message: "You need check terms and conditions button!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)

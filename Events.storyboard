@@ -918,7 +918,7 @@
                                 </connections>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Mes-z4-Rse">
-                                <rect key="frame" x="50" y="292" width="221" height="50"/>
+                                <rect key="frame" x="49.5" y="292" width="221" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="i11-ge-wNB">
                                         <rect key="frame" x="0.0" y="8.5" width="152" height="33.5"/>
@@ -984,6 +984,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="EVENT DETAILS" id="aKK-3F-KPh">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="lxQ-0C-2eK"/>
                         <barButtonItem key="rightBarButtonItem" image="FMI_ALL_Preferences_Icon" id="AIG-8E-ahx"/>
                     </navigationItem>
                     <connections>
@@ -1376,6 +1377,10 @@
         <scene sceneID="55b-nH-iWO">
             <objects>
                 <viewController id="JjK-gp-bV0" customClass="BookingConsultationViewController" customModule="FindMeInc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fxa-6X-1cY"/>
+                        <viewControllerLayoutGuide type="bottom" id="hQ4-qv-tkZ"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="p0z-7A-loM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

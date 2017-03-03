@@ -8,13 +8,16 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     @IBOutlet weak var mainTabBar: UITabBar!
     
+    
+    //MARK: - UIVIewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.items?.first?.image = #imageLiteral(resourceName: "FMI_All_Star_Icon")
+        self.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,15 +25,12 @@ class MainTabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        let userPage = (viewController as! UINavigationController).viewControllers[0]
+        if userPage is UserPageViewController {
+            (userPage as! UserPageViewController).userIDFromSegue = UserDefaults.standard.object(forKey: "userID") as! Int!
+        }
+        return true
     }
-    */
 
 }

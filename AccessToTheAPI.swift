@@ -3,6 +3,8 @@ import Alamofire
 import AlamofireImage
 
 class MySession {
+    
+    //MARK: - Initialization
     class var sharedInfo: MySession {
         struct My {
             static var instance = MySession()
@@ -12,6 +14,7 @@ class MySession {
     
     var token: String!
     let serverURL: String = "http://104.238.176.105/"
+    //let serverURL: String = "http://45.76.38.75/"
     
     // MARK: Start session
     //Not used yet
@@ -150,12 +153,10 @@ class MySession {
     }
     
     //MARK: Get tattoo details
-    func getTattooDetails(photoID: Int, userType: Int, onSuccess sucsess: @escaping (_ response: NSDictionary) -> Void, onFailure failure: @escaping (_ error: Error) -> Void){
+    func getTattooDetails(photoID: Int, onSuccess sucsess: @escaping (_ response: NSDictionary) -> Void, onFailure failure: @escaping (_ error: Error) -> Void){
         let parameters: Parameters = [
-            "code" : "\(userType)",
             "id" : "\(photoID)"
         ]
-        print (parameters)
         Alamofire.request("\(serverURL)api/photoinfo", method: .post, parameters: parameters).validate(statusCode: 200..<300).responseJSON { (response) in
             switch response.result{
             case .success:
@@ -243,8 +244,18 @@ class MySession {
     }
     
     //MARK: Get user info for own page
-    func getUserInfo( userID: Int, onSuccess success: @escaping (_ response: NSDictionary) -> Void, onFailure failure: @escaping (_ error:Error) -> Void){
-        
+    func getUserInfo(userID: Int, onSuccess success: @escaping (_ response: NSDictionary) -> Void, onFailure failure: @escaping (_ error:Error) -> Void) {
+        let params: Parameters = [
+            "user_id" : userID
+        ]
+        Alamofire.request("\(serverURL)api/user/getinfo/\(userID)", method: .get, parameters: nil).validate(statusCode: 200..<300).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                success((response.result.value as! NSDictionary).value(forKey: "data") as! NSDictionary)
+            case .failure(let error):
+                failure(error)
+            }
+        }
     }
     
 }

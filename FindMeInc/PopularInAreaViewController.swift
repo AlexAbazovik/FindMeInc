@@ -189,9 +189,9 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
     //MARK: Send data to Tatto details view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToTattoDetail" {
-        let recipeViewController = segue.destination as! TattooDetailsViewController
-        recipeViewController.indexPathItemInNewsFeed = (self.collectionView.indexPathsForSelectedItems?[0].row)!
-        }else if segue.identifier == "segueToEventsDetail" {
+            let recipeViewController = segue.destination as! TattooDetailsViewController
+            recipeViewController.indexPathItemInNewsFeed = (self.collectionView.indexPathsForSelectedItems?[0].row)!
+        } else if segue.identifier == "segueToEventsDetail" {
             let recipeViewController = segue.destination as! EventDetailsViewController
             recipeViewController.typeOfEvent = selectedItemType!
             recipeViewController.eventID = selectedItemID
