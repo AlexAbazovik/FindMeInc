@@ -5,6 +5,9 @@
 //  Created by Alex Vecher on 28.02.17.
 //  Copyright © 2017 Александр. All rights reserved.
 //
+//____________________________________________________
+//TO DO: Combine imagesArray and loadedImages
+//____________________________________________________
 
 import UIKit
 
@@ -15,7 +18,14 @@ class TattooConsultationViewController: UIViewController, UIImagePickerControlle
     
     @IBOutlet weak var budgetSlider: RangeSlider!
     
+    //MARK: Outlets to send
+    @IBOutlet weak var tattooDescription: UITextView!
+    @IBOutlet weak var minBudget: UILabel!
+    @IBOutlet weak var maxBudget: UILabel!
+    
+    
     var imagesArray = [UIImage]()
+    var loadedImages = [Int]()
     
     //MARK: - UIViewController lifecycle
     override func viewDidLoad() {
@@ -58,12 +68,32 @@ class TattooConsultationViewController: UIViewController, UIImagePickerControlle
         }
     }
     
+    //MARK: Save consultation
     @IBAction func actionFindMeInc(_ sender: UIButton) {
+        let parameters = [
+            "description" : tattooDescription.text,
+            "min_budget" : minBudget.text!,
+            "max_budget" : maxBudget.text!,
+            "photos" : loadedImages
+        ] as [String : Any]
         
+        UploadSession.sharedInfo.saveConsultation(parameters: parameters, onSuccess: { (response) in
+            if response != false {
+                let alert = UIAlertController(title: "Great", message: "Your Tattoo Idea Has Been Posted. Artist Will be In Touch!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Back to profile", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "View convention", style: .default, handler: { (action) in
+                    self.performSegue(withIdentifier: "segueToEventsDetail", sender: self)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }) { (error) in
+            print(error)
+        }
     }
     
     @IBAction func actionDeletePhotoButon(_ sender: UIButton) {
         imagesArray.remove(at: sender.tag)
+        loadedImages.remove(at: sender.tag)
         //imagesCollectionView.deleteItems(at: [IndexPath.init(row: sender.tag, section: 0)])
         imagesCollectionView.reloadData()
     }
@@ -92,6 +122,12 @@ class TattooConsultationViewController: UIViewController, UIImagePickerControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         imagesArray.append(chosenImage)
+        //MARK: Send image to the server
+        UploadSession.sharedInfo.uploadPhoto(image: chosenImage, onSuccess: { (response) in
+            self.loadedImages.append(response)
+        }) { (error) in
+            print(error)
+        }
         imagesCollectionView.reloadData()
         //imagesCollectionView.insertItems(at: [IndexPath.init(row: imagesArray.count - 1, section: 0)])
         print(imagesArray.count)
@@ -114,6 +150,7 @@ class TattooConsultationViewController: UIViewController, UIImagePickerControlle
         cell.deleteImageButton.tag = indexPath.row
         return cell
     }
+
     /*
     // MARK: - Navigation
 
