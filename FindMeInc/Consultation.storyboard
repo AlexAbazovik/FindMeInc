@@ -97,15 +97,15 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jmt-WG-PAl">
                                                             <rect key="frame" x="0.0" y="0.0" width="102" height="185"/>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuK-B8-5w3">
-                                                            <rect key="frame" x="82" y="0.0" width="20" height="20"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuK-B8-5w3">
+                                                            <rect key="frame" x="77" y="5" width="20" height="20"/>
+                                                            <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="0.30300192636986301" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="D6K-h1-TLj"/>
                                                                 <constraint firstAttribute="height" constant="20" id="xNH-nt-ZnZ"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                            <state key="normal" title="+">
-                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <state key="normal" image="FMI_All_Delete_Button">
+                                                                <color key="titleColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
                                                                 <action selector="actionDeletePhotoButon:" destination="tFc-zT-CSj" eventType="touchUpInside" id="aKM-Fa-Lna"/>
@@ -118,8 +118,8 @@
                                                     <constraint firstAttribute="trailing" secondItem="jmt-WG-PAl" secondAttribute="trailing" id="NbV-w1-aRV"/>
                                                     <constraint firstItem="jmt-WG-PAl" firstAttribute="leading" secondItem="AQh-CL-9rh" secondAttribute="leading" id="SEm-KF-3Le"/>
                                                     <constraint firstAttribute="bottom" secondItem="jmt-WG-PAl" secondAttribute="bottom" id="awl-kl-CGa"/>
-                                                    <constraint firstItem="BuK-B8-5w3" firstAttribute="top" secondItem="AQh-CL-9rh" secondAttribute="top" id="nAo-NS-wS9"/>
-                                                    <constraint firstAttribute="trailing" secondItem="BuK-B8-5w3" secondAttribute="trailing" id="wCZ-X8-z8n"/>
+                                                    <constraint firstItem="BuK-B8-5w3" firstAttribute="top" secondItem="AQh-CL-9rh" secondAttribute="top" constant="5" id="nAo-NS-wS9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BuK-B8-5w3" secondAttribute="trailing" constant="5" id="wCZ-X8-z8n"/>
                                                 </constraints>
                                                 <size key="customSize" width="102" height="185"/>
                                                 <connections>
@@ -285,6 +285,9 @@
                     <connections>
                         <outlet property="budgetSlider" destination="yeB-dT-U4Q" id="tLG-kJ-wSc"/>
                         <outlet property="imagesCollectionView" destination="4gH-7R-hQ2" id="QMO-LJ-qAH"/>
+                        <outlet property="maxBudget" destination="0Sq-xf-SKa" id="nnT-6L-Er7"/>
+                        <outlet property="minBudget" destination="DKg-OU-pQ0" id="adN-vl-TPR"/>
+                        <outlet property="tattooDescription" destination="7pL-4z-hAc" id="lxd-Lr-FYr"/>
                         <outletCollection property="moneyLabels" destination="DKg-OU-pQ0" collectionClass="NSMutableArray" id="QPK-CZ-09s"/>
                         <outletCollection property="moneyLabels" destination="0Sq-xf-SKa" collectionClass="NSMutableArray" id="gME-xV-FHa"/>
                     </connections>
@@ -300,6 +303,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FMI_All_Delete_Button" width="63" height="63"/>
         <image name="FMI_All_Horizontal_Row" width="2043" height="3"/>
     </resources>
 </document>
