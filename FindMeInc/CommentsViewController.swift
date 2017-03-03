@@ -12,7 +12,6 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //MARK: Data from tatto details view controller
     var photoID: Int?
-    var userType: Int?
     
     var viewCenter: CGPoint?
     
@@ -96,7 +95,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if Data.sharedInfo.chatInfo != nil{
             return (Data.sharedInfo.chatInfo!.value(forKey: "info") as! NSArray).count
-        }else{
+        } else {
             return 0
         }
     }
@@ -121,6 +120,11 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
             self.likeButton.isSelected = Data.sharedInfo.chatInfo?.value(forKey: "isLiked") as! Bool
             self.likesCount.text = Data.sharedInfo.chatInfo?.value(forKey: "likesCount") as? String
             self.chatCount.text = Data.sharedInfo.chatInfo?.value(forKey: "chatCount") as? String
+            
+            self.inputTextView.text = "Write something..."
+            self.inputTextView.textColor = #colorLiteral(red: 0.5764705882, green: 0.5843137255, blue: 0.5960784314, alpha: 1)
+            self.view.endEditing(true)
+            
             self.messageTableView.reloadData()
         }) { (error) in
             print(error)
@@ -131,9 +135,9 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     //TO DO: Send button state on the server
     @IBAction func like(_ sender: UIButton){
         MySession.sharedInfo.photoLike(photoID: photoID!, userID: UserDefaults.standard.value(forKey: "userID") as! Int)
-        if sender.isSelected{
+        if sender.isSelected {
             likesCount.text = String(Int(likesCount.text!)! - 1)
-        }else{
+        } else {
             likesCount.text = String(Int(likesCount.text!)! + 1)
         }
         sender.isSelected = !sender.isSelected

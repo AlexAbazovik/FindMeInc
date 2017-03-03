@@ -1,3 +1,6 @@
+//MARK: - TODO Привязать к user page
+
+
 import UIKit
 
 class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -12,6 +15,8 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     @IBOutlet weak var tagsCollectionView: UICollectionView!
     @IBOutlet weak var savedLabel: UILabel!
     
+    var userID: Int?
+    
     //This variable used for transfer data from alert view controller
     var indexPathItemInNewsFeed : Int?
     
@@ -20,7 +25,6 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     
     //MARK: Var for sent to Chat view controller
     var photoID: Int?
-    var userType: Int?
     
     //MARK: View life cilce
     override func viewDidLoad() {
@@ -32,6 +36,11 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
         loadData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -39,9 +48,9 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     //MARK: Load data on the view from the server
     func loadData(){
         self.photoID = (Data.sharedInfo.dataCollectionForNewsFeed![indexPathItemInNewsFeed!] as! NSDictionary).value(forKey: "id") as? Int
-        self.userType = (Data.sharedInfo.dataCollectionForNewsFeed![indexPathItemInNewsFeed!] as! NSDictionary).value(forKey: "code") as? Int
         
-        MySession.sharedInfo.getTattooDetails(photoID: photoID!, userType: userType!, onSuccess: { (photoDescription) in
+        MySession.sharedInfo.getTattooDetails(photoID: photoID!, onSuccess: { (photoDescription) in
+            self.userID = photoDescription.value(forKey: "user_id") as! Int?
             self.userName.title = photoDescription.value(forKey: "username") as! String?
             let url = URL.init(string: (Data.sharedInfo.dataCollectionForNewsFeed?[self.indexPathItemInNewsFeed!] as! NSDictionary).value(forKey: "url") as! String)
             UIView.transition(with: self.photo, duration: 0.5, options: self.photoTransitionsOptions, animations: {
@@ -102,12 +111,11 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     }
     
     @IBAction func nextPhotoPresent(_ sender: Any) {
-        if indexPathItemInNewsFeed! != (Data.sharedInfo.dataCollectionForNewsFeed?.count)! - 10{
+        if indexPathItemInNewsFeed! != (Data.sharedInfo.dataCollectionForNewsFeed?.count)! - 10 {
             indexPathItemInNewsFeed = indexPathItemInNewsFeed! + 1
                         photoTransitionsOptions = [UIViewAnimationOptions.transitionFlipFromRight]
             loadData()
-        }
-        else{
+        } else {
             MySession.sharedInfo.getImagesList(parameters: nil, more: true, onSucsess: { (success) in
             }, onFailure: { (error) in
                 print(error)
@@ -124,12 +132,12 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     
     //MARK: Save image in library
     //TO DO: Save photo to user page collection
-    @IBAction func savePhotoToLibrary(){
+    @IBAction func savePhotoToLibrary() {
         UIImageWriteToSavedPhotosAlbum(photo.image!, photoSaved(), nil, nil)
     }
     
     //MARK: Show message when photo saved
-    func photoSaved(){
+    func photoSaved() {
         savedLabel.alpha = 1.0
         UIView.animate(withDuration: 1.0, delay: 0.0, animations: {
             self.savedLabel.alpha = 0.0
@@ -138,10 +146,12 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     
     //MARK: Prepare for transition
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueFromTattoDetailsToComments"{
+        if segue.identifier == "segueFromTattoDetailsToComments" {
         let recipeViewContorller = segue.destination as! CommentsViewController
             recipeViewContorller.photoID = photoID
-            recipeViewContorller.userType = userType
-    }
+        } else if segue.identifier == "segueFromTattooDetailToUserPage" {
+            let userPageViewController = segue.destination as! UserPageViewController
+            userPageViewController.userIDFromSegue = userID
+        }
 }
 }

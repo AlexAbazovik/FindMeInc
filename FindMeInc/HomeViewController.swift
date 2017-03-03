@@ -21,6 +21,8 @@ class HomeViewController: UIViewController {
         if(UIScreen.main.bounds.size.height == 736){
             heightButtonConstraints.constant = heightButtonConstraints.constant * 1.2
         }
+        
+        UserDefaults.standard.removeObject(forKey: "userID")
     }
     
     override func viewDidAppear(_ animated: Bool) {
