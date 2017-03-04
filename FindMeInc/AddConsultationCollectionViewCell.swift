@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class AddConsultationCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var deleteImageButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    var progressView: MBProgressHUD!
 }

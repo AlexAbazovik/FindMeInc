@@ -71,14 +71,29 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
     //MARK: Like button tap
     //TO DO: Send button state on the server
     @IBAction func like(_ sender: UIButton){
-        if sender.isSelected{
+        if sender.isSelected {
             likesCount.text = String(Int(likesCount.text!)! - 1)
             MySession.sharedInfo.photoLike(photoID: photoID!, userID: UserDefaults.standard.value(forKey: "userID") as! Int, like: false)
-        }else{
+        } else {
             likesCount.text = String(Int(likesCount.text!)! + 1)
                         MySession.sharedInfo.photoLike(photoID: photoID!, userID: UserDefaults.standard.value(forKey: "userID") as! Int, like: true)
         }
         sender.isSelected = !sender.isSelected
+    }
+    
+    func actionLike(_ sender: UIButton) -> Void {
+        if sender.isSelected {
+            likesCount.text = String(Int(likesCount.text!)! - 1)
+            MySession.sharedInfo.photoLike(photoID: photoID!, userID: UserDefaults.standard.value(forKey: "userID") as! Int, like: false)
+        } else {
+            likesCount.text = String(Int(likesCount.text!)! + 1)
+            MySession.sharedInfo.photoLike(photoID: photoID!, userID: UserDefaults.standard.value(forKey: "userID") as! Int, like: true)
+        }
+        sender.isSelected = !sender.isSelected
+    }
+    
+    @IBAction func actionDoubleTap(_ sender: Any) {
+        actionLike(likeButoon)
     }
     
     //MARK: Tags collection view data source
@@ -150,8 +165,8 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
         let recipeViewContorller = segue.destination as! CommentsViewController
             recipeViewContorller.photoID = photoID
         } else if segue.identifier == "segueFromTattooDetailToUserPage" {
-            let userPageViewController = segue.destination as! UserPageViewController
-            userPageViewController.userIDFromSegue = userID
+            let userPageTableViewController = segue.destination as! UserPageTableViewController
+            userPageTableViewController.userIDFromSegue = userID
         }
 }
 }

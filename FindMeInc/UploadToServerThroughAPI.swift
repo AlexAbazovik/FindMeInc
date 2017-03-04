@@ -12,8 +12,8 @@ class UploadSession {
     
     let serverURL: String = "http://104.238.176.105/"
     
-    //MARK: Apload photo to the server
-    func uploadPhoto(image: UIImage, onSuccess success:@escaping(_ response: Int) -> Void, onFailure failure: @escaping(_ error: Error) -> Void) {
+    //MARK: Upload photo to the server
+    func uploadPhoto(image: UIImage, uploadProgress progress:@escaping(_ response: Double) -> Void, onSuccess success:@escaping(_ response: Int) -> Void, onFailure failure: @escaping(_ error: Error) -> Void) {
         
         let uploadData = UIImagePNGRepresentation(image)
         Alamofire.upload(multipartFormData: { (multipartData) in
@@ -22,8 +22,9 @@ class UploadSession {
             switch result {
             case .success(let upload, _, _):
                 
-                upload.uploadProgress(closure: { (progress) in
-                    print("Upload Progress: \(progress.fractionCompleted)")
+                upload.uploadProgress(closure: { (uploadProgress) in
+                    //print("Upload Progress: \(uploadProgress.fractionCompleted)")
+                    progress(uploadProgress.fractionCompleted)
                 })
                 upload.responseJSON { response in
                     success((response.result.value as! NSDictionary).value(forKey: "data") as! Int)

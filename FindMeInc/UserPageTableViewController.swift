@@ -1,41 +1,40 @@
 //
-//  UserPageViewController.swift
+//  UserPageTableViewController.swift
 //  FindMeInc
 //
-//  Created by Alex Vecher on 02.03.17.
+//  Created by Alex Vecher on 04.03.17.
 //  Copyright © 2017 Александр. All rights reserved.
 //
 
 import UIKit
 
-class UserPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
+class UserPageTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var userIDFromSegue: Int!
     
-    //images
+    let refresher = UIRefreshControl()
+    
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var coverImageView: UIImageView!
-    
-    //user info
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var studios: UILabel!
+    //user info cell
     @IBOutlet var userInfo: [UILabel]!
     @IBOutlet weak var about: UITextView!
+    //user info cell
+    private var userInfoCellHeight: CGFloat = 23.0
+    private var userInfoSelectedCellHeight: CGFloat = 223.0
+    private var isSelected: Bool = false
     
-    //user images
+    //staff cell
+    private var cellHeight: CGFloat = 0.001
+    private var selectedCellHeight: CGFloat = 80
+    private var isParlor: Bool = false
+    
+    //data
     var userImages: [NSDictionary]!
     var squad: [NSDictionary]!
     var followers: [NSDictionary]!
     
-    @IBOutlet weak var infoView: UIView!
-    @IBOutlet weak var moreInfoButton: UIButton!
-    @IBOutlet weak var infoViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var staffCollectionViewHeightConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var staffCollectionView: UICollectionView!
     @IBOutlet weak var userImagesCollectionView: UICollectionView!
-    
-    var segmentedControl: UISegmentedControl!
     
     //MARK: - UIViewController life cycle
     override func viewDidLoad() {
@@ -43,20 +42,24 @@ class UserPageViewController: UIViewController, UICollectionViewDelegate, UIColl
         // Do any additional setup after loading the view.
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.height / 2.0
         
-        infoViewHeightConstraint.constant = 0.0
-        
         userImages = Array()
         squad = Array()
         followers = Array()
-        
+        print(userIDFromSegue)
         //TODO: - TODO
         if (UserDefaults.standard.object(forKey: "userID") as! Int != userIDFromSegue) {
             loadData()
+        } else {
+            self.navigationController?.isNavigationBarHidden = true
         }
+        
+        //MARK: Add refresher on the collection view
+        refresher.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        tableView.addSubview(refresher)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-         //TODO: - TODO
+        //TODO: - TODO
         if (UserDefaults.standard.object(forKey: "userID") as! Int == userIDFromSegue) {
             loadData()
         }
@@ -64,18 +67,20 @@ class UserPageViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
+        if (UserDefaults.standard.object(forKey: "userID") as! Int != userIDFromSegue) {
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()
+            self.navigationController?.navigationBar.isTranslucent = true
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-        self.navigationController?.navigationBar.shadowImage = nil
-        //self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9450980392, green: 0.9450980392, blue: 0.9450980392, alpha: 1)
-        //self.navigationController?.navigationBar.isTranslucent = false
+        if (UserDefaults.standard.object(forKey: "userID") as! Int != userIDFromSegue) {
+            self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+            self.navigationController?.navigationBar.shadowImage = nil
+            self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9450980392, green: 0.9450980392, blue: 0.9450980392, alpha: 1)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,38 +88,57 @@ class UserPageViewController: UIViewController, UICollectionViewDelegate, UIColl
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: - Load user data from server
-    func loadData() -> Void {
-        print(userIDFromSegue)
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    //MARK: - Data
+    func getInfo() -> Void {
         MySession.sharedInfo.getUserInfo(userID: userIDFromSegue, onSuccess: { (dict) in
             print(dict)
             self.avatarImageView.kf.setImage(with: URL.init(string: (dict.value(forKey: "avatar") as? String)!))
             self.coverImageView.kf.setImage(with: URL.init(string: (dict.value(forKey: "cover_photo") as? String)!))
             
-            self.userName.text = dict.value(forKey: "username") as? String
-            self.studios.text = dict.value(forKey: "studio") as? String
+            self.userInfo[0].text = dict.value(forKey: "username") as? String
+            self.userInfo[1].text = dict.value(forKey: "studio") as? String
             
-            self.userInfo[0].text = dict.value(forKey: "address") as? String
-            self.userInfo[1].text = dict.value(forKey: "phone") as? String
-            self.userInfo[2].text = dict.value(forKey: "email") as? String
-            self.userInfo[3].text = dict.value(forKey: "parlor") as? String
+            self.userInfo[2].text = dict.value(forKey: "address") as? String
+            self.userInfo[3].text = dict.value(forKey: "phone") as? String
+            self.userInfo[4].text = dict.value(forKey: "email") as? String
+            self.userInfo[5].text = dict.value(forKey: "parlor") as? String
             
             self.about.text = dict.value(forKey: "about") as? String
             
             self.userImages = dict.value(forKey: "photos") as? Array
             if (dict.value(forKey: "usertype") as! Int) == 2 {
+                self.isParlor = true
+                
                 self.squad = dict.value(forKey: "squad") as? Array
                 self.staffCollectionView.reloadData()
-                self.actionShowStaffCollectionView()
             } else {
                 self.followers = dict.value(forKey: "followers") as? Array
             }
             
             self.userImagesCollectionView.reloadData()
             
+            self.tableView.reloadData()
+            
+            self.refresher.endRefreshing()
+            
         }) { (error) in
             print(error.localizedDescription)
         }
+    }
+    
+    //MARK: - Load user data from server
+    func loadData() -> Void {
+        print(userIDFromSegue)
+        getInfo()
+    }
+    
+    //Refresh data in newsfeed
+    func refreshData() {
+        getInfo()
     }
     
     //MARK: - UISegmentedControl
@@ -131,30 +155,56 @@ class UserPageViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         return segmented
     }
-    
-    //MARK: - Actions
-    @IBAction func actionShowInfoView(_ sender: UIButton) {
-        infoViewHeightConstraint.constant = 200.0
-        UIView.animate(withDuration: 0.3, animations: { 
-            self.view.layoutIfNeeded()
-        }) { (true) in
-            UIView.animate(withDuration: 0.3, animations: { 
-                self.infoView.subviews[0].alpha = 1.0
-                self.moreInfoButton.alpha = 0.0
-            })
+
+    // MARK: - UITableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if (indexPath.row == 1) {
+            if (isSelected) {
+                isSelected = false
+            } else {
+                isSelected = true
+            }
+            tableView.beginUpdates()
+            tableView.endUpdates()
+            
+            tableView.cellForRow(at: indexPath)?.layoutIfNeeded()
         }
     }
     
-    @IBAction func actionHideInfoView(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.3, animations: { 
-            self.infoView.subviews[0].alpha = 0.0
-            self.moreInfoButton.alpha = 1.0
-        }) { (true) in
-            self.infoViewHeightConstraint.constant = 0.0
-            UIView.animate(withDuration: 0.3, animations: { 
-                self.view.layoutIfNeeded()
-            })
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height: CGFloat = 0.0
+        switch indexPath.row {
+        case 0:
+            height = 200
+            break
+        case 1:
+            if (isSelected) {
+                height = userInfoSelectedCellHeight
+            } else {
+                height = userInfoCellHeight
+            }
+            break
+        case 2:
+            if (isParlor) {
+                height = selectedCellHeight
+            } else {
+                height = cellHeight
+            }
+            break
+        case 3:
+            height = 31.0
+            break
+        case 4:
+            height = (CGFloat(userImages.count - 1) / 3.0) * (self.view.bounds.width / 3.0)
+            if (height < self.view.bounds.width / 3.0) {
+                height = self.view.bounds.width / 3.0
+            }
+            break
+        default:
+            break
         }
+        return height
     }
     
     //MARK: - UICollectionViewDataSource
@@ -181,6 +231,7 @@ class UserPageViewController: UIViewController, UICollectionViewDelegate, UIColl
             let url = URL.init(string: squad[indexPath.row].object(forKey: "avatar") as! String)
             (cell.contentView.subviews[0] as! UIImageView).kf.setImage(with: url)
         } else if collectionView == self.userImagesCollectionView {
+            //cell.frame = CGRect(x: 0.0, y: 0.0, width: self.view.bounds.width / 3.0, height: self.view.bounds.width / 3.0)
             if (UserDefaults.standard.object(forKey: "userID") as! Int == userIDFromSegue) {
                 if indexPath.row == 0 && indexPath.section == 0 {
                     cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellWithButton",
@@ -202,20 +253,25 @@ class UserPageViewController: UIViewController, UICollectionViewDelegate, UIColl
         return cell
     }
     
-    //staffCollectionView animations
-    func actionShowStaffCollectionView() {
-        self.staffCollectionViewHeightConstraint.constant = 80.0
-        UIView.animate(withDuration: 0.3, animations: {
-            self.view.layoutIfNeeded()
-        })
+    //MARK: - UICollectionViewDelegateFlowLayout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == self.staffCollectionView {
+             return CGSize.init(width: 70.0, height: 70.0)
+        } else {
+             return CGSize.init(width: collectionView.bounds.width * 0.33, height: collectionView.bounds.width * 0.33)
+        }
     }
     
-    func actionHideStaffCollectionView() {
-        self.staffCollectionViewHeightConstraint.constant = 0.0
-        UIView.animate(withDuration: 0.3, animations: {
-            self.view.layoutIfNeeded()
-        })
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt minimumLineSpacingForSectionAtIndex: NSInteger) -> CGFloat {
+        return 0.0
+    }
+
+    
+
     /*
     // MARK: - Navigation
 

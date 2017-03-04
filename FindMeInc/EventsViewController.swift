@@ -225,10 +225,10 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         sender.isSelected = true
         if sender.tag == 1 {
             calendarView.isHidden = false
-            self.navigationItem.title = "C A L E N D A R"
+            self.navigationItem.title = "CALENDAR"
         } else {
             calendarView.isHidden = true
-            self.navigationItem.title = "E V E N T S"
+            self.navigationItem.title = "EVENTS"
         }
     }
     

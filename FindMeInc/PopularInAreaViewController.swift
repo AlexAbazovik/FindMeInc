@@ -48,9 +48,9 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if Data.sharedInfo.dataCollectionForNewsFeed != nil{
+        if Data.sharedInfo.dataCollectionForNewsFeed != nil {
             return (Data.sharedInfo.dataCollectionForNewsFeed?.count)! + 1
-        }else{
+        } else {
             return 0
         }
     }
@@ -69,13 +69,13 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
 
         //If cell the last cell in this collection show cell with ActivityIndicator
         
-        if indexPath.row == (Data.sharedInfo.dataCollectionForNewsFeed?.count)!{
+        if indexPath.row == (Data.sharedInfo.dataCollectionForNewsFeed?.count)! {
             let lastCell = collectionView.dequeueReusableCell(withReuseIdentifier: "lastCollectionViewCell", for: indexPath)
             
             //MARK: Start animate activity indicator
             (lastCell.viewWithTag(1) as! UIActivityIndicatorView).startAnimating()
             return lastCell
-        }else{
+        } else {
             let type = (Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int
             let urlString = (Data.sharedInfo.dataCollectionForNewsFeed![indexPath.row] as! NSDictionary).value(forKey: "url") as! String
             var cell: PopularInYourAreaCollectionViewCell
@@ -112,24 +112,24 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
         var size = CGSize(width: 165, height: 240)
         
         //MARK: Specific cell size for iPhone 5 and SE
-        if(UIScreen.main.bounds.size.height == 568){
+        if(UIScreen.main.bounds.size.height == 568) {
             size = CGSize(width: 135, height: 200)
         }
         //MARK: Specific cell size for iPhone PLUS
-        if(UIScreen.main.bounds.size.height == 736){
+        if(UIScreen.main.bounds.size.height == 736) {
             size = CGSize(width: 180, height: 270)
         }
 
         if indexPath.row != (Data.sharedInfo.dataCollectionForNewsFeed?.count)!{
             
             // Specific cell size for one with event content type
-            if (Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int == 0||(Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int == 4{
+            if (Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int == 0||(Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "code") as! Int == 4 {
                 size = CGSize(width: collectionView.frame.width, height: 200.0)
                 if(UIScreen.main.bounds.size.height == 736){
                     size = CGSize(width: collectionView.frame.width, height: 240)
                 }
             }
-        }else {
+        } else {
             //MARK: Specific cell size for the last one
             size = CGSize(width: collectionView.frame.width, height: 200.0)
             if(UIScreen.main.bounds.size.height == 736){
@@ -146,18 +146,18 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
         selectedItemID = (Data.sharedInfo.dataCollectionForNewsFeed?[indexPath.row] as! NSDictionary).value(forKey: "id") as? Int
         if type == 0 || type == 4 {
             self.performSegue(withIdentifier: "segueToEventsDetail", sender: self)
-        }else {
+        } else {
             self.performSegue(withIdentifier: "segueToTattoDetail", sender: self)
         }
     }
     
     //MARK: Show view for choose filter options
-    @IBAction func optionsButtonTap(_ sender: UIBarButtonItem){
+    @IBAction func optionsButtonTap(_ sender: UIBarButtonItem) {
         alertView.isHidden = false
     }
     
     //MARK: Reload data in collection view with filter
-    @IBAction func filteringOptionsDidSelect(_ sender: UIStoryboardSegue?){
+    @IBAction func filteringOptionsDidSelect(_ sender: UIStoryboardSegue?) {
         sendRequestToRetrieveListPhoto(dataPassed)
         collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .bottom, animated: true)
     }
@@ -165,13 +165,13 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
     //MARK: Show more function
     //If the user reached the bottom of collection view new collection load
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == (Data.sharedInfo.dataCollectionForNewsFeed?.count)! - 10{
+        if indexPath.row == (Data.sharedInfo.dataCollectionForNewsFeed?.count)! - 10 {
             sendRequestToRetrieveListPhoto(dataPassed, true)
         }
     }
     
     //MARK: Send request to list of images
-    @objc func sendRequestToRetrieveListPhoto(_ params: [String]? = nil,_ more: Bool = false){
+    @objc func sendRequestToRetrieveListPhoto(_ params: [String]? = nil,_ more: Bool = false) {
         MySession.sharedInfo.getImagesList(parameters: params, more: more, onSucsess: {(success) in
             self.collectionView.reloadData()
             self.refresher.endRefreshing()
@@ -182,7 +182,7 @@ class PopularInAreaViewController: UIViewController, UICollectionViewDataSource,
     }
     
     //Refresh data in newsfeed
-    func refreshData(){
+    func refreshData() {
         sendRequestToRetrieveListPhoto(dataPassed, false)
     }
     

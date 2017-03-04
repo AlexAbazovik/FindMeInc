@@ -27,8 +27,8 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         let userPage = (viewController as! UINavigationController).viewControllers[0]
-        if userPage is UserPageViewController {
-            (userPage as! UserPageViewController).userIDFromSegue = UserDefaults.standard.object(forKey: "userID") as! Int!
+        if userPage is UserPageTableViewController {
+            (userPage as! UserPageTableViewController).userIDFromSegue = UserDefaults.standard.object(forKey: "userID") as! Int!
         }
         return true
     }

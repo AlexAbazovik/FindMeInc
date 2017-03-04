@@ -10,9 +10,13 @@
 //____________________________________________________
 
 import UIKit
+import MBProgressHUD
 
 class TattooConsultationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    @IBOutlet weak var findMeInkButton: UIButton!
+    @IBOutlet weak var uploadImageButton: UIButton!
+    
     @IBOutlet var moneyLabels: [UILabel]!
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     
@@ -81,9 +85,10 @@ class TattooConsultationViewController: UIViewController, UIImagePickerControlle
             if response != false {
                 let alert = UIAlertController(title: "Great", message: "Your Tattoo Idea Has Been Posted. Artist Will be In Touch!", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Back to profile", style: .default, handler: { (action) in
-                    
+                    self.navigationController?.popViewController(animated: true)
+                    self.tabBarController?.selectedViewController = self.tabBarController?.viewControllers?[4]
                 }))
-                alert.addAction(UIAlertAction(title: "View convention", style: .default, handler: { (action) in
+                alert.addAction(UIAlertAction(title: "Back", style: .default, handler: { (action) in
                     self.navigationController?.popViewController(animated: true)
                 }))
                 self.present(alert, animated: true, completion: nil)
@@ -122,17 +127,59 @@ class TattooConsultationViewController: UIViewController, UIImagePickerControlle
     
     //MARK: - UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        findMeInkButton.isEnabled = false
+        uploadImageButton.isEnabled = false
+        
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         imagesArray.append(chosenImage)
+        
+       /* let blackView = UIView.init(frame: imagesCollectionView.bounds)
+        print(imagesCollectionView.bounds)
+        blackView.backgroundColor = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.3)
+        //imagesCollectionView.addSubview(blackView)
+        
+        let progressView = MBProgressHUD.showAdded(to: self.view, animated: true)
+        progressView.mode = MBProgressHUDMode.indeterminate
+        progressView.label.text = "Loading"
+        progressView.center = imagesCollectionView.center
+        blackView.addSubview(progressView)
+        imagesCollectionView.addSubview(blackView) */
+        
+        
+        //var progressView = MBProgressHUD()
+        var cell = AddConsultationCollectionViewCell()
+        DispatchQueue.main.async {
+            print(self.imagesCollectionView.visibleCells.count)
+            cell = (self.imagesCollectionView.cellForItem(at: IndexPath.init(row: self.imagesArray.count - 1, section: 0)) as! AddConsultationCollectionViewCell)
+            
+            cell.progressView = MBProgressHUD.showAdded(to: cell.imageView, animated: true)
+            cell.progressView.mode = MBProgressHUDMode.determinate
+            //progressView.label.text = "Loading"
+            
+            cell.progressView.bounds = CGRect(x: 0.0, y: 0.0, width: cell.progressView.bounds.width, height: cell.progressView.bounds.width)
+        }
+        
         //MARK: Send image to the server
-        UploadSession.sharedInfo.uploadPhoto(image: chosenImage, onSuccess: { (response) in
+        UploadSession.sharedInfo.uploadPhoto(image: chosenImage, uploadProgress: { (uploadProgress) in
+            print("double = \(uploadProgress)")
+            cell.progressView.progress = Float(uploadProgress)
+        }, onSuccess: { (response) in
             self.loadedImages.append(response)
+            
+            self.findMeInkButton.isEnabled = true
+            self.uploadImageButton.isEnabled = true
+            
+            cell.progressView.hide(animated: true)
         }) { (error) in
-            print(error)
+            print(error.localizedDescription)
+            
+            self.findMeInkButton.isEnabled = true
+            self.uploadImageButton.isEnabled = true
+            
+            cell.progressView.hide(animated: true)
         }
         imagesCollectionView.reloadData()
-        //imagesCollectionView.insertItems(at: [IndexPath.init(row: imagesArray.count - 1, section: 0)])
-        print(imagesArray.count)
+
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -150,6 +197,7 @@ class TattooConsultationViewController: UIViewController, UIImagePickerControlle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as! AddConsultationCollectionViewCell
         cell.imageView.image = imagesArray[indexPath.row]
         cell.deleteImageButton.tag = indexPath.row
+        
         return cell
     }
 
