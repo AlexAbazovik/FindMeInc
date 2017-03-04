@@ -85,10 +85,11 @@ class TattooConsultationViewController: UIViewController, UIImagePickerControlle
             if response != false {
                 let alert = UIAlertController(title: "Great", message: "Your Tattoo Idea Has Been Posted. Artist Will be In Touch!", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Back to profile", style: .default, handler: { (action) in
-                    
+                    self.navigationController?.popViewController(animated: true)
+                    self.tabBarController?.selectedViewController = self.tabBarController?.viewControllers?[4]
                 }))
-                alert.addAction(UIAlertAction(title: "View convention", style: .default, handler: { (action) in
-                    //self.navigationController?.popViewController(animated: true)
+                alert.addAction(UIAlertAction(title: "Back", style: .default, handler: { (action) in
+                    self.navigationController?.popViewController(animated: true)
                 }))
                 self.present(alert, animated: true, completion: nil)
             }
