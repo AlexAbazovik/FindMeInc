@@ -13,6 +13,8 @@ import UIKit
 
 class TattooConsultationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    @IBOutlet weak var findMeInkButton: UIButton!
+    
     @IBOutlet var moneyLabels: [UILabel]!
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     
@@ -122,13 +124,19 @@ class TattooConsultationViewController: UIViewController, UIImagePickerControlle
     
     //MARK: - UIImagePickerControllerDelegate
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        findMeInkButton.isEnabled = false
+        
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         imagesArray.append(chosenImage)
         //MARK: Send image to the server
-        UploadSession.sharedInfo.uploadPhoto(image: chosenImage, onSuccess: { (response) in
+        UploadSession.sharedInfo.uploadPhoto(image: chosenImage, uploadProgress: { (uploadProgress) in
+            print("double = \(uploadProgress)")
+        }, onSuccess: { (response) in
             self.loadedImages.append(response)
+            self.findMeInkButton.isEnabled = true
         }) { (error) in
-            print(error)
+            print(error.localizedDescription)
+            self.findMeInkButton.isEnabled = true
         }
         imagesCollectionView.reloadData()
         //imagesCollectionView.insertItems(at: [IndexPath.init(row: imagesArray.count - 1, section: 0)])

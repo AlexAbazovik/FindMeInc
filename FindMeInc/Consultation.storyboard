@@ -284,6 +284,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="budgetSlider" destination="yeB-dT-U4Q" id="tLG-kJ-wSc"/>
+                        <outlet property="findMeInkButton" destination="wRW-Kt-Bu1" id="Q8z-gi-GfO"/>
                         <outlet property="imagesCollectionView" destination="4gH-7R-hQ2" id="QMO-LJ-qAH"/>
                         <outlet property="maxBudget" destination="0Sq-xf-SKa" id="nnT-6L-Er7"/>
                         <outlet property="minBudget" destination="DKg-OU-pQ0" id="adN-vl-TPR"/>
