@@ -19,6 +19,7 @@ class EventDetailsViewController: UIViewController, UICollectionViewDelegate, UI
     var typeOfEvent: Int?
     var eventID: Int?
     var plusBarButtonItem = UIBarButtonItem()
+    var settingsBarButtonItem = UIBarButtonItem()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,10 @@ class EventDetailsViewController: UIViewController, UICollectionViewDelegate, UI
             self.navigationItem.rightBarButtonItem = plusBarButtonItem
         } else {
             upperLayerScrollViewHide()
+            //TODO: - Change selector for settings bar button item -
+            settingsBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "FMI_ALL_Preferences_Icon"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(transitionToConsultation))
+            settingsBarButtonItem.tag = 2
+            self.navigationItem.rightBarButtonItem = settingsBarButtonItem
         }
     }
 

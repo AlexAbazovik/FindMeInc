@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8aa-md-nrd">
-                                <rect key="frame" x="16" y="15" width="343" height="647"/>
+                                <rect key="frame" x="16" y="15" width="343" height="592"/>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iJn-tg-wnE">
                                     <size key="itemSize" width="160" height="200"/>
@@ -168,20 +168,42 @@
                                 <rect key="frame" x="177" y="323" width="20" height="20"/>
                                 <color key="color" red="0.8980392157" green="0.61568627450000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12x-6x-fJt">
+                                <rect key="frame" x="15" y="617" width="345" height="40"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.61568627450000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="T61-vM-7VB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
+                                <state key="normal" title="Create a Tattoo Idea for Artist to Contact You" backgroundImage="FMI_All_Text_Field_Border">
+                                    <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iXz-sr-W8s" kind="show" id="2xN-wF-llk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dCF-yt-5lf" firstAttribute="top" secondItem="eiM-Kq-E0G" secondAttribute="bottom" id="6yQ-rf-fPY"/>
                             <constraint firstItem="8aa-md-nrd" firstAttribute="leading" secondItem="MGr-Mf-dlG" secondAttribute="leadingMargin" id="8Ba-Lm-4iB"/>
-                            <constraint firstItem="dCF-yt-5lf" firstAttribute="top" secondItem="8aa-md-nrd" secondAttribute="bottom" constant="5" id="Dgg-yY-9WW"/>
                             <constraint firstAttribute="trailing" secondItem="eiM-Kq-E0G" secondAttribute="trailing" id="Hec-cD-0Rf"/>
                             <constraint firstItem="lln-MT-swk" firstAttribute="centerX" secondItem="MGr-Mf-dlG" secondAttribute="centerX" id="Nf0-Sn-iMm"/>
                             <constraint firstItem="eiM-Kq-E0G" firstAttribute="top" secondItem="flW-UD-3W1" secondAttribute="bottom" id="PGE-MA-EeG"/>
+                            <constraint firstItem="12x-6x-fJt" firstAttribute="leading" secondItem="MGr-Mf-dlG" secondAttribute="leading" constant="15" id="RZD-zn-jmH"/>
+                            <constraint firstItem="12x-6x-fJt" firstAttribute="top" secondItem="8aa-md-nrd" secondAttribute="bottom" constant="10" id="VHq-16-aOn"/>
                             <constraint firstItem="8aa-md-nrd" firstAttribute="top" secondItem="MGr-Mf-dlG" secondAttribute="topMargin" constant="15" id="Y8c-wB-SUT"/>
+                            <constraint firstAttribute="trailing" secondItem="12x-6x-fJt" secondAttribute="trailing" constant="15" id="b8w-b8-r0P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8aa-md-nrd" secondAttribute="trailing" id="c0f-xX-e56"/>
                             <constraint firstItem="lln-MT-swk" firstAttribute="centerY" secondItem="MGr-Mf-dlG" secondAttribute="centerY" id="cyf-pv-BXq"/>
                             <constraint firstItem="eiM-Kq-E0G" firstAttribute="leading" secondItem="MGr-Mf-dlG" secondAttribute="leading" id="oy2-t2-FVW"/>
+                            <constraint firstItem="dCF-yt-5lf" firstAttribute="top" secondItem="12x-6x-fJt" secondAttribute="bottom" constant="10" id="xcW-Ct-Eic"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="eiM-Kq-E0G"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="POPULAR IN YOUR AREA" id="R0A-mK-jzP">
                         <barButtonItem key="backBarButtonItem" title="Back" id="GZB-JV-I4m"/>
@@ -202,6 +224,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8sg-qb-I2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3677.5999999999999" y="-1268.8155922038982"/>
+        </scene>
+        <!--Consultation-->
+        <scene sceneID="bYH-UV-wNE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Consultation" id="iXz-sr-W8s" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4vQ-Vs-qly" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3678" y="-870"/>
         </scene>
         <!--Custom Alert View Controller-->
         <scene sceneID="8kB-Gu-wfr">
@@ -239,7 +269,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agl-oC-wvp">
-                                                    <rect key="frame" x="103.5" y="13.5" width="34.5" height="16.5"/>
+                                                    <rect key="frame" x="102.5" y="12" width="36.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -337,5 +367,6 @@
         <image name="FMI_All_Flower_Icon" width="708" height="708"/>
         <image name="FMI_All_Options_Icon" width="22" height="22"/>
         <image name="FMI_All_Star_Icon" width="22" height="22"/>
+        <image name="FMI_All_Text_Field_Border" width="1602" height="268"/>
     </resources>
 </document>
