@@ -552,6 +552,7 @@
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="aRf-lh-8QR" appends="YES" id="ncZ-WU-dte"/>
                                     <outletCollection property="gestureRecognizers" destination="wBv-cq-3fr" appends="YES" id="TfF-7r-nnB"/>
+                                    <outletCollection property="gestureRecognizers" destination="CU1-w2-pIp" appends="YES" id="3qh-Xv-bAz"/>
                                 </connections>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Ghw-Nx-wAm">
@@ -758,6 +759,11 @@
                         <action selector="nextPhotoPresent:" destination="mP1-SD-dk1" id="FRU-IO-ljb"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="CU1-w2-pIp">
+                    <connections>
+                        <action selector="actionDoubleTap:" destination="mP1-SD-dk1" id="0MA-MZ-zax"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3864.8000000000002" y="1105.9970014992505"/>
         </scene>
