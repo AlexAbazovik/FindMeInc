@@ -37,7 +37,7 @@ class UserPageViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     var segmentedControl: UISegmentedControl!
     
-    //MARK: - UIViewController lifecycle
+    //MARK: - UIViewController life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

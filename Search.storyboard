@@ -16,6 +16,9 @@
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans</string>
         </array>
+        <array key="OpenSans-Semibold.ttf">
+            <string>OpenSans-Semibold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Navigation Controller-->
@@ -76,10 +79,10 @@
                                         <rect key="frame" x="5" y="0.0" width="333" height="38"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FMI_All_Search_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="F6k-tZ-wBR">
-                                                <rect key="frame" x="0.0" y="4.5" width="29" height="29"/>
+                                                <rect key="frame" x="0.0" y="8" width="22" height="22"/>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tf1-mg-BUT">
-                                                <rect key="frame" x="39" y="10.5" width="294" height="17"/>
+                                                <rect key="frame" x="32" y="10.5" width="301" height="17"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -119,10 +122,26 @@
                                     <color key="titleColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yay-fA-fUZ">
+                                <rect key="frame" x="15" y="617" width="345" height="40"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.61568627450000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qgv-Dm-JUH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
+                                <state key="normal" title="Create a Tattoo Idea for Artist to Contact You" backgroundImage="FMI_All_Text_Field_Border">
+                                    <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uUp-o3-n5h" kind="show" id="izX-6B-p69"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WKS-NX-yXh" firstAttribute="top" secondItem="n9V-mD-Veh" secondAttribute="bottom" constant="10" id="4QZ-nW-J3P"/>
+                            <constraint firstItem="Yay-fA-fUZ" firstAttribute="leading" secondItem="isd-os-iNv" secondAttribute="leading" constant="15" id="6yo-oX-R1B"/>
+                            <constraint firstItem="L1J-AH-5U3" firstAttribute="top" secondItem="Yay-fA-fUZ" secondAttribute="bottom" constant="10" id="RZo-vK-fwF"/>
                             <constraint firstItem="WKS-NX-yXh" firstAttribute="leading" secondItem="isd-os-iNv" secondAttribute="leadingMargin" constant="10" id="Rqu-jT-nKe"/>
                             <constraint firstItem="ef5-P5-3Ck" firstAttribute="centerX" secondItem="isd-os-iNv" secondAttribute="centerX" id="SSO-0I-Q5p"/>
                             <constraint firstItem="n9V-mD-Veh" firstAttribute="leading" secondItem="isd-os-iNv" secondAttribute="leadingMargin" constant="10" id="TGe-1h-vne"/>
@@ -132,6 +151,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="e9e-fd-DhU" secondAttribute="trailing" id="nzc-NV-ava"/>
                             <constraint firstItem="n9V-mD-Veh" firstAttribute="top" secondItem="e9e-fd-DhU" secondAttribute="bottom" constant="10" id="pfe-Pf-La7"/>
                             <constraint firstItem="e9e-fd-DhU" firstAttribute="top" secondItem="ef5-P5-3Ck" secondAttribute="bottom" constant="15" id="r2i-HX-035"/>
+                            <constraint firstAttribute="trailing" secondItem="Yay-fA-fUZ" secondAttribute="trailing" constant="15" id="sVz-FF-Rte"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="S E A R C H" id="ict-qy-baW">
@@ -142,10 +162,19 @@
             </objects>
             <point key="canvasLocation" x="3678" y="-591"/>
         </scene>
+        <!--Consultation-->
+        <scene sceneID="GwA-K1-PFc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Consultation" id="uUp-o3-n5h" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="clS-Hz-1Dq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3678" y="-184"/>
+        </scene>
     </scenes>
     <resources>
         <image name="FMI_ALL_Preferences_Icon" width="22" height="22"/>
         <image name="FMI_All_Horizontal_Row" width="2043" height="3"/>
-        <image name="FMI_All_Search_Icon" width="29" height="29"/>
+        <image name="FMI_All_Search_Icon" width="22" height="22"/>
+        <image name="FMI_All_Text_Field_Border" width="1602" height="268"/>
     </resources>
 </document>

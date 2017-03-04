@@ -357,7 +357,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FTb-5J-je0">
-                                <rect key="frame" x="16" y="467" width="343" height="192"/>
+                                <rect key="frame" x="16" y="467" width="343" height="140"/>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="9" minimumInteritemSpacing="9" id="u4d-kF-8f4">
                                     <size key="itemSize" width="100" height="100"/>
@@ -450,6 +450,20 @@
                                     <segue destination="ljb-D1-kW3" kind="embed" id="zwq-lY-7JZ"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5x-hI-cbV">
+                                <rect key="frame" x="15" y="617" width="345" height="40"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.61568627450000002" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qTX-pM-qVo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
+                                <state key="normal" title="Create a Tattoo Idea for Artist to Contact You" backgroundImage="FMI_All_Text_Field_Border">
+                                    <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lFU-aH-Eri" kind="show" id="Rwd-gs-cGE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -457,11 +471,12 @@
                             <constraint firstItem="FTb-5J-je0" firstAttribute="top" secondItem="vSA-ar-ed5" secondAttribute="bottom" constant="8" id="2dr-Ic-l1S"/>
                             <constraint firstItem="nh0-cy-vO9" firstAttribute="top" secondItem="cef-0H-3UI" secondAttribute="bottom" constant="8" id="6PI-ge-uAO"/>
                             <constraint firstAttribute="trailing" secondItem="rzi-21-9Om" secondAttribute="trailing" id="7FK-3g-wuI"/>
+                            <constraint firstItem="h5x-hI-cbV" firstAttribute="leading" secondItem="KpU-Zm-bE2" secondAttribute="leading" constant="15" id="AFj-EM-4Zs"/>
                             <constraint firstItem="cef-0H-3UI" firstAttribute="trailing" secondItem="KpU-Zm-bE2" secondAttribute="trailingMargin" id="BAt-8i-gXz"/>
                             <constraint firstItem="y8b-Hx-351" firstAttribute="top" secondItem="cef-0H-3UI" secondAttribute="bottom" constant="8" id="BDW-ne-xNh"/>
-                            <constraint firstItem="ViH-VO-lep" firstAttribute="top" secondItem="FTb-5J-je0" secondAttribute="bottom" constant="8" id="Cxn-TH-S3J"/>
                             <constraint firstItem="nh0-cy-vO9" firstAttribute="trailing" secondItem="KpU-Zm-bE2" secondAttribute="trailingMargin" id="D2H-50-xOv"/>
                             <constraint firstItem="SD6-dX-UST" firstAttribute="centerY" secondItem="rzi-21-9Om" secondAttribute="centerY" multiplier="1.53" id="ElC-OK-EGh"/>
+                            <constraint firstAttribute="trailing" secondItem="h5x-hI-cbV" secondAttribute="trailing" constant="15" id="FOV-qH-WJF"/>
                             <constraint firstItem="rzi-21-9Om" firstAttribute="height" secondItem="KpU-Zm-bE2" secondAttribute="height" multiplier="0.29985" id="GFJ-Nh-lj7"/>
                             <constraint firstItem="nh0-cy-vO9" firstAttribute="leading" secondItem="KpU-Zm-bE2" secondAttribute="leadingMargin" id="HUe-E5-wcd"/>
                             <constraint firstItem="FTb-5J-je0" firstAttribute="top" secondItem="nh0-cy-vO9" secondAttribute="bottom" constant="8" id="I3D-At-Fll"/>
@@ -471,6 +486,7 @@
                             <constraint firstItem="vSA-ar-ed5" firstAttribute="top" secondItem="cef-0H-3UI" secondAttribute="bottom" constant="8" id="LYH-5e-h6d"/>
                             <constraint firstItem="rzi-21-9Om" firstAttribute="leading" secondItem="KpU-Zm-bE2" secondAttribute="leading" id="MyQ-Ge-Pgw"/>
                             <constraint firstItem="lqs-F7-Tq3" firstAttribute="leading" secondItem="KpU-Zm-bE2" secondAttribute="leading" id="NNS-Yw-ZAm"/>
+                            <constraint firstItem="h5x-hI-cbV" firstAttribute="top" secondItem="FTb-5J-je0" secondAttribute="bottom" constant="10" id="QGG-v0-Og5"/>
                             <constraint firstItem="y8b-Hx-351" firstAttribute="trailing" secondItem="KpU-Zm-bE2" secondAttribute="trailingMargin" id="R6K-Ix-zMV"/>
                             <constraint firstItem="y8b-Hx-351" firstAttribute="leading" secondItem="KpU-Zm-bE2" secondAttribute="leadingMargin" id="Wme-kV-ZvO"/>
                             <constraint firstItem="lqs-F7-Tq3" firstAttribute="top" secondItem="rzi-21-9Om" secondAttribute="bottom" id="dch-ye-35k"/>
@@ -481,6 +497,7 @@
                             <constraint firstItem="FTb-5J-je0" firstAttribute="trailing" secondItem="KpU-Zm-bE2" secondAttribute="trailingMargin" id="i4G-RI-3Fb"/>
                             <constraint firstItem="rz2-pV-mft" firstAttribute="leading" secondItem="KpU-Zm-bE2" secondAttribute="leading" id="jO6-b7-IPv"/>
                             <constraint firstItem="OWY-GT-26k" firstAttribute="trailing" secondItem="KpU-Zm-bE2" secondAttribute="trailingMargin" id="ko5-ZP-spD"/>
+                            <constraint firstItem="ViH-VO-lep" firstAttribute="top" secondItem="h5x-hI-cbV" secondAttribute="bottom" constant="10" id="mJT-0j-JK7"/>
                             <constraint firstItem="SD6-dX-UST" firstAttribute="height" secondItem="rzi-21-9Om" secondAttribute="height" multiplier="0.35" id="nGe-YY-DTL"/>
                             <constraint firstItem="vSA-ar-ed5" firstAttribute="leading" secondItem="KpU-Zm-bE2" secondAttribute="leadingMargin" id="oW0-tR-NGp"/>
                             <constraint firstItem="FTb-5J-je0" firstAttribute="top" secondItem="y8b-Hx-351" secondAttribute="bottom" constant="8" id="rnA-8X-DAJ"/>
@@ -1171,6 +1188,14 @@
             </objects>
             <point key="canvasLocation" x="3022" y="1580"/>
         </scene>
+        <!--Consultation-->
+        <scene sceneID="0o4-Cb-Z2q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Consultation" id="lFU-aH-Eri" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kM0-J4-wWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3524" y="1722"/>
+        </scene>
     </scenes>
     <resources>
         <image name="FMI_All_Border_For_Button" width="646" height="646"/>
@@ -1183,6 +1208,7 @@
         <image name="FMI_All_Share_Icon" width="135" height="167"/>
         <image name="FMI_All_Star_Without_Cercle_Icon" width="144" height="137"/>
         <image name="FMI_All_Star_Without_Cercle_Orange_Icon" width="144" height="137"/>
+        <image name="FMI_All_Text_Field_Border" width="1602" height="268"/>
         <image name="FMI_All_Twitter_Logo" width="126" height="125"/>
         <image name="FMI_All_Up_Arrow" width="113" height="62"/>
         <image name="FMI_All_User_Icon" width="22" height="22"/>
