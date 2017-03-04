@@ -165,8 +165,8 @@ class TattooDetailsViewController: UIViewController, UICollectionViewDelegate, U
         let recipeViewContorller = segue.destination as! CommentsViewController
             recipeViewContorller.photoID = photoID
         } else if segue.identifier == "segueFromTattooDetailToUserPage" {
-            let userPageViewController = segue.destination as! UserPageViewController
-            userPageViewController.userIDFromSegue = userID
+            let userPageTableViewController = segue.destination as! UserPageTableViewController
+            userPageTableViewController.userIDFromSegue = userID
         }
 }
 }
