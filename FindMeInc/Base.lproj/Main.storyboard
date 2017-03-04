@@ -186,7 +186,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE A NEW ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Vs-NA-D9m">
-                                        <rect key="frame" x="146.5" y="240" width="124" height="14"/>
+                                        <rect key="frame" x="147" y="240" width="123" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="14" id="RCT-p1-O08"/>
                                         </constraints>
@@ -243,7 +243,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="emz-gk-Q3Q">
-                                        <rect key="frame" x="94.5" y="480" width="227.5" height="20"/>
+                                        <rect key="frame" x="95.5" y="480" width="225.5" height="20"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7se-5K-FTz" customClass="CustomRadioButton" customModule="FindMeInc" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -270,13 +270,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I ACCEPT THE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1d6-9x-RkE">
-                                                <rect key="frame" x="27" y="0.0" width="66.5" height="20"/>
+                                                <rect key="frame" x="27" y="0.0" width="64.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                                 <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-16" translatesAutoresizingMaskIntoConstraints="NO" id="x60-9g-oWa">
-                                                <rect key="frame" x="100.5" y="0.0" width="127" height="20"/>
+                                                <rect key="frame" x="98.5" y="0.0" width="127" height="20"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l0a-N3-ltu">
                                                         <rect key="frame" x="0.0" y="0.0" width="127" height="20"/>
@@ -316,7 +316,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWQ-dj-bnF">
-                                        <rect key="frame" x="200.5" y="564" width="14.5" height="14"/>
+                                        <rect key="frame" x="200" y="564" width="15" height="14"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -432,7 +432,7 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="SZy-Fx-RdQ">
-                                        <rect key="frame" x="94" y="446" width="227.5" height="20"/>
+                                        <rect key="frame" x="95" y="446" width="225.5" height="20"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qF1-Bv-4VW" customClass="CustomRadioButton" customModule="FindMeInc" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -459,13 +459,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I ACCEPT THE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjr-OG-Oyy">
-                                                <rect key="frame" x="27" y="0.0" width="66.5" height="20"/>
+                                                <rect key="frame" x="27" y="0.0" width="64.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                                 <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S88-Tf-kYw">
-                                                <rect key="frame" x="100.5" y="0.0" width="127" height="20"/>
+                                                <rect key="frame" x="98.5" y="0.0" width="127" height="20"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="TERMS AND CONDITIONS">
@@ -521,7 +521,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE A NEW ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6X-kS-lf0">
-                                        <rect key="frame" x="146" y="240" width="124" height="14"/>
+                                        <rect key="frame" x="146.5" y="240" width="123" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="14" id="5kR-WM-YUq"/>
                                         </constraints>
@@ -547,13 +547,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPe-ZR-hDl">
-                                        <rect key="frame" x="201" y="530" width="14.5" height="12"/>
+                                        <rect key="frame" x="200.5" y="530" width="15" height="14"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVp-hu-BTe">
-                                        <rect key="frame" x="68" y="552" width="280" height="44"/>
+                                        <rect key="frame" x="68" y="554" width="280" height="44"/>
                                         <color key="backgroundColor" red="0.1035201028" green="0.46086388830000002" blue="0.73495054240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                         <state key="normal" title="C O N N E C T  W I T H  F A C E B O O K ">
@@ -752,7 +752,7 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="EvT-VV-yBk">
-                                        <rect key="frame" x="94" y="470" width="227.5" height="20"/>
+                                        <rect key="frame" x="95" y="470" width="225.5" height="20"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM5-go-Yhu" customClass="CustomRadioButton" customModule="FindMeInc" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -780,13 +780,13 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I ACCEPT THE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7Z-a6-Ayn">
-                                                <rect key="frame" x="27" y="0.0" width="66.5" height="20"/>
+                                                <rect key="frame" x="27" y="0.0" width="64.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                                 <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="buW-ji-Sve">
-                                                <rect key="frame" x="100.5" y="0.0" width="127" height="20"/>
+                                                <rect key="frame" x="98.5" y="0.0" width="127" height="20"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="TERMS AND CONDITIONS">
@@ -831,7 +831,7 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE A NEW ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aoy-wc-6sX">
-                                        <rect key="frame" x="146" y="230" width="124" height="14"/>
+                                        <rect key="frame" x="146.5" y="230" width="123" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="14" id="gNm-MS-yUc"/>
                                         </constraints>
@@ -898,13 +898,13 @@ App and site (c) 2015-2017 Tattoo Technologies, Inc. (TTI), a Delaware corporati
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDK-Gy-QKe">
-                                        <rect key="frame" x="201" y="554" width="14.5" height="12"/>
+                                        <rect key="frame" x="200.5" y="554" width="15" height="14"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="10"/>
                                         <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lg9-bv-yRx">
-                                        <rect key="frame" x="68" y="576" width="280" height="44"/>
+                                        <rect key="frame" x="68" y="578" width="280" height="44"/>
                                         <color key="backgroundColor" red="0.1035201028" green="0.46086388830000002" blue="0.73495054240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                         <state key="normal" title="C O N N E C T  W I T H  F A C E B O O K ">
