@@ -289,6 +289,7 @@
                         <outlet property="maxBudget" destination="0Sq-xf-SKa" id="nnT-6L-Er7"/>
                         <outlet property="minBudget" destination="DKg-OU-pQ0" id="adN-vl-TPR"/>
                         <outlet property="tattooDescription" destination="7pL-4z-hAc" id="lxd-Lr-FYr"/>
+                        <outlet property="uploadImageButton" destination="ZdX-ih-4s2" id="HyK-zO-reH"/>
                         <outletCollection property="moneyLabels" destination="DKg-OU-pQ0" collectionClass="NSMutableArray" id="QPK-CZ-09s"/>
                         <outletCollection property="moneyLabels" destination="0Sq-xf-SKa" collectionClass="NSMutableArray" id="gME-xV-FHa"/>
                     </connections>
